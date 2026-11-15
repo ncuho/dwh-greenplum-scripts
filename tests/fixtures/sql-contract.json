@@ -1,0 +1,1452 @@
+{
+  "files": [
+    {
+      "file": "ddl/schemas/ods.sql",
+      "token_sha256": "c92738d4270cbac4a21d80aad4643de5672b15844da6fc6076c9c324b84c0eb8",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/mart.sql",
+      "token_sha256": "31ac205be4793bfc451fef99c6ae94f24e48a1898392694e047193bd1426c1bc",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/ref.sql",
+      "token_sha256": "81d1e4db90416909a7b4c840804205e1621eee354d6ddb2e9e1ca4a8e44d9faa",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/stg.sql",
+      "token_sha256": "bbac3c03afdb213a7f849d7d2a603bfe0aeb8a94c14cda41694059e517900f66",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/dds.sql",
+      "token_sha256": "428509e2cccf4eea97e1f00dfb265700cbf10646b279d57fbbb90c366f2d8016",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/dm.sql",
+      "token_sha256": "4e6b78d20a58791bf6015cc3f986331617eab7e20077dcf780b8cbaabaef45df",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/ctl.sql",
+      "token_sha256": "7107776b7fb786ad73622e0c4a4acc44e42f999402b98deb84c904cac5dfb7b6",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/schemas/etl.sql",
+      "token_sha256": "442c3d82b3e7e0b8e1b5c4d7a0919f790cb93b989e69157f4dfe92c3f431fda3",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/domains/ref/tariff_rate.sql",
+      "token_sha256": "cbe3029c04e5cc46475dc4fd6711672757290ca54f61ccdf0ddd52d29f2c634c",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/types/ref/work_state.sql",
+      "token_sha256": "a6f15c72c63536d81b44641fadbd5d1b4771e35aef5e88f649d21b4fb7557045",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/sequences/ctl/run_id_seq.sql",
+      "token_sha256": "62bbb7964b8b6060933dabf97a70dd61d6451752de1d6c805b01a0cc8fdf550c",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/tables/mart/bo_werks_text.sql",
+      "token_sha256": "b14a5c4cc9fc8aba8a17a00b893e51906d37a10744262f435d31e8d6b3907349",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_hse_incidents.sql",
+      "token_sha256": "a3acf59de59c877451039620fc61b1ed22430c5cb802e8382b2930a6fa8d63f5",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_hse_one.sql",
+      "token_sha256": "f88bfe302b5bb08fe3ac55f78a9a5f1e4619d9a1889779ac81868f6b8084fbf5",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_incidents.sql",
+      "token_sha256": "77f4131e1177bbaa191112c018c90dffeee5eada0d597c20dd652ee7866262cb",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_project_status.sql",
+      "token_sha256": "2dac5e1f7824ef6c0d5d08020fbd212aed512a0fbc210e52e17fae53a1f6fc3b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_well.sql",
+      "token_sha256": "0ed97549e0802276717f138b52cc1e3b5d50c5d890054400d87ec2e7ab46a8f3",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_well_more.sql",
+      "token_sha256": "9ff97e124f93c035327c37acd01ea2a39b3f4f69afa4cd44c3a156dd82b2528b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/dm_well_production.sql",
+      "token_sha256": "193d14b635d90d8f7d8ab799c5f2671300f0a9659c94f99bf372d8c853277369",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/og_bs_area.sql",
+      "token_sha256": "48b5dc5b40d54dfa5b83f989a7fcd8abdbc8886f9525abb25a6a9b3976682ced",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/mart/og_report.sql",
+      "token_sha256": "be3bf0124929ef76075ac4b0cd3a4189ede003caa38957dbb0a4286640596e04",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_asu_work_assignment.sql",
+      "token_sha256": "18f2ff35451d01298347a6d36f19170e2467650cbae9c24372f20670ab2960d9",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_but000.sql",
+      "token_sha256": "4ca5e7fa02d435b84726992eba588c5ddff05443a22f79df4afa3100b6845f59",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_crmd_activity_h.sql",
+      "token_sha256": "d5fcebf5f251b51861788f037fe3d8e0da298e02f655943655cc310255061e51",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_crmd_orderadm_h.sql",
+      "token_sha256": "a9058e05a2b300cbdcfa312cf3ec0bc5513665f8d16017446ff4b1dbe91bbddb",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_crmd_orderadm_i.sql",
+      "token_sha256": "8b904043e1873b31339e3148721bd34c1e9266a619102ba3e1bbb0d831b39d77",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_crmd_partner.sql",
+      "token_sha256": "b8dca3bcd596ffb396a395b330fa40b3085b4f144d66f7a2f02858f2fc776ef2",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_pa0001.sql",
+      "token_sha256": "5fd49d4fbdd57766491cf87190389d6d2bdbc2be84f0e1f74896ab2aed4ee450",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_pa0002.sql",
+      "token_sha256": "2f71d11169f563e264bddc21b245f8596f7b8756ae5d49c17a7035a87ab50625",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_project.sql",
+      "token_sha256": "20b99cdbe6a5c7d0dae70d61dd74b27a2bd6a09f9e8c6f1c44972002d93d4280",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_t500p.sql",
+      "token_sha256": "f8ad3c4d46f0edaf3bd1baaf7cb9226c77fb6458f2b2aafdd01f6c248eeb5dd9",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_task.sql",
+      "token_sha256": "dc3bee4f18287f40b0a85a06c8a03616a124fb1f054e4d978fc2b7ea8e519a5b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_changerequest.sql",
+      "token_sha256": "cf3dcfb7afc346b6b834094dc06ba248739d7d9b1479b9be20360cb8e16055ec",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_cmdb.sql",
+      "token_sha256": "e66e02bfa29c7cfb17a10d1de1cddabbd5501d30d251bfed33fe19ceb414734b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_comment.sql",
+      "token_sha256": "e83d59fa61266d7f1b1ce2f5cc54874630e1be626539f40df97c9b7ff11e0c0b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_company.sql",
+      "token_sha256": "7e777a2ccfe4f881bb6ebe4762e72372432702e5731a6be74a63794fa21208ab",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_directory.sql",
+      "token_sha256": "911586fdfdd05d9f452a133f4f411c1511bad8012630998cf0ed689afe5ea483",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_employee.sql",
+      "token_sha256": "a12e3005c2fc596025f61375fb85323cf5ae42f8ec3b9605417ea05a43ce4478",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_equipment_repair.sql",
+      "token_sha256": "de8cc0f3d5c2ff03f2d217bcd575fc91ba59ab1e73a6f4bc6ed06159a701632c",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_kb.sql",
+      "token_sha256": "485700797f0f9ac7aa4c2248b76bda02b136a5545cc003ca49f48b2d920b66a5",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_locality.sql",
+      "token_sha256": "518dd4ee23dc4480d87e45fc6c8e2e050070e59582d7344ea8afaea70be38d9d",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_mark.sql",
+      "token_sha256": "bcada236e91e8911f4618e29ce11318f1c758eaf026ac21fdfb4f5f960b7d075",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_ou.sql",
+      "token_sha256": "2e43fd0f9e6a0ecb497cb40bd4de59f19df5de228c38cda89b7cbfef639ce235",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_priority.sql",
+      "token_sha256": "44fb4b43b89d97f7fdc806cc99a1beae975eda571e866eea283ea10b979f211c",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_production_volume.sql",
+      "token_sha256": "156e77764f1b22d0fc2d6c1a4a970d120c962161dd198d63cd65c3f69075cb6b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_servicecall.sql",
+      "token_sha256": "8f5ab1212946472415d2576c13448adef1d92ec69217a0dea1c21196464ad4e7",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_servicecateg.sql",
+      "token_sha256": "dd3af4142aae8717f2d70d234c88585127dbac8a04920c9e7573ddf811e1ba1c",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_slmservice.sql",
+      "token_sha256": "b393948ccf8e8d3574665dcb80ae1d66d87683886e7aebfb37442c9716d4eac1",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_team.sql",
+      "token_sha256": "b8189bc809c36aba66160e19d608683ed5e3bab357ef9302d763f9cc1da3f60a",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_typeworks.sql",
+      "token_sha256": "9c02de2bce08348d90bfadf7eaf046ec6ed3cc842d0104945039a55e8f88175b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_well.sql",
+      "token_sha256": "001cdfdc83434c1813231f6f95864a4b335da040f0d65660a696b998208b9954",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_well_incident.sql",
+      "token_sha256": "aff5fb2e54e9dac12c7a55b1f014c95975ef06d467c270556df5918fc9a147ae",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_tbl_workrecord.sql",
+      "token_sha256": "d38aa68f4e430106106183ea2425121c15f6434f32c66100a00828aaf5d01ae7",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_ws_user.sql",
+      "token_sha256": "a14fa396f08b8f8803e4a72bcba54ee71b00c6e7202eeb4bc61d0a0e3bf6a725",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_zcbap_infsys.sql",
+      "token_sha256": "6e0bdfd4a61f57b05131385884b22d790043452df7f1e7317f6e94938ae1600b",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_zgr_it.sql",
+      "token_sha256": "f13c8536a430238b663e85f8a338dd4911996591e9f0639bcecb8cea99b1ce0e",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ods/og_znapr.sql",
+      "token_sha256": "7898c3546c69edd6d3383133374f0b8c0c74c56d660d88979b549efb31249225",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/unit.sql",
+      "token_sha256": "bfe4beac06d7af0d992b58f291b7246b599e040fa9d915d413d858e97de88042",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/calendar.sql",
+      "token_sha256": "d761bbd4f04f6a0ad3c4da5ca6e41c2ea2f811f7336c1d880f261e3b1be60959",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/product.sql",
+      "token_sha256": "bf0db2451db6276f5911add7a8c1b6a2cd15783673c93e6e0e4a7365645e2b55",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/repair_type.sql",
+      "token_sha256": "c6802e9ac398babda1eface6f4eff063217f8dce3c8bc404f6bdf02b9b4507f5",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/downtime_reason.sql",
+      "token_sha256": "e516f6afd27e684b4a68fb3fc8f406d333b30a27c2d2879ee710f1530c90d38d",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/sensor_type.sql",
+      "token_sha256": "12ac5978f956aa06c28f70b4964258ef477fa902598dd13f5dc9e248e73df111",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/energy_tariff.sql",
+      "token_sha256": "3d0522b0a3631fa661c7f805c688dcd23e45a3de1d23a08557b363ae71234dc9",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ref/quality_spec.sql",
+      "token_sha256": "f856f9925ac687a3a418a1cf707281e18b0688489de9f22314daf3dd36c96870",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/stg/measurement_event.sql",
+      "token_sha256": "f30907ee40d87656b0dc75c230a5b570622bb521ed540c7555b1bbbdea65d995",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/stg/repair_event.sql",
+      "token_sha256": "d5ea9ddfd4e9f244d82a08bd7c3d6e74f6bffe88e7fc819da103a857ab8e6404",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/stg/lab_event.sql",
+      "token_sha256": "6ebe0c69c97325e2a198a4af437a1974cd5738d53555d4bbe1f9031ecbec1acc",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/stg/shipment_event.sql",
+      "token_sha256": "844ff946e3d4e336b146ecccb134289728344c1266a5a03e001aa018e60e6146",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/dim_well_scd2.sql",
+      "token_sha256": "3b474c6bfcbc04158fc966bee313d849924d25d20d7a9ab5b141b0d9ce98be59",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/dim_equipment.sql",
+      "token_sha256": "d621cd3fd682afedb8882998ed64dad8d511b5fea212c776ddabc263433a1b3f",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/dim_contract.sql",
+      "token_sha256": "e93e1cd9243725ef02a4b0e160aee988a38967f760bf402adf7da0a03f197f0e",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/bridge_equipment_well_history.sql",
+      "token_sha256": "9daa66130e4b87b04069642d2483e642d70ecaf7640e29556e3a9a0c8135ea5c",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_production_day.sql",
+      "token_sha256": "1931bf0cd971976985b0b17f3ac3c0d744f86fbb57840dbccd8b7268462ca78f",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_telemetry_hour.sql",
+      "token_sha256": "1584e5360cfebc0b78d99e1aa8014caf115a961c16850fe37191ec1213fa0e23",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_downtime_interval.sql",
+      "token_sha256": "21711bdef51e3846672baae3c4bdd8cc2636e2a787a15118bd86748ff4439e29",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_repair_order.sql",
+      "token_sha256": "bf396c6e3c6cd8c38e3619d78095bc10cbc8a6378e0554a73af29f1d45c894fb",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_repair_operation.sql",
+      "token_sha256": "378c048ccc21239f6253d8f7efce9c618b52e98beecdce70f3d3d3e368d75b89",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_energy_day.sql",
+      "token_sha256": "4d1b4902900ffa2b136e50d89f1a51d5da899aa62cc92ff6c1295e088405cb05",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_lab_sample.sql",
+      "token_sha256": "4e9cad64b16012632628de20a5cbb179b10ece8f7f68e0f3bccb9c41da706ce2",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_quality_measurement.sql",
+      "token_sha256": "1549fb5e5ad7d5f52286af820edd2991239ba91068c69247185836a5211f37fb",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_production_plan_month.sql",
+      "token_sha256": "071b12a6e08ce29149533a470e1b9c40a20af707e6e5adbc59e85fbc1984c447",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_shipment.sql",
+      "token_sha256": "79b7daaa5ed582cf5b0508377b7d44d302e5eeda01c231bc98e3d0726f644166",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dds/fact_shipment_item.sql",
+      "token_sha256": "489da57df320f9eb32271132713e5899fae805082c95e97d2f5257489ea3ccb0",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/well_day_balance.sql",
+      "token_sha256": "9a85eb654d20792234b74754f148f793757eca694cb2f9c52ae5764101fa8169",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/field_month_performance.sql",
+      "token_sha256": "a626761f665d7191cfae9ccc37af489df75aa15114f8ae283323f55145c40321",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/repair_cost_month.sql",
+      "token_sha256": "0c347dcc7ceaa7b712f66d16fcb605c254d71218e56b4dee08bdcf8aba4c5790",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/energy_intensity_day.sql",
+      "token_sha256": "45a52d6262da3d02bbae4d6bf9a5457a8df8feebf9587ecb3479440e734daf3d",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/quality_compliance_day.sql",
+      "token_sha256": "fb255c00ff505d1b9ebb4cf291111622b16c805d82f26cdb099fe33eabbcd260",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/shipment_balance_month.sql",
+      "token_sha256": "1ad51e617ce35d43be1e6dabd0406e8482086ad246f82c9f86555926132a13fa",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/dm/service_production_impact.sql",
+      "token_sha256": "85ff630d259fed2dc87169cdfc9f0be29314e3d764c9f053a24ec0e2da6d8139",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ctl/load_batch.sql",
+      "token_sha256": "d3f16b862e8ae51e6dd856223de78adcd3a92ac32f30059787f20cedccca97a4",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ctl/task_run.sql",
+      "token_sha256": "04024e827a4c3fe823851a51c247feb1df4180f56e46ee23904e1c625a195547",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ctl/quality_result.sql",
+      "token_sha256": "207cc575094336eb8931525aa3f1fe850a95d320ab09627c45c140d462636e85",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ctl/source_asset.sql",
+      "token_sha256": "7f38605e246b7283a50ba31b9772a1d77c999a66da08d7330d3dca72de999c17",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/tables/ctl/publication_release.sql",
+      "token_sha256": "26a765bd1caf6939e3d14701d9aee2cae2ec72909286c4502e1bf155fc9474f0",
+      "source_statements": 2
+    },
+    {
+      "file": "ddl/indexes/dds/ix_equipment_code.sql",
+      "token_sha256": "93359ec223065c7210565f00923d49f5886c424aa45677c23d6405f1f0721f86",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/indexes/dds/ix_equipment_type_bitmap.sql",
+      "token_sha256": "e8412dfab57a5c8e8ecfca6c69cea1d8b4a2ac534e7531c1eb80c6a78263952e",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/unit.sql",
+      "token_sha256": "78897ed0d590e50c38100892a2a0700e44e6e4f146731ca2ac9e60ac3e520052",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/calendar.sql",
+      "token_sha256": "27bf2af0238fa2701bbcc969d8dad833c8ab298d8f0131f4140702c375c5ff54",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/product.sql",
+      "token_sha256": "e07ea1baeb9be7688c3f37275c18d129ec1d56e2360dada18b2663c253aa63ef",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/repair_type.sql",
+      "token_sha256": "468fe611eac57c9c03d85658f617a004c37e0679c254ae3fce06f830484df3ea",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/downtime_reason.sql",
+      "token_sha256": "5e0d52287d835092dd558e1cdb7a7ca60021d6a92608bcc2ed913b6174d53d6e",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/sensor_type.sql",
+      "token_sha256": "95aa9b7a3eb60057b0bccdb88b0b83ccdf6155ffe536816f6407ebfd03fa1bd6",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/energy_tariff.sql",
+      "token_sha256": "d685ad536ff6feff19d8bd5b55df2c487af9eab02751f9fb580c4ecb303de700",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ref/quality_spec.sql",
+      "token_sha256": "390eb43856963e764dbc0e9a9901e53ca73b84d216f50f7aa934a16f5e359b71",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ctl/load_batch.sql",
+      "token_sha256": "1884092305765ef5db113931a6c8328f28e75c6287a150a820e6d033be332933",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/dim_well_scd2.sql",
+      "token_sha256": "09b7ee7b6909712d71301aff59ff9905cc81d6498e6816efc7328a1f83d7b4ae",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/dim_equipment.sql",
+      "token_sha256": "2cd7128557d52a9e0eddd481d4088eab68232c4cc11557082b3f4c82f39edda0",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/bridge_equipment_well_history.sql",
+      "token_sha256": "c54ba3d312829ea3207bd55d9a83dd364949c655f0a462b3dc0e671eaadcf918",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/dim_contract.sql",
+      "token_sha256": "141ae9369b7326955901b22f4392652e98888ba677450f798cd70cbc032eca6a",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_repair_order.sql",
+      "token_sha256": "465e943596c5473fe8680a64158c3bdf0962cfd9ee12bcbbd9cec8caae28ac29",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_downtime_interval.sql",
+      "token_sha256": "00ab9c78e1c51016cefcfeaf8a923c28be2cbec19b950d20787744db8266c78d",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_repair_operation.sql",
+      "token_sha256": "aa732e81b1efc7a409e271097ce643f17857608749b382132f3708a917791f39",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/working/production_weights.sql",
+      "token_sha256": "c4882a5ae61d4987275b47ab8b4d770a4d810662061c6583c97a808aaa633f4f",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/working/production_floors.sql",
+      "token_sha256": "d9b634bc65b702df6075edb9f0c67978ba89c8890388e7b1fa8596fdbcf71569",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_production_day.sql",
+      "token_sha256": "1b10d0a4cb3e25551c8632bf6df960da59cb5f8cda291dc4ab95afd114d4922a",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_energy_day.sql",
+      "token_sha256": "5737bb5f67810d6e88c1e00907d92a11ddc05e38634b2417587dea88abfe0883",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_telemetry_hour.sql",
+      "token_sha256": "ef3c0736ea99125b28a69bd2fe7caa52a09de4208181b0597fd4ac9265b71d57",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_production_plan_month.sql",
+      "token_sha256": "17ae207a5c98adca8b0e02fa3e271ed54325be0bffae569d60b5dddf41c7f671",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_lab_sample.sql",
+      "token_sha256": "4321052a0ef49fc98e0ae2add05bd1d7175ec06a6241d976766ea5cf525f7b72",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_quality_measurement.sql",
+      "token_sha256": "65c79200949441f88bdd27c16de12fe3f30ddb1b284d1e57f7fbc3edbe8ed71c",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_shipment.sql",
+      "token_sha256": "95295ce0bc01f883512762c8bfb5e9ad9509699eb5ff36e8bd9e51cf9479e798",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/dds/fact_shipment_item.sql",
+      "token_sha256": "5dd0af68688a239a4db6526d1584db0d99cafde9eb41ed045b7a5193b0774b0a",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/stg/measurement_event.sql",
+      "token_sha256": "faf039360872597619aff55d2b4347688d5b39e202f224b9d4014c9bef4faada",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/stg/repair_event.sql",
+      "token_sha256": "fb01a3b52df85892e309e4d8b9a0f7e9fcf7e86bd607274712db8d366607dad2",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/stg/lab_event.sql",
+      "token_sha256": "88b8954bcfa65da183e0557f0baa2eba368de0dec9e306bd51b87fd43658fa0f",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/stg/shipment_event.sql",
+      "token_sha256": "46149b155a76bf37c2df72cae5a317c924934006ce80b8a9761f5b86a5fa6913",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/bootstrap/ctl/load_batch__finalize.sql",
+      "token_sha256": "5a5daf3869c12692c26f31278bc9063ab3bfbeb96bb33aedb3c6ea2a6037aa7a",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/f_fiscal_period.sql",
+      "token_sha256": "86b95031cf0aefd780d20095e8a73a84e483640cd5f9642aa0a3eb3316b2ec38",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/f_energy_cost.sql",
+      "token_sha256": "085dfbf8c2e5d66d1ec17c127474d8de487bca2bc224ac2784ad0437bf1e0cc1",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/f_parse_telemetry.sql",
+      "token_sha256": "b3f7a8ad5a1b674c7ffde6483b8331f2f26fd6fd898e75e4bf53fbbe3324ec5a",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/f_count_asset.sql",
+      "token_sha256": "68d50ba842f4618f1c0fda401524890f084c860c2b998485ff9cfcbd5ac4ee50",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/rebuild_marts.sql",
+      "token_sha256": "6ab8ebc22c3b35ea0d97f40f15b508f68ef60406ea9dc310647562b35866ab7b",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/views/dm/v_production_dashboard.sql",
+      "token_sha256": "eb6bcbc8139d8b3342e190d88458a3691b18e90b9980401214ff92d894688bf0",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/views/dds/v_production_with_well.sql",
+      "token_sha256": "2d130cc9a4ff9d5793830ac1c4ac829446d53b06fa8cc2008e95dc174bece98c",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/operations/initial_rebuild_marts.sql",
+      "token_sha256": "9e0635ffe5aaea31f053bc141df5e0f32e463028fd09ce7f3659384760e0161a",
+      "source_statements": 1
+    },
+    {
+      "file": "ddl/materialized_views/dm/mv_field_month_energy.sql",
+      "token_sha256": "b80d1ba929b6533982f582cee8562c410ecc41bb0dfd772a3f1f6189fa4ae7d0",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/maintenance/refresh_field_month_energy.sql",
+      "token_sha256": "7cf8309498af8c482fc115bb303e2cff0bb7e45487936a005074746247a7d060",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/rebuild_production_day.sql",
+      "token_sha256": "dd18094e523855427c6f628b8fce5754359d11400531037842162fadbc793964",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/run_daily_batch.sql",
+      "token_sha256": "2e29136add945f57393655351d59acfa5e03a9d0300f326b8bf51ba7eecd80f6",
+      "source_statements": 1
+    },
+    {
+      "file": "dml/operations/initial_run_daily_batch.sql",
+      "token_sha256": "099f41c2ef0a6dad3d27c719394d4477dd74a29abae5cb64950a00fdab1d4641",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.bo_werks_text.sql",
+      "token_sha256": "386c4abf02fcbb87159e462396cbe47a53677530d2e353128c0fd85813badfd7",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_hse_incidents.sql",
+      "token_sha256": "a9e548162cb37dcbdfd3c6fa7c8454e0a2f3c2057bbfd7a5c53238349c8db06b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_hse_one.sql",
+      "token_sha256": "40709b1a0b3c6bc0a51633a343dd5fc11a787a77e87d9202bb79af2dfdeeaf49",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_incidents.sql",
+      "token_sha256": "7367017a8ba47f0e48ee247e971ac7ea7896ccbc39e268066755e7cf7a9aab45",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_project_status.sql",
+      "token_sha256": "27ae005c2de1bce9f881f10070c7e628e351c0c5a8201a537347c51ad446fe83",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_well.sql",
+      "token_sha256": "5124e09c06365c5e851c2e7c4cd9d80d9fd1d2e809c23c9d69a9401e4a790576",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_well_more.sql",
+      "token_sha256": "9b36ae95fb71235e7300329001719c1ad3a66bf3497ae1a19a42d28f0e9d2278",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.dm_well_production.sql",
+      "token_sha256": "ca53e42e0e48c7d1da94d4b5674930cf81a3afc6fb4dc4e054911b817440c9ae",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.og_bs_area.sql",
+      "token_sha256": "ecfecaf2a9e4ba54708d0f6aa8fddfc8d7fd20d6bbf3bc5f56785e73c0db05ed",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_mart.og_report.sql",
+      "token_sha256": "3a64578501572d22241d113fa48e0160e309eca84a23821758fde9d1e11d44ef",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_asu_work_assignment.sql",
+      "token_sha256": "19faa12343cee61f4e8e7c45bf0f375add6375d169ef700d203553568f39c0ac",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_but000.sql",
+      "token_sha256": "db00c639cf1df4cd84fc4a4b830a7fa4ad97882ca2652e453307b8d190fd21b1",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_crmd_activity_h.sql",
+      "token_sha256": "ef2525414c65918450446864a8c3d4b6cb8b8169ea606f576bb4dd2464e43e5e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_crmd_orderadm_h.sql",
+      "token_sha256": "ecbde04603edaa56eb28d8be34bd0c872d4c4674c4a4241cdde2f68cf5ef1beb",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_crmd_orderadm_i.sql",
+      "token_sha256": "468a4dc83610452b39dec7c38bb59d9d710803cad440512746fb2a106f282f2f",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_crmd_partner.sql",
+      "token_sha256": "2da50b98cdda5e44942ebb5c5cbf3dfc5862f607d70c8aadc150ac9b3fd297ac",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_pa0001.sql",
+      "token_sha256": "30a1b51ca44e280990aa9d05cfb9c8d580e8e637bac72c5285a1e06c2a4266b6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_pa0002.sql",
+      "token_sha256": "d2840dc38892b923e1d0b2ab9e08a7f55ded41faa1c4044bf5e55f95dfc004a4",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_project.sql",
+      "token_sha256": "06c495431524389fe6213ccf6920b703fb83d9e68f0f0f33a27779ba6520e92e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_t500p.sql",
+      "token_sha256": "06f5e5b15d55a48f56f7a17ba39b7330619d786884be0d46e8c1db1e19d668b6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_task.sql",
+      "token_sha256": "f557a634e74942779952a5bf3c70ac9a052220f9fe8fabd6a73d8454134289e8",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_changerequest.sql",
+      "token_sha256": "c212bc1cb72887a43d87c71ece75cda41c3f9f7026b8a571d1e0e4ab0ee96708",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_cmdb.sql",
+      "token_sha256": "dd420d0bd4dadad9952a1723c4642befa5f0339e4e51dd6c640bd269bdc83fa4",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_comment.sql",
+      "token_sha256": "151105df536e1be3604a8393c5ae881e51207c11e459b353ba20967491736b82",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_company.sql",
+      "token_sha256": "fc704125dd76e8232e18575398ecf66542be1b452a2090885c9457753eb56794",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_directory.sql",
+      "token_sha256": "d0d2adda47231126d85ff1a4487b99aaa431e51b401670cff739d5496dd397f6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_employee.sql",
+      "token_sha256": "5445902d0a00a6a9b1f4c26a719056dd147e6be5ed4eb91667ac4d8a58716749",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_equipment_repair.sql",
+      "token_sha256": "8eebdcfe6cd19ae8f60984a60d1c2126ae430a8f5ec7a5f879745b5dcc1b4173",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_kb.sql",
+      "token_sha256": "6f70b365bb24853228df43aabc2c0b0af7354f829ce6bcf5f2237b486fff5b3f",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_locality.sql",
+      "token_sha256": "255f5dd2529b5c15afcb26a693631d842f78589694d4d7db3158281cd4439ff0",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_mark.sql",
+      "token_sha256": "b52b67860fd7ff45f9796d957027d9febc15b4d189c5d34d7f836a40044eb516",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_ou.sql",
+      "token_sha256": "af7255bf55539cb5fb72c39399c7ce2ad3b5b6eab2ec4f94a38eff2bb3405848",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_priority.sql",
+      "token_sha256": "a6b46f0a13feb4750e2999d2f3baf1bcea77b321096388fc78df9c1b367d25ec",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_production_volume.sql",
+      "token_sha256": "88f3f7ff56f213f01789f88d5ab22e590a08f71c614dfb6c04e958d4b43c26f5",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_servicecall.sql",
+      "token_sha256": "1d98cc075085fcb5b580ec85ab138d72d3d7f03fb65be5191ce18daa4855ffca",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_servicecateg.sql",
+      "token_sha256": "047a6232017b340a94e964169618bb69e4df589787f70a3dfe132d42e85ea1e1",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_slmservice.sql",
+      "token_sha256": "71aeea57c459e6a8f0e36cb40d2bb0bc03d1c2fa5bd112c309c74959f9c8a024",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_team.sql",
+      "token_sha256": "5cf792fec987467e1c7c311ed78d7773bc2c97b03e032371a7e9c036876de84f",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_typeworks.sql",
+      "token_sha256": "a26f0271bafdfbf18248e6274d10bed0ff97ec9fdda3b718d5d091a00ffe4dd2",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_well.sql",
+      "token_sha256": "f9e9fa88adce9919795c687946fe2625891f105582d6dd29f2f84950d7ddaefb",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_well_incident.sql",
+      "token_sha256": "0ea684aa1af130727474df2e347d1e33e96819aa696070d26ad7f6f0fab445c6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_tbl_workrecord.sql",
+      "token_sha256": "a6d7631cec5dc4a93b3754605eedccbfc91d74ea765c11ad6ee08de68c0a949b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_ws_user.sql",
+      "token_sha256": "ecd8a2f76d54e73c5ae11d966211d3c1fb5ef4e8629fbb42c5e5d6660f18eb75",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_zcbap_infsys.sql",
+      "token_sha256": "aea54e2fc4ac9db1dfae4af2b1400341c49139fd7b8944e9577061c38b1367c7",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_zgr_it.sql",
+      "token_sha256": "a6db7e309cdd27b20584e5ea9354a8c2faf4f885564ba429b3ae077e02242c97",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ods.og_znapr.sql",
+      "token_sha256": "9f43608b5b395d28607c7f83378ad99613b1de57fd88eb2b273612ae9b875a92",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.unit.sql",
+      "token_sha256": "3c5b8edca13b2dc7ce1d6eef5e93422cb71138757054c7703256a4b0aa88fb6c",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.calendar.sql",
+      "token_sha256": "e38fa7c274750c9afadd158704c9c31d8c41ef3237436e77ce87075dd8a42b32",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.product.sql",
+      "token_sha256": "0636dc1639bdae2a1dac147c57db9945eb33683a736bb11f25e3c8ed8b88aec8",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.repair_type.sql",
+      "token_sha256": "a1742232cb3e81b000c6f1eb2d213b6beb5e2b9a2b0a738ac952f5a5d01554e8",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.downtime_reason.sql",
+      "token_sha256": "17af8719c8db77ce7e74b447268246d76271746629a3a9dcfd6df141e455e3c3",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.sensor_type.sql",
+      "token_sha256": "27c793f91ef445d6d3bad3d8672d2b882ba7b6a9db2ca1af2e7035d4a57aece4",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.energy_tariff.sql",
+      "token_sha256": "9d23b5b277faf94069083252c2a2eece42a396d2c4042231cbe47a0b135ab307",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ref.quality_spec.sql",
+      "token_sha256": "166aba679226c86b82da58cf978811bb61c6652b92600b4ee994ed35be66adfa",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_stg.measurement_event.sql",
+      "token_sha256": "1d4694894282cd6574586221d2075334dc86b887cce5d820262999191d776e7b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_stg.repair_event.sql",
+      "token_sha256": "1d9cdce031274f0b6c8c55bcdb1d001941b096193ee711091fe98d51c86317ad",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_stg.lab_event.sql",
+      "token_sha256": "0292d6ade857904c2190264d389253332c5d5ceb95d6c46ed1803552fbc72555",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_stg.shipment_event.sql",
+      "token_sha256": "93b299a9378afc1351cd229cc1008212c1bb1b2b46c4b815be2944d24a38e052",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.dim_well_scd2.sql",
+      "token_sha256": "ffc935112af8be53d0d6bfc3597268fa9159b59ad442afc336722391b0484395",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.dim_equipment.sql",
+      "token_sha256": "10961991f12cc141845e367b96d57f9d614743476b66af8f5b7ff44197cf5c3f",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.dim_contract.sql",
+      "token_sha256": "bf12b94bb0267ad8761fd7751e5d30730029f71b2cd97495ef1974733ed31c0f",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.bridge_equipment_well_history.sql",
+      "token_sha256": "df043225ccd8d7088c117cd884deccfc21cd40c9a90b6fac7452aaefe298c1aa",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_production_day.sql",
+      "token_sha256": "ff71a7d1c66b0de9cffc7ef58af8f3d49c4c24b7cff656d4723258c82cee5acb",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_telemetry_hour.sql",
+      "token_sha256": "32d89a99233293fc62fa98de979da43908b632817df6cd2aae353d899fe5b8fe",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_downtime_interval.sql",
+      "token_sha256": "150872d7628c74e958d82155970d99609a76d4bcc18b0419b9be0153883bb552",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_repair_order.sql",
+      "token_sha256": "325e1b6302751deea688e256317fe8e58545d9ac25c195a15b71cfbff6b4cab1",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_repair_operation.sql",
+      "token_sha256": "1e44f6b44281df9c4b26e0e7900363e7b84e2d09ad28fb79930afaf2b85c91cc",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_energy_day.sql",
+      "token_sha256": "e585ec694f1858eb25a3bb82b131fd52ef6df94ac3a017f71d07a6b3123cac4b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_lab_sample.sql",
+      "token_sha256": "2e589f6b349cce2f92d3020f090a101ee07cbc4c658b16745a54e7869c45d906",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_quality_measurement.sql",
+      "token_sha256": "419d29fbf31f530f42706d7fb7ce8a449e0f886d974b78a6d34dc02961632c0b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_production_plan_month.sql",
+      "token_sha256": "35f87926e916f10a3ef96ac0afffd9ee1a6a72994e3334a3ba840f6f1afa46f5",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_shipment.sql",
+      "token_sha256": "26bd4bdd7d2e325ef56e2d64506d099aa1a7e089247a89e4c55d3a3b0b0e1303",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dds.fact_shipment_item.sql",
+      "token_sha256": "332d66444cadb51757dce06e3d624e4f15492d61daa49014cb18f0ac68707a39",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.well_day_balance.sql",
+      "token_sha256": "a5b623406e9b69c2d981984cdbd6ca816f1b4dc627869749cd8f3c396c790a73",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.field_month_performance.sql",
+      "token_sha256": "04ead74ce4ffae954dbe5dc5509bfdaeee935f75ee4b1da140f1c3e71e557040",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.repair_cost_month.sql",
+      "token_sha256": "659033930c0f804a04288dca238b77ca0af40e27e1ab046c816309ed7dece785",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.energy_intensity_day.sql",
+      "token_sha256": "c80b983ae5ef991130f39eaab6f8eb6087acbc4db2301caf7dfb7d2ad16b169b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.quality_compliance_day.sql",
+      "token_sha256": "fdc59eac91e6f5bf1304ec2afc94708d5a7519a9ac93a6bfa7ae648f17b6d0a4",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.shipment_balance_month.sql",
+      "token_sha256": "1d661ca989072112d33e188790ca5840402a09c797bafc404e3d342807ef96ba",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_dm.service_production_impact.sql",
+      "token_sha256": "63c6dc681330c29aa2f5473f918d03eb465c682b033a52992c1ee021bbbdc374",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ctl.load_batch.sql",
+      "token_sha256": "98708bbf676ccec6f0c087201d52e2248fc48c34b5d6cc1b2223c0cedef7f361",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ctl.task_run.sql",
+      "token_sha256": "774ac03a7e932100262ad9e81cbe04d935bc56aa40c7c32f711db193b3335eb9",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ctl.quality_result.sql",
+      "token_sha256": "4f374070ad93864fd68133d8eed543fe3b6b9b602c254a267903f22a3bf21bd4",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ctl.source_asset.sql",
+      "token_sha256": "991f1b46ca8512c34c611bbc8442c869e7c518976f8e22ef3a52dff0ef8b1f31",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/key_ctl.publication_release.sql",
+      "token_sha256": "3ba4623252b733c30b821bd978d84201b2cecf87889d6f0175296e2c85b2f725",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_0_ods.og_tbl_production_volume.sql",
+      "token_sha256": "fb55760bc03c3c93b05774e9ca4ef29f6af643cd81c7e5194534c6967b753ba6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_1_ods.og_tbl_well.sql",
+      "token_sha256": "66d91cbb40288f20c11249388353de8143549b52c4b36ef514faa3630ca20a49",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_2_ods.og_tbl_equipment_repair.sql",
+      "token_sha256": "b75dd24fb470043c28e6825276f10da8d5f245d5dee4f26359cbff9e839c0d47",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_3_ods.og_tbl_well_incident.sql",
+      "token_sha256": "c0fbacb4e29fb02d5e2a42ac7ffc11ac01940963da1f4cb670320245fdd441a1",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_4_ods.og_tbl_workrecord.sql",
+      "token_sha256": "60e171c09ff6aa953ad1e894e6570b1977af49f2e00f234d27fac514938f98e6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_5_ods.og_tbl_workrecord.sql",
+      "token_sha256": "ce904dd5c4408fd909383b8cad10a162afe0f0234945d01ed42e92ce3ebd8461",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_6_ods.og_tbl_servicecall.sql",
+      "token_sha256": "8ac40923cc2d30448964482d0aeafdb6ab1f7b07b4ba6b129948cc014455c067",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_7_ods.og_tbl_servicecall.sql",
+      "token_sha256": "f1c93b7e2d6710e1c9180b68d28fe4ac6687258377c48830bafbffde6c9dd959",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_8_ods.og_tbl_servicecall.sql",
+      "token_sha256": "43d794b7b66573a04efa33327bbde6d4784bb89be4d80367743557c16d3f0573",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_9_ods.og_tbl_servicecall.sql",
+      "token_sha256": "49cd5ce18a7b7784dd9639fdb7853c9805a02c3d1395b96767f75a81b2e502ec",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_10_ods.og_tbl_servicecall.sql",
+      "token_sha256": "90adcbdff9a273f091b7a89d19fd6bc60f88947e3e93fe353e78ebb3bfd54f39",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_11_ods.og_tbl_comment.sql",
+      "token_sha256": "db0a8f3659085ec9919a11fc718cf528589146f4e4da54c7e9dc1f0379975745",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_12_ods.og_task.sql",
+      "token_sha256": "0ba46cd175de7b4000fb2c34061c479bcf034f43565d18c4cec8a0ee9c8b91ab",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_13_ods.og_task.sql",
+      "token_sha256": "2b926606e19f529cdc641c8924ea3a80b5d6f8f3c5d9e8eff522ff7c04d2287e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_14_ods.og_pa0001.sql",
+      "token_sha256": "18aa85e055b1a0d47bb20487c66a5bbe0c7228bf47958088f74630e0a795e90b",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_15_stg.measurement_event.sql",
+      "token_sha256": "b2d7e7ea734308f0ece9120e6b5792c7b9e9798abcc8eb9a05aab5b237c4c318",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_16_stg.repair_event.sql",
+      "token_sha256": "3682d5373b4cea15b7c544331e63a038342af190554aec62bd7a43b35c6332d0",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_17_stg.lab_event.sql",
+      "token_sha256": "94dc0f69b1329f26b7413239bc78dd81d3adb1709c396d1dd83e650edb4a1074",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_18_dds.dim_well_scd2.sql",
+      "token_sha256": "37e523dcb6a04e3ed7b6ca2a79df1f56ed9cffa38b093ea0cbfc734aa66bf314",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_19_dds.bridge_equipment_well_history.sql",
+      "token_sha256": "f602cf7b04843aabe7442803609b66ad54f495453ba7ae6e8694fab33850622e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_20_dds.fact_production_day.sql",
+      "token_sha256": "5029f781d5987126f87dbdd4315772eaf086bdc2cf2a38b5d42976deeea2ec90",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_21_dds.fact_telemetry_hour.sql",
+      "token_sha256": "d503d6594b7e9563e4688a6edcd2502ea348545942e2eeca796b7dd6848254ef",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_22_dds.fact_downtime_interval.sql",
+      "token_sha256": "fb4df95acd78993d1c218a41a1e03ae620e81f64701b4c842e1525ca00fb66cd",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_23_dds.fact_repair_order.sql",
+      "token_sha256": "6faab0a66d5ab35e642a15c3afea2236900eb176457401c22a61019cc3587f73",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_24_dds.fact_repair_operation.sql",
+      "token_sha256": "a2c19813527eb59bef7bad0338f3588c1592f4b426d7e7dbb4befa6493c6c3f5",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_25_dds.fact_energy_day.sql",
+      "token_sha256": "af9abeef36c2f764932af231eae3a76045dc381a524fbf51a47e7ca37569c75e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_26_dds.fact_lab_sample.sql",
+      "token_sha256": "84a91665ed0d5a5352667b331351b00f10219cbbc06de8f41312e0d965539eab",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_27_dds.fact_quality_measurement.sql",
+      "token_sha256": "5e5f1fd04be697a79128f8b396a22f1e732ce551bf499da113b614180820874a",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_28_dds.fact_production_plan_month.sql",
+      "token_sha256": "f062214e5bf9e2bbd0352a66223b86f856145ce8dbfac7ab413ce24170f32e78",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_29_dm.well_day_balance.sql",
+      "token_sha256": "5578114ba3bf0f8f9d6b16ad06573a1407df45330cbdada73a4f5f28459b14e7",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_30_dm.repair_cost_month.sql",
+      "token_sha256": "a8aa5cfbb02eb009643694d266fa17f16dff4c8c8f56656a3c9b33b6685565d3",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_31_dm.energy_intensity_day.sql",
+      "token_sha256": "3d4b74e1a7cef4b69442ac73eb82e3ac54dba61c80904e924bfd0288d333f94c",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_32_dm.service_production_impact.sql",
+      "token_sha256": "3cd38af7c06defeee256750b79b801af78d8517975f24450f017a3336b5c025c",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_33_dds.fact_production_day.sql",
+      "token_sha256": "6f91a4326812807455b06ad6c9283e8ec15781c2cce8b82f3894be3e89713ee8",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_34_dds.fact_repair_operation.sql",
+      "token_sha256": "14204e2c48070e32f16793989dec44db1b77337c280e3130b5152acebb3b0786",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_35_dds.fact_quality_measurement.sql",
+      "token_sha256": "3f628b8e59d512af9eb24784a8ceed9f49937d597303b3f5493638f8a7005216",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_36_dds.fact_quality_measurement.sql",
+      "token_sha256": "06696afe49404f0d844459a086606ef2a9d22265d79e1e49c441624afd699237",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_37_dds.fact_energy_day.sql",
+      "token_sha256": "4b450c68d87b42db9ca8c0e4d53ca8b3eaaa508b2dce625c7acc429c999296b5",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/relation_38_dds.fact_shipment_item.sql",
+      "token_sha256": "c5c8fbe6765cfd6cf5027fecbfe1f3d3b45c482fd8225c207b75af7d4ece9e56",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/daily_expected_count.sql",
+      "token_sha256": "256f898992ec2821985aeb7c7377581fd122c149b788ae0456cd85266abdb8ec",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/telemetry_expected_count.sql",
+      "token_sha256": "d4bf2c443426cc675db8d9f1659b7c749e32819c7a4fbb8977e548e66a776451",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/daily_month_exact_decimal.sql",
+      "token_sha256": "5dc11625c5177a51303a7e15efdaa9bc233eaf6ab46532727bf71172e9a38511",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/daily_source_double_tolerance.sql",
+      "token_sha256": "fe984ee833d0b64c56787a4111e65367bd21acfe3dba1e717a863989a98964b3",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/scd_overlap.sql",
+      "token_sha256": "462f933e413d1f080f393f5324849dae8e439f331f09099d75a97188bb43719a",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/scd_fact_one_version.sql",
+      "token_sha256": "7d2785d4df3e0c3cd574b216002eb95e79105cb09c39fe906e3307b952884490",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/downtime_overlap.sql",
+      "token_sha256": "31c59278602bb00d8674d7124efb72d08cba74111a5fef21685a992846567f16",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/hours_bounds.sql",
+      "token_sha256": "53644d798de0b70d764f6e4dfc991188f0bc6b57c2bfddb2d93519b47f1c0ca9",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/energy_price.sql",
+      "token_sha256": "286eb2ee9e986f6f97cae2764bed1ea4f4e0965037c6b70c3d0caf6172010f95",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/zero_denominator_null.sql",
+      "token_sha256": "4f6c933c2395cb31d451453461d8628f48b505642aefed91bd7cb282b9dd390e",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/plan_daily_month_conservation.sql",
+      "token_sha256": "cfc4251d1105adaa605e5e98405556ec30c2eca5c9a6e5f15d2719ec98222401",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/shipment_mass_balance.sql",
+      "token_sha256": "43d9ca025b86d77e683754177f9783010b30d6ce8ad7be8a5d881f11a482ed64",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/shipment_month_continuity.sql",
+      "token_sha256": "a5e2579865fd97d33b0e6f376bc05c4b407e5f8117d74cf7517ec00c38e7f3bb",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/quality_flags_correct.sql",
+      "token_sha256": "b329b55889bab2bec162f8f59145101799786eab7407beb9a43a0a0a6a706ca6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/mart_aggregate_parity.sql",
+      "token_sha256": "7ad0f9f666084e54f5f974b9f3d7afd492adde5c9172616345c882d61dcff4b0",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/default_partitions_empty.sql",
+      "token_sha256": "034702104396b1489ad93e53b2cae7a5d8be4c9c1654ef0616c87c480884adc6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/telemetry_utc_range.sql",
+      "token_sha256": "497e5f5939b686b7adb5402719e63e4614193bf57e147ea8805c471ccd572122",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/raw_telemetry_count.sql",
+      "token_sha256": "7b2bfe2d1b354310f1b79a37dd8866f71e69f74dea99e8b7372fdad71d5b1d81",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/quality/raw_json_parse.sql",
+      "token_sha256": "16b212e81677a86ee0644c2bd544d31e0bade34105e4398fbc1e2ac7aa43c0d6",
+      "source_statements": 1
+    },
+    {
+      "file": "functions/etl/verify_negative_gates.sql",
+      "token_sha256": "71c5f45c4ce3abc811848fa4c946eea0554399f531b3e389d3bcb780c353c0e6",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/run_negative_gates.sql",
+      "token_sha256": "924d0940b934fe402b9c4165d77a03e2757e4e99a89f1be808a6746b0147b576",
+      "source_statements": 1
+    },
+    {
+      "file": "tests/sql/idempotence.sql",
+      "token_sha256": "4b75cb1cc9ce2774395f2e1723c4ef6cbd4cb3d62e3bf9b92518a24639f29a8f",
+      "source_statements": 1
+    }
+  ],
+  "wrappers": {
+    "sources/bootstrap/01_schema.sql": "\\set ON_ERROR_STOP on\n\n-- Greenplum 6.26.2. New og_dwh database only; existing DLH is read-only.\n\n\nBEGIN;\n\n\\ir ../../ddl/schemas/ods.sql\n\n\\ir ../../ddl/schemas/mart.sql\n\n\\ir ../../ddl/schemas/ref.sql\n\n\\ir ../../ddl/schemas/stg.sql\n\n\\ir ../../ddl/schemas/dds.sql\n\n\\ir ../../ddl/schemas/dm.sql\n\n\\ir ../../ddl/schemas/ctl.sql\n\n\\ir ../../ddl/schemas/etl.sql\n\n\\ir ../../ddl/domains/ref/tariff_rate.sql\n\n\\ir ../../ddl/types/ref/work_state.sql\n\n\\ir ../../ddl/sequences/ctl/run_id_seq.sql\n\n\\ir ../../ddl/tables/mart/bo_werks_text.sql\n\n\\ir ../../ddl/tables/mart/dm_hse_incidents.sql\n\n\\ir ../../ddl/tables/mart/dm_hse_one.sql\n\n\\ir ../../ddl/tables/mart/dm_incidents.sql\n\n\\ir ../../ddl/tables/mart/dm_project_status.sql\n\n\\ir ../../ddl/tables/mart/dm_well.sql\n\n\\ir ../../ddl/tables/mart/dm_well_more.sql\n\n\\ir ../../ddl/tables/mart/dm_well_production.sql\n\n\\ir ../../ddl/tables/mart/og_bs_area.sql\n\n\\ir ../../ddl/tables/mart/og_report.sql\n\n\\ir ../../ddl/tables/ods/og_asu_work_assignment.sql\n\n\\ir ../../ddl/tables/ods/og_but000.sql\n\n\\ir ../../ddl/tables/ods/og_crmd_activity_h.sql\n\n\\ir ../../ddl/tables/ods/og_crmd_orderadm_h.sql\n\n\\ir ../../ddl/tables/ods/og_crmd_orderadm_i.sql\n\n\\ir ../../ddl/tables/ods/og_crmd_partner.sql\n\n\\ir ../../ddl/tables/ods/og_pa0001.sql\n\n\\ir ../../ddl/tables/ods/og_pa0002.sql\n\n\\ir ../../ddl/tables/ods/og_project.sql\n\n\\ir ../../ddl/tables/ods/og_t500p.sql\n\n\\ir ../../ddl/tables/ods/og_task.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_changerequest.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_cmdb.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_comment.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_company.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_directory.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_employee.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_equipment_repair.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_kb.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_locality.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_mark.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_ou.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_priority.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_production_volume.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_servicecall.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_servicecateg.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_slmservice.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_team.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_typeworks.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_well.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_well_incident.sql\n\n\\ir ../../ddl/tables/ods/og_tbl_workrecord.sql\n\n\\ir ../../ddl/tables/ods/og_ws_user.sql\n\n\\ir ../../ddl/tables/ods/og_zcbap_infsys.sql\n\n\\ir ../../ddl/tables/ods/og_zgr_it.sql\n\n\\ir ../../ddl/tables/ods/og_znapr.sql\n\n\\ir ../../ddl/tables/ref/unit.sql\n\n\\ir ../../ddl/tables/ref/calendar.sql\n\n\\ir ../../ddl/tables/ref/product.sql\n\n\\ir ../../ddl/tables/ref/repair_type.sql\n\n\\ir ../../ddl/tables/ref/downtime_reason.sql\n\n\\ir ../../ddl/tables/ref/sensor_type.sql\n\n\\ir ../../ddl/tables/ref/energy_tariff.sql\n\n\\ir ../../ddl/tables/ref/quality_spec.sql\n\n\\ir ../../ddl/tables/stg/measurement_event.sql\n\n\\ir ../../ddl/tables/stg/repair_event.sql\n\n\\ir ../../ddl/tables/stg/lab_event.sql\n\n\\ir ../../ddl/tables/stg/shipment_event.sql\n\n\\ir ../../ddl/tables/dds/dim_well_scd2.sql\n\n\\ir ../../ddl/tables/dds/dim_equipment.sql\n\n\\ir ../../ddl/tables/dds/dim_contract.sql\n\n\\ir ../../ddl/tables/dds/bridge_equipment_well_history.sql\n\n\\ir ../../ddl/tables/dds/fact_production_day.sql\n\n\\ir ../../ddl/tables/dds/fact_telemetry_hour.sql\n\n\\ir ../../ddl/tables/dds/fact_downtime_interval.sql\n\n\\ir ../../ddl/tables/dds/fact_repair_order.sql\n\n\\ir ../../ddl/tables/dds/fact_repair_operation.sql\n\n\\ir ../../ddl/tables/dds/fact_energy_day.sql\n\n\\ir ../../ddl/tables/dds/fact_lab_sample.sql\n\n\\ir ../../ddl/tables/dds/fact_quality_measurement.sql\n\n\\ir ../../ddl/tables/dds/fact_production_plan_month.sql\n\n\\ir ../../ddl/tables/dds/fact_shipment.sql\n\n\\ir ../../ddl/tables/dds/fact_shipment_item.sql\n\n\\ir ../../ddl/tables/dm/well_day_balance.sql\n\n\\ir ../../ddl/tables/dm/field_month_performance.sql\n\n\\ir ../../ddl/tables/dm/repair_cost_month.sql\n\n\\ir ../../ddl/tables/dm/energy_intensity_day.sql\n\n\\ir ../../ddl/tables/dm/quality_compliance_day.sql\n\n\\ir ../../ddl/tables/dm/shipment_balance_month.sql\n\n\\ir ../../ddl/tables/dm/service_production_impact.sql\n\n\\ir ../../ddl/tables/ctl/load_batch.sql\n\n\\ir ../../ddl/tables/ctl/task_run.sql\n\n\\ir ../../ddl/tables/ctl/quality_result.sql\n\n\\ir ../../ddl/tables/ctl/source_asset.sql\n\n\\ir ../../ddl/tables/ctl/publication_release.sql\n\n\\ir ../../ddl/indexes/dds/ix_equipment_code.sql\n\n\\ir ../../ddl/indexes/dds/ix_equipment_type_bitmap.sql\n\nCOMMIT;\n",
+    "sources/bootstrap/03_synthetic.sql": "\\set ON_ERROR_STOP on\n\n-- Deterministic synthetic enrichment of the exact existing mirrors. New og_dwh only.\nBEGIN;\n\nSET statement_timeout='240s';\n\nSET TIME ZONE 'UTC';\n\n\\ir ../../dml/bootstrap/ref/unit.sql\n\n\\ir ../../dml/bootstrap/ref/calendar.sql\n\n\\ir ../../dml/bootstrap/ref/product.sql\n\n\\ir ../../dml/bootstrap/ref/repair_type.sql\n\n\\ir ../../dml/bootstrap/ref/downtime_reason.sql\n\n\\ir ../../dml/bootstrap/ref/sensor_type.sql\n\n\\ir ../../dml/bootstrap/ref/energy_tariff.sql\n\n\\ir ../../dml/bootstrap/ref/quality_spec.sql\n\n\\ir ../../dml/bootstrap/ctl/load_batch.sql\n\n\\ir ../../dml/bootstrap/dds/dim_well_scd2.sql\n\n\\ir ../../dml/bootstrap/dds/dim_equipment.sql\n\n\\ir ../../dml/bootstrap/dds/bridge_equipment_well_history.sql\n\n\\ir ../../dml/bootstrap/dds/dim_contract.sql\n\n\\ir ../../dml/bootstrap/dds/fact_repair_order.sql\n\n\\ir ../../dml/bootstrap/dds/fact_downtime_interval.sql\n\n\\ir ../../dml/bootstrap/dds/fact_repair_operation.sql\n\n\\ir ../../dml/bootstrap/working/production_weights.sql\n\n\\ir ../../dml/bootstrap/working/production_floors.sql\n\n\\ir ../../dml/bootstrap/dds/fact_production_day.sql\n\n\\ir ../../dml/bootstrap/dds/fact_energy_day.sql\n\n\\ir ../../dml/bootstrap/dds/fact_telemetry_hour.sql\n\n\\ir ../../dml/bootstrap/dds/fact_production_plan_month.sql\n\n\\ir ../../dml/bootstrap/dds/fact_lab_sample.sql\n\n\\ir ../../dml/bootstrap/dds/fact_quality_measurement.sql\n\n\\ir ../../dml/bootstrap/dds/fact_shipment.sql\n\n\\ir ../../dml/bootstrap/dds/fact_shipment_item.sql\n\n\\ir ../../dml/bootstrap/stg/measurement_event.sql\n\n\\ir ../../dml/bootstrap/stg/repair_event.sql\n\n\\ir ../../dml/bootstrap/stg/lab_event.sql\n\n\\ir ../../dml/bootstrap/stg/shipment_event.sql\n\n\\ir ../../dml/bootstrap/ctl/load_batch__finalize.sql\n\nCOMMIT;\n",
+    "sources/bootstrap/04_logic_and_marts.sql": "\\set ON_ERROR_STOP on\n\nBEGIN;\n\n\\ir ../../functions/etl/f_fiscal_period.sql\n\n\\ir ../../functions/etl/f_energy_cost.sql\n\n\\ir ../../functions/etl/f_parse_telemetry.sql\n\n\\ir ../../functions/etl/f_count_asset.sql\n\n\\ir ../../functions/etl/rebuild_marts.sql\n\n\\ir ../../ddl/views/dm/v_production_dashboard.sql\n\n\\ir ../../ddl/views/dds/v_production_with_well.sql\n\nCOMMIT;\n\n\\ir ../../dml/operations/initial_rebuild_marts.sql\n\n\\ir ../../ddl/materialized_views/dm/mv_field_month_energy.sql\n\n\\ir ../../dml/maintenance/refresh_field_month_energy.sql\n",
+    "sources/bootstrap/05_batch_logic.sql": "\\set ON_ERROR_STOP on\n\nBEGIN;\n\n\\ir ../../functions/etl/rebuild_production_day.sql\n\n\\ir ../../functions/etl/run_daily_batch.sql\n\nCOMMIT;\n\n\\ir ../../dml/operations/initial_run_daily_batch.sql\n",
+    "tests/sql/quality.sql": "\\set ON_ERROR_STOP on\n\nSET statement_timeout='120s';\n\n\\ir quality/key_mart.bo_werks_text.sql\n\n\\ir quality/key_mart.dm_hse_incidents.sql\n\n\\ir quality/key_mart.dm_hse_one.sql\n\n\\ir quality/key_mart.dm_incidents.sql\n\n\\ir quality/key_mart.dm_project_status.sql\n\n\\ir quality/key_mart.dm_well.sql\n\n\\ir quality/key_mart.dm_well_more.sql\n\n\\ir quality/key_mart.dm_well_production.sql\n\n\\ir quality/key_mart.og_bs_area.sql\n\n\\ir quality/key_mart.og_report.sql\n\n\\ir quality/key_ods.og_asu_work_assignment.sql\n\n\\ir quality/key_ods.og_but000.sql\n\n\\ir quality/key_ods.og_crmd_activity_h.sql\n\n\\ir quality/key_ods.og_crmd_orderadm_h.sql\n\n\\ir quality/key_ods.og_crmd_orderadm_i.sql\n\n\\ir quality/key_ods.og_crmd_partner.sql\n\n\\ir quality/key_ods.og_pa0001.sql\n\n\\ir quality/key_ods.og_pa0002.sql\n\n\\ir quality/key_ods.og_project.sql\n\n\\ir quality/key_ods.og_t500p.sql\n\n\\ir quality/key_ods.og_task.sql\n\n\\ir quality/key_ods.og_tbl_changerequest.sql\n\n\\ir quality/key_ods.og_tbl_cmdb.sql\n\n\\ir quality/key_ods.og_tbl_comment.sql\n\n\\ir quality/key_ods.og_tbl_company.sql\n\n\\ir quality/key_ods.og_tbl_directory.sql\n\n\\ir quality/key_ods.og_tbl_employee.sql\n\n\\ir quality/key_ods.og_tbl_equipment_repair.sql\n\n\\ir quality/key_ods.og_tbl_kb.sql\n\n\\ir quality/key_ods.og_tbl_locality.sql\n\n\\ir quality/key_ods.og_tbl_mark.sql\n\n\\ir quality/key_ods.og_tbl_ou.sql\n\n\\ir quality/key_ods.og_tbl_priority.sql\n\n\\ir quality/key_ods.og_tbl_production_volume.sql\n\n\\ir quality/key_ods.og_tbl_servicecall.sql\n\n\\ir quality/key_ods.og_tbl_servicecateg.sql\n\n\\ir quality/key_ods.og_tbl_slmservice.sql\n\n\\ir quality/key_ods.og_tbl_team.sql\n\n\\ir quality/key_ods.og_tbl_typeworks.sql\n\n\\ir quality/key_ods.og_tbl_well.sql\n\n\\ir quality/key_ods.og_tbl_well_incident.sql\n\n\\ir quality/key_ods.og_tbl_workrecord.sql\n\n\\ir quality/key_ods.og_ws_user.sql\n\n\\ir quality/key_ods.og_zcbap_infsys.sql\n\n\\ir quality/key_ods.og_zgr_it.sql\n\n\\ir quality/key_ods.og_znapr.sql\n\n\\ir quality/key_ref.unit.sql\n\n\\ir quality/key_ref.calendar.sql\n\n\\ir quality/key_ref.product.sql\n\n\\ir quality/key_ref.repair_type.sql\n\n\\ir quality/key_ref.downtime_reason.sql\n\n\\ir quality/key_ref.sensor_type.sql\n\n\\ir quality/key_ref.energy_tariff.sql\n\n\\ir quality/key_ref.quality_spec.sql\n\n\\ir quality/key_stg.measurement_event.sql\n\n\\ir quality/key_stg.repair_event.sql\n\n\\ir quality/key_stg.lab_event.sql\n\n\\ir quality/key_stg.shipment_event.sql\n\n\\ir quality/key_dds.dim_well_scd2.sql\n\n\\ir quality/key_dds.dim_equipment.sql\n\n\\ir quality/key_dds.dim_contract.sql\n\n\\ir quality/key_dds.bridge_equipment_well_history.sql\n\n\\ir quality/key_dds.fact_production_day.sql\n\n\\ir quality/key_dds.fact_telemetry_hour.sql\n\n\\ir quality/key_dds.fact_downtime_interval.sql\n\n\\ir quality/key_dds.fact_repair_order.sql\n\n\\ir quality/key_dds.fact_repair_operation.sql\n\n\\ir quality/key_dds.fact_energy_day.sql\n\n\\ir quality/key_dds.fact_lab_sample.sql\n\n\\ir quality/key_dds.fact_quality_measurement.sql\n\n\\ir quality/key_dds.fact_production_plan_month.sql\n\n\\ir quality/key_dds.fact_shipment.sql\n\n\\ir quality/key_dds.fact_shipment_item.sql\n\n\\ir quality/key_dm.well_day_balance.sql\n\n\\ir quality/key_dm.field_month_performance.sql\n\n\\ir quality/key_dm.repair_cost_month.sql\n\n\\ir quality/key_dm.energy_intensity_day.sql\n\n\\ir quality/key_dm.quality_compliance_day.sql\n\n\\ir quality/key_dm.shipment_balance_month.sql\n\n\\ir quality/key_dm.service_production_impact.sql\n\n\\ir quality/key_ctl.load_batch.sql\n\n\\ir quality/key_ctl.task_run.sql\n\n\\ir quality/key_ctl.quality_result.sql\n\n\\ir quality/key_ctl.source_asset.sql\n\n\\ir quality/key_ctl.publication_release.sql\n\n\\ir quality/relation_0_ods.og_tbl_production_volume.sql\n\n\\ir quality/relation_1_ods.og_tbl_well.sql\n\n\\ir quality/relation_2_ods.og_tbl_equipment_repair.sql\n\n\\ir quality/relation_3_ods.og_tbl_well_incident.sql\n\n\\ir quality/relation_4_ods.og_tbl_workrecord.sql\n\n\\ir quality/relation_5_ods.og_tbl_workrecord.sql\n\n\\ir quality/relation_6_ods.og_tbl_servicecall.sql\n\n\\ir quality/relation_7_ods.og_tbl_servicecall.sql\n\n\\ir quality/relation_8_ods.og_tbl_servicecall.sql\n\n\\ir quality/relation_9_ods.og_tbl_servicecall.sql\n\n\\ir quality/relation_10_ods.og_tbl_servicecall.sql\n\n\\ir quality/relation_11_ods.og_tbl_comment.sql\n\n\\ir quality/relation_12_ods.og_task.sql\n\n\\ir quality/relation_13_ods.og_task.sql\n\n\\ir quality/relation_14_ods.og_pa0001.sql\n\n\\ir quality/relation_15_stg.measurement_event.sql\n\n\\ir quality/relation_16_stg.repair_event.sql\n\n\\ir quality/relation_17_stg.lab_event.sql\n\n\\ir quality/relation_18_dds.dim_well_scd2.sql\n\n\\ir quality/relation_19_dds.bridge_equipment_well_history.sql\n\n\\ir quality/relation_20_dds.fact_production_day.sql\n\n\\ir quality/relation_21_dds.fact_telemetry_hour.sql\n\n\\ir quality/relation_22_dds.fact_downtime_interval.sql\n\n\\ir quality/relation_23_dds.fact_repair_order.sql\n\n\\ir quality/relation_24_dds.fact_repair_operation.sql\n\n\\ir quality/relation_25_dds.fact_energy_day.sql\n\n\\ir quality/relation_26_dds.fact_lab_sample.sql\n\n\\ir quality/relation_27_dds.fact_quality_measurement.sql\n\n\\ir quality/relation_28_dds.fact_production_plan_month.sql\n\n\\ir quality/relation_29_dm.well_day_balance.sql\n\n\\ir quality/relation_30_dm.repair_cost_month.sql\n\n\\ir quality/relation_31_dm.energy_intensity_day.sql\n\n\\ir quality/relation_32_dm.service_production_impact.sql\n\n\\ir quality/relation_33_dds.fact_production_day.sql\n\n\\ir quality/relation_34_dds.fact_repair_operation.sql\n\n\\ir quality/relation_35_dds.fact_quality_measurement.sql\n\n\\ir quality/relation_36_dds.fact_quality_measurement.sql\n\n\\ir quality/relation_37_dds.fact_energy_day.sql\n\n\\ir quality/relation_38_dds.fact_shipment_item.sql\n\n\\ir quality/daily_expected_count.sql\n\n\\ir quality/telemetry_expected_count.sql\n\n\\ir quality/daily_month_exact_decimal.sql\n\n\\ir quality/daily_source_double_tolerance.sql\n\n\\ir quality/scd_overlap.sql\n\n\\ir quality/scd_fact_one_version.sql\n\n\\ir quality/downtime_overlap.sql\n\n\\ir quality/hours_bounds.sql\n\n\\ir quality/energy_price.sql\n\n\\ir quality/zero_denominator_null.sql\n\n\\ir quality/plan_daily_month_conservation.sql\n\n\\ir quality/shipment_mass_balance.sql\n\n\\ir quality/shipment_month_continuity.sql\n\n\\ir quality/quality_flags_correct.sql\n\n\\ir quality/mart_aggregate_parity.sql\n\n\\ir quality/default_partitions_empty.sql\n\n\\ir quality/telemetry_utc_range.sql\n\n\\ir quality/raw_telemetry_count.sql\n\n\\ir quality/raw_json_parse.sql\n",
+    "tests/sql/negative_gates.sql": "\\set ON_ERROR_STOP on\n\n\\ir ../../functions/etl/verify_negative_gates.sql\n\n\\ir run_negative_gates.sql\n"
+  }
+}

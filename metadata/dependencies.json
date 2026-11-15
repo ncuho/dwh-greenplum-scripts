@@ -3,7 +3,7 @@
     "target": "dm.well_day_balance",
     "sources": [
       "dds.fact_production_day",
-      "ods.sng_tbl_well",
+      "ods.og_tbl_well",
       "ref.calendar",
       "dds.fact_production_plan_month",
       "dds.fact_energy_day"
@@ -17,7 +17,7 @@
     "target": "dm.field_month_performance",
     "sources": [
       "dds.fact_production_day",
-      "ods.sng_tbl_well",
+      "ods.og_tbl_well",
       "ref.calendar",
       "dds.fact_production_plan_month",
       "dds.fact_energy_day"
@@ -43,7 +43,7 @@
     "target": "dm.energy_intensity_day",
     "sources": [
       "dds.fact_production_day",
-      "ods.sng_tbl_well",
+      "ods.og_tbl_well",
       "ref.calendar",
       "dds.fact_production_plan_month",
       "dds.fact_energy_day"
@@ -58,7 +58,7 @@
     "sources": [
       "dds.fact_quality_measurement",
       "dds.fact_lab_sample",
-      "ods.sng_tbl_well"
+      "ods.og_tbl_well"
     ],
     "kind": "computed_data_lineage",
     "transformation": "etl.rebuild_marts(bigint,bigint)",
@@ -79,8 +79,8 @@
   {
     "target": "dm.service_production_impact",
     "sources": [
-      "ods.sng_tbl_servicecall",
-      "ods.sng_tbl_well",
+      "ods.og_tbl_servicecall",
+      "ods.og_tbl_well",
       "dds.fact_production_day"
     ],
     "kind": "computed_data_lineage",

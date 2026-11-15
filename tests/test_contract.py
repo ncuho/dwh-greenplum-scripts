@@ -1,7 +1,7 @@
 import importlib.util,json,math,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('loader',ROOT/'scripts/load_mirrors.py');loader=importlib.util.module_from_spec(spec);spec.loader.exec_module(loader)
+spec=importlib.util.spec_from_file_location('loader',ROOT/'sources/bootstrap/load_snapshots.py');loader=importlib.util.module_from_spec(spec);spec.loader.exec_module(loader)
 class ContractTest(unittest.TestCase):
  def test_manifest(self):
   m=json.loads((ROOT/'metadata/asset-manifest.json').read_text());names=[a['name'] for a in m['assets']];self.assertEqual(len(names),85);self.assertEqual(len(set(names)),85);self.assertEqual(sum(a['class']=='exact_existing_mirror' for a in m['assets']),46)

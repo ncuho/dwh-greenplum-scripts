@@ -2361,7 +2361,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_bs_area",
+    "table_name": "og_bs_area",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "bs_area",
@@ -2371,7 +2371,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_bs_area",
+    "table_name": "og_bs_area",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "direction",
@@ -2381,7 +2381,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -2391,7 +2391,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "clientou_id",
@@ -2401,7 +2401,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "year",
@@ -2411,7 +2411,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "month",
@@ -2421,7 +2421,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "cnt",
@@ -2431,7 +2431,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "avg_resolution_min",
@@ -2441,7 +2441,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "pct_usedkb",
@@ -2451,7 +2451,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "pct_first_time",
@@ -2461,7 +2461,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "avg_answer",
@@ -2471,7 +2471,7 @@
   },
   {
     "schema_name": "mart",
-    "table_name": "sng_report",
+    "table_name": "og_report",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "total_time_hours",
@@ -2481,7 +2481,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "assigment_id",
@@ -2491,7 +2491,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "assigment_name",
@@ -2501,7 +2501,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "work_type",
@@ -2511,7 +2511,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "assigment_state",
@@ -2521,7 +2521,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_id",
@@ -2531,7 +2531,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_asu_work_assignment",
+    "table_name": "og_asu_work_assignment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "executor_id",
@@ -2541,7 +2541,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "partner",
@@ -2551,7 +2551,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "type",
@@ -2561,7 +2561,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name_org1",
@@ -2571,7 +2571,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name_last",
@@ -2581,7 +2581,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name_first",
@@ -2591,7 +2591,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "namemiddle",
@@ -2601,7 +2601,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ind_sector",
@@ -2611,7 +2611,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "location_1",
@@ -2621,7 +2621,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_but000",
+    "table_name": "og_but000",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "found_dat",
@@ -2631,7 +2631,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_activity_h",
+    "table_name": "og_crmd_activity_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -2641,7 +2641,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_activity_h",
+    "table_name": "og_crmd_activity_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "category",
@@ -2651,7 +2651,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_activity_h",
+    "table_name": "og_crmd_activity_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "priority",
@@ -2661,7 +2661,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_activity_h",
+    "table_name": "og_crmd_activity_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "partner",
@@ -2671,7 +2671,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_activity_h",
+    "table_name": "og_crmd_activity_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "completion",
@@ -2681,7 +2681,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_h",
+    "table_name": "og_crmd_orderadm_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "object_id",
@@ -2691,7 +2691,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_h",
+    "table_name": "og_crmd_orderadm_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "process_type",
@@ -2701,7 +2701,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_h",
+    "table_name": "og_crmd_orderadm_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "posting_date",
@@ -2711,7 +2711,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_h",
+    "table_name": "og_crmd_orderadm_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "description",
@@ -2721,7 +2721,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_h",
+    "table_name": "og_crmd_orderadm_h",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "partner",
@@ -2731,7 +2731,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_i",
+    "table_name": "og_crmd_orderadm_i",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -2741,7 +2741,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_i",
+    "table_name": "og_crmd_orderadm_i",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ordered_prod",
@@ -2751,7 +2751,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_i",
+    "table_name": "og_crmd_orderadm_i",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "header",
@@ -2761,7 +2761,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_i",
+    "table_name": "og_crmd_orderadm_i",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "number_int",
@@ -2771,7 +2771,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_orderadm_i",
+    "table_name": "og_crmd_orderadm_i",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "cost",
@@ -2781,7 +2781,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_partner",
+    "table_name": "og_crmd_partner",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -2791,7 +2791,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_partner",
+    "table_name": "og_crmd_partner",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "partner_fct",
@@ -2801,7 +2801,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_partner",
+    "table_name": "og_crmd_partner",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "partner_no",
@@ -2811,7 +2811,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_crmd_partner",
+    "table_name": "og_crmd_partner",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "order_id",
@@ -2821,7 +2821,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0001",
+    "table_name": "og_pa0001",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "pernr",
@@ -2831,7 +2831,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0001",
+    "table_name": "og_pa0001",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "bukrs",
@@ -2841,7 +2841,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0001",
+    "table_name": "og_pa0001",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "werks",
@@ -2851,7 +2851,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0001",
+    "table_name": "og_pa0001",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "orgeh",
@@ -2861,7 +2861,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0001",
+    "table_name": "og_pa0001",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "stell",
@@ -2871,7 +2871,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "pernr",
@@ -2881,7 +2881,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "nachn",
@@ -2891,7 +2891,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "vorna",
@@ -2901,7 +2901,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "midnm",
@@ -2911,7 +2911,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "gesch",
@@ -2921,7 +2921,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "gbdat",
@@ -2931,7 +2931,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_pa0002",
+    "table_name": "og_pa0002",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "natio",
@@ -2941,7 +2941,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -2951,7 +2951,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name",
@@ -2961,7 +2961,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "code",
@@ -2971,7 +2971,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "status_id",
@@ -2981,7 +2981,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "director_id",
@@ -2991,7 +2991,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "date_start_plan",
@@ -3001,7 +3001,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "date_end_plan",
@@ -3011,7 +3011,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_project",
+    "table_name": "og_project",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "object_cost",
@@ -3021,7 +3021,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_t500p",
+    "table_name": "og_t500p",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "persa",
@@ -3031,7 +3031,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_t500p",
+    "table_name": "og_t500p",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "molga",
@@ -3041,7 +3041,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_t500p",
+    "table_name": "og_t500p",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name1",
@@ -3051,7 +3051,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_id",
@@ -3061,7 +3061,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_title",
@@ -3071,7 +3071,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_desc",
@@ -3081,7 +3081,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_hours",
@@ -3091,7 +3091,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_project_id",
@@ -3101,7 +3101,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_status_id",
@@ -3111,7 +3111,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "assigned_ws_user_id",
@@ -3121,7 +3121,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_priority_id",
@@ -3131,7 +3131,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_target_finish",
@@ -3141,7 +3141,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_task",
+    "table_name": "og_task",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "task_completed",
@@ -3151,7 +3151,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3161,7 +3161,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3171,7 +3171,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -3181,7 +3181,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleemployee_id",
@@ -3191,7 +3191,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleteam_id",
@@ -3201,7 +3201,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "impact",
@@ -3211,7 +3211,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "category",
@@ -3221,7 +3221,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_changerequest",
+    "table_name": "og_tbl_changerequest",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "code",
@@ -3231,7 +3231,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3241,7 +3241,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3251,7 +3251,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ci_hostname",
@@ -3261,7 +3261,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ci_ip",
@@ -3271,7 +3271,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -3281,7 +3281,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleteam_id",
@@ -3291,7 +3291,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_cmdb",
+    "table_name": "og_tbl_cmdb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ci_bservice",
@@ -3301,7 +3301,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_comment",
+    "table_name": "og_tbl_comment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3311,7 +3311,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_comment",
+    "table_name": "og_tbl_comment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "servicecall_id",
@@ -3321,7 +3321,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_comment",
+    "table_name": "og_tbl_comment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "author_id",
@@ -3331,7 +3331,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_comment",
+    "table_name": "og_tbl_comment",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "text",
@@ -3341,7 +3341,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_company",
+    "table_name": "og_tbl_company",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3351,7 +3351,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_company",
+    "table_name": "og_tbl_company",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "dbid",
@@ -3361,7 +3361,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_company",
+    "table_name": "og_tbl_company",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "fullname",
@@ -3371,7 +3371,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_company",
+    "table_name": "og_tbl_company",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "company_type",
@@ -3381,7 +3381,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_directory",
+    "table_name": "og_tbl_directory",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3391,7 +3391,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_directory",
+    "table_name": "og_tbl_directory",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3401,7 +3401,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_directory",
+    "table_name": "og_tbl_directory",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "code",
@@ -3411,7 +3411,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_directory",
+    "table_name": "og_tbl_directory",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "type",
@@ -3421,7 +3421,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3431,7 +3431,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "first_name",
@@ -3441,7 +3441,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "last_name",
@@ -3451,7 +3451,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "middle_name",
@@ -3461,7 +3461,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "fio",
@@ -3471,7 +3471,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "login",
@@ -3481,7 +3481,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "email",
@@ -3491,7 +3491,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "mobile_phone",
@@ -3501,7 +3501,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "employee_employeenumber",
@@ -3511,7 +3511,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "post",
@@ -3521,7 +3521,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "parent_id",
@@ -3531,7 +3531,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_employee",
+    "table_name": "og_tbl_employee",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "date_of_birth",
@@ -3541,7 +3541,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3551,7 +3551,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "factbegindate",
@@ -3561,7 +3561,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "factenddate",
@@ -3571,7 +3571,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "wellid",
@@ -3581,7 +3581,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "contractor_id",
@@ -3591,7 +3591,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_equipment_repair",
+    "table_name": "og_tbl_equipment_repair",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "cost",
@@ -3601,7 +3601,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3611,7 +3611,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3621,7 +3621,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleteam_id",
@@ -3631,7 +3631,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "author_id",
@@ -3641,7 +3641,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "viewcounter",
@@ -3651,7 +3651,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -3661,7 +3661,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_kb",
+    "table_name": "og_tbl_kb",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "kbsection_basedcateg",
@@ -3671,7 +3671,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_locality",
+    "table_name": "og_tbl_locality",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3681,7 +3681,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_locality",
+    "table_name": "og_tbl_locality",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "dbid",
@@ -3691,7 +3691,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_locality",
+    "table_name": "og_tbl_locality",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name",
@@ -3701,7 +3701,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_locality",
+    "table_name": "og_tbl_locality",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "region",
@@ -3711,7 +3711,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_mark",
+    "table_name": "og_tbl_mark",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3721,7 +3721,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_mark",
+    "table_name": "og_tbl_mark",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "code",
@@ -3731,7 +3731,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_mark",
+    "table_name": "og_tbl_mark",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "color",
@@ -3741,7 +3741,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_mark",
+    "table_name": "og_tbl_mark",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3751,7 +3751,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3761,7 +3761,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3771,7 +3771,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "titleshort",
@@ -3781,7 +3781,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ou_code",
@@ -3791,7 +3791,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ou_customer",
@@ -3801,7 +3801,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_ou",
+    "table_name": "og_tbl_ou",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "parent_id",
@@ -3811,7 +3811,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_priority",
+    "table_name": "og_tbl_priority",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3821,7 +3821,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_priority",
+    "table_name": "og_tbl_priority",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -3831,7 +3831,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_priority",
+    "table_name": "og_tbl_priority",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "priority_level",
@@ -3841,7 +3841,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3851,7 +3851,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "well_id",
@@ -3861,7 +3861,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "prod_date",
@@ -3871,7 +3871,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "oil_volume",
@@ -3881,7 +3881,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "gas_volume",
@@ -3891,7 +3891,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_production_volume",
+    "table_name": "og_tbl_production_volume",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "water_volume",
@@ -3901,7 +3901,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -3911,7 +3911,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "request_date",
@@ -3921,7 +3921,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "registration_date",
@@ -3931,7 +3931,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -3941,7 +3941,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "priority_id",
@@ -3951,7 +3951,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "service_id",
@@ -3961,7 +3961,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "clientou_id",
@@ -3971,7 +3971,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "clientemployee_id",
@@ -3981,7 +3981,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleteam_id",
@@ -3991,7 +3991,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleemployee_id",
@@ -4001,7 +4001,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "resolutiontime",
@@ -4011,7 +4011,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "datedecision",
@@ -4021,7 +4021,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "usedkb",
@@ -4031,7 +4031,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "cnt_sol",
@@ -4041,7 +4041,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "answ_avg",
@@ -4051,7 +4051,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "call_infsystem",
@@ -4061,7 +4061,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "impact",
@@ -4071,7 +4071,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecall",
+    "table_name": "og_tbl_servicecall",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "urgency",
@@ -4081,7 +4081,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecateg",
+    "table_name": "og_tbl_servicecateg",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4091,7 +4091,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_servicecateg",
+    "table_name": "og_tbl_servicecateg",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -4101,7 +4101,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4111,7 +4111,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -4121,7 +4121,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state_",
@@ -4131,7 +4131,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "responsibleteam_id",
@@ -4141,7 +4141,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "customer_ou",
@@ -4151,7 +4151,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "classification",
@@ -4161,7 +4161,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "rating",
@@ -4171,7 +4171,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_slmservice",
+    "table_name": "og_tbl_slmservice",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "informsystem",
@@ -4181,7 +4181,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_team",
+    "table_name": "og_tbl_team",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4191,7 +4191,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_team",
+    "table_name": "og_tbl_team",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -4201,7 +4201,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_team",
+    "table_name": "og_tbl_team",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "teamlevel",
@@ -4211,7 +4211,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_team",
+    "table_name": "og_tbl_team",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "leader_id",
@@ -4221,7 +4221,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_team",
+    "table_name": "og_tbl_team",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "headou_id",
@@ -4231,7 +4231,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_typeworks",
+    "table_name": "og_tbl_typeworks",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4241,7 +4241,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_typeworks",
+    "table_name": "og_tbl_typeworks",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -4251,7 +4251,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well",
+    "table_name": "og_tbl_well",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4261,7 +4261,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well",
+    "table_name": "og_tbl_well",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "fieldid",
@@ -4271,7 +4271,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well",
+    "table_name": "og_tbl_well",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "title",
@@ -4281,7 +4281,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well",
+    "table_name": "og_tbl_well",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "depth",
@@ -4291,7 +4291,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well",
+    "table_name": "og_tbl_well",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -4301,7 +4301,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well_incident",
+    "table_name": "og_tbl_well_incident",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4311,7 +4311,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well_incident",
+    "table_name": "og_tbl_well_incident",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "well_id",
@@ -4321,7 +4321,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well_incident",
+    "table_name": "og_tbl_well_incident",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "timebegin",
@@ -4331,7 +4331,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well_incident",
+    "table_name": "og_tbl_well_incident",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "incident_type",
@@ -4341,7 +4341,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_well_incident",
+    "table_name": "og_tbl_well_incident",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "severity",
@@ -4351,7 +4351,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4361,7 +4361,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "servicecall",
@@ -4371,7 +4371,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "employee",
@@ -4381,7 +4381,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "workrecordkb_typeworks",
@@ -4391,7 +4391,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "time",
@@ -4401,7 +4401,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "client_ou",
@@ -4411,7 +4411,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_tbl_workrecord",
+    "table_name": "og_tbl_workrecord",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "state",
@@ -4421,7 +4421,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "ws_user_id",
@@ -4431,7 +4431,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "auth_user",
@@ -4441,7 +4441,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "firstname",
@@ -4451,7 +4451,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "lastname",
@@ -4461,7 +4461,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "email",
@@ -4471,7 +4471,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "phone_number",
@@ -4481,7 +4481,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_ws_user",
+    "table_name": "og_ws_user",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "job_title",
@@ -4491,7 +4491,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zcbap_infsys",
+    "table_name": "og_zcbap_infsys",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "id",
@@ -4501,7 +4501,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zcbap_infsys",
+    "table_name": "og_zcbap_infsys",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name",
@@ -4511,7 +4511,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zcbap_infsys",
+    "table_name": "og_zcbap_infsys",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "short_name",
@@ -4521,7 +4521,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zcbap_infsys",
+    "table_name": "og_zcbap_infsys",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "teh_name",
@@ -4531,7 +4531,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zcbap_infsys",
+    "table_name": "og_zcbap_infsys",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "flag_cap",
@@ -4541,7 +4541,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zgr_it",
+    "table_name": "og_zgr_it",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "kod_gr",
@@ -4551,7 +4551,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zgr_it",
+    "table_name": "og_zgr_it",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name",
@@ -4561,7 +4561,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zgr_it",
+    "table_name": "og_zgr_it",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name_eng",
@@ -4571,7 +4571,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_zgr_it",
+    "table_name": "og_zgr_it",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "gr_pp",
@@ -4581,7 +4581,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_znapr",
+    "table_name": "og_znapr",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "kod_napr",
@@ -4591,7 +4591,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_znapr",
+    "table_name": "og_znapr",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name",
@@ -4601,7 +4601,7 @@
   },
   {
     "schema_name": "ods",
-    "table_name": "sng_znapr",
+    "table_name": "og_znapr",
     "relkind": "r",
     "relstorage": "h",
     "column_name": "name_eng",

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "status": "DEPLOYED_VALIDATED_GREENPLUM_ONLY",
-  "database": "sng_dwh",
+  "status": "DEPLOYED_METADATA_RENAMED_NO_DATA_RECALCULATION",
+  "database": "og_dwh",
   "source_contract": "existing46 unchanged; 2025 synthetic snapshot",
   "logical_table_count": 85,
   "counts_by_class": {
@@ -25,11 +25,11 @@
       "description": "Заводы (werks)",
       "source_fqn": "dlh_trino.dlh.mart.bo_werks_text",
       "source_sql_fqn": "dlh.mart.bo_werks_text",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "zkz_werks"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -63,7 +63,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 8
+      "observed_rows": 8,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_hse_incidents",
@@ -71,11 +72,11 @@
       "description": "Витрина инцидентов HSE",
       "source_fqn": "dlh_trino.dlh.mart.dm_hse_incidents",
       "source_sql_fqn": "dlh.mart.dm_hse_incidents",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -133,7 +134,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 392
+      "observed_rows": 392,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_hse_one",
@@ -141,11 +143,11 @@
       "description": "Витрина HSE (единая)",
       "source_fqn": "dlh_trino.dlh.mart.dm_hse_one",
       "source_sql_fqn": "dlh.mart.dm_hse_one",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -195,7 +197,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 400
+      "observed_rows": 400,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_incidents",
@@ -203,11 +206,11 @@
       "description": "Витрина инцидентов",
       "source_fqn": "dlh_trino.dlh.mart.dm_incidents",
       "source_sql_fqn": "dlh.mart.dm_incidents",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -241,7 +244,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 100
+      "observed_rows": 100,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_project_status",
@@ -249,11 +253,11 @@
       "description": "Витрина статусов проектов",
       "source_fqn": "dlh_trino.dlh.mart.dm_project_status",
       "source_sql_fqn": "dlh.mart.dm_project_status",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -303,7 +307,8 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 39
+      "observed_rows": 39,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_well",
@@ -311,11 +316,11 @@
       "description": "Витрина скважин",
       "source_fqn": "dlh_trino.dlh.mart.dm_well",
       "source_sql_fqn": "dlh.mart.dm_well",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -349,7 +354,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 200
+      "observed_rows": 200,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_well_more",
@@ -357,11 +363,11 @@
       "description": "Витрина скважин (расширенная)",
       "source_fqn": "dlh_trino.dlh.mart.dm_well_more",
       "source_sql_fqn": "dlh.mart.dm_well_more",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -419,7 +425,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 200
+      "observed_rows": 200,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "mart.dm_well_production",
@@ -427,11 +434,11 @@
       "description": "Витрина добычи по скважинам",
       "source_fqn": "dlh_trino.dlh.mart.dm_well_production",
       "source_sql_fqn": "dlh.mart.dm_well_production",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -497,19 +504,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 2400
+      "observed_rows": 2400,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "mart.sng_bs_area",
+      "name": "mart.og_bs_area",
       "class": "exact_existing_mirror",
       "description": "Направления БС",
-      "source_fqn": "dlh_trino.dlh.mart.sng_bs_area",
-      "source_sql_fqn": "dlh.mart.sng_bs_area",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.mart.og_bs_area",
+      "source_sql_fqn": "dlh.mart.og_bs_area",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "bs_area"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -535,19 +543,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 6
+      "observed_rows": 6,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "mart.sng_report",
+      "name": "mart.og_report",
       "class": "exact_existing_mirror",
       "description": "Сводный отчёт по КПЭ (ОЕ × месяц)",
-      "source_fqn": "dlh_trino.dlh.mart.sng_report",
-      "source_sql_fqn": "dlh.mart.sng_report",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.mart.og_report",
+      "source_sql_fqn": "dlh.mart.og_report",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -637,19 +646,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 480
+      "observed_rows": 480,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_asu_work_assignment",
+      "name": "ods.og_asu_work_assignment",
       "class": "exact_existing_mirror",
       "description": "Назначения работ",
-      "source_fqn": "dlh_trino.dlh.ods.sng_asu_work_assignment",
-      "source_sql_fqn": "dlh.ods.sng_asu_work_assignment",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_asu_work_assignment",
+      "source_sql_fqn": "dlh.ods.og_asu_work_assignment",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "assigment_id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -707,19 +717,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 2000
+      "observed_rows": 2000,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_but000",
+      "name": "ods.og_but000",
       "class": "exact_existing_mirror",
       "description": "Контрагенты (SAP BP)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_but000",
-      "source_sql_fqn": "dlh.ods.sng_but000",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_but000",
+      "source_sql_fqn": "dlh.ods.og_but000",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "partner"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -801,19 +812,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 60
+      "observed_rows": 60,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_crmd_activity_h",
+      "name": "ods.og_crmd_activity_h",
       "class": "exact_existing_mirror",
       "description": "CRM-активности",
-      "source_fqn": "dlh_trino.dlh.ods.sng_crmd_activity_h",
-      "source_sql_fqn": "dlh.ods.sng_crmd_activity_h",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_crmd_activity_h",
+      "source_sql_fqn": "dlh.ods.og_crmd_activity_h",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -863,19 +875,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 500
+      "observed_rows": 500,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_crmd_orderadm_h",
+      "name": "ods.og_crmd_orderadm_h",
       "class": "exact_existing_mirror",
       "description": "Заказы (шапка)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_crmd_orderadm_h",
-      "source_sql_fqn": "dlh.ods.sng_crmd_orderadm_h",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_crmd_orderadm_h",
+      "source_sql_fqn": "dlh.ods.og_crmd_orderadm_h",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "object_id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -925,19 +938,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 300
+      "observed_rows": 300,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_crmd_orderadm_i",
+      "name": "ods.og_crmd_orderadm_i",
       "class": "exact_existing_mirror",
       "description": "Позиции заказов",
-      "source_fqn": "dlh_trino.dlh.ods.sng_crmd_orderadm_i",
-      "source_sql_fqn": "dlh.ods.sng_crmd_orderadm_i",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_crmd_orderadm_i",
+      "source_sql_fqn": "dlh.ods.og_crmd_orderadm_i",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -987,19 +1001,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 800
+      "observed_rows": 800,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_crmd_partner",
+      "name": "ods.og_crmd_partner",
       "class": "exact_existing_mirror",
       "description": "Партнёры заказов",
-      "source_fqn": "dlh_trino.dlh.ods.sng_crmd_partner",
-      "source_sql_fqn": "dlh.ods.sng_crmd_partner",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_crmd_partner",
+      "source_sql_fqn": "dlh.ods.og_crmd_partner",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1041,19 +1056,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 400
+      "observed_rows": 400,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_pa0001",
+      "name": "ods.og_pa0001",
       "class": "exact_existing_mirror",
       "description": "Штатная расстановка (SAP HR)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_pa0001",
-      "source_sql_fqn": "dlh.ods.sng_pa0001",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_pa0001",
+      "source_sql_fqn": "dlh.ods.og_pa0001",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "pernr"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1103,19 +1119,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 150
+      "observed_rows": 150,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_pa0002",
+      "name": "ods.og_pa0002",
       "class": "exact_existing_mirror",
       "description": "Личные данные (SAP HR)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_pa0002",
-      "source_sql_fqn": "dlh.ods.sng_pa0002",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_pa0002",
+      "source_sql_fqn": "dlh.ods.og_pa0002",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "pernr"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1181,19 +1198,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 150
+      "observed_rows": 150,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_project",
+      "name": "ods.og_project",
       "class": "exact_existing_mirror",
       "description": "Проекты",
-      "source_fqn": "dlh_trino.dlh.ods.sng_project",
-      "source_sql_fqn": "dlh.ods.sng_project",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_project",
+      "source_sql_fqn": "dlh.ods.og_project",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1267,19 +1285,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 40
+      "observed_rows": 40,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_t500p",
+      "name": "ods.og_t500p",
       "class": "exact_existing_mirror",
       "description": "Персонал-области",
-      "source_fqn": "dlh_trino.dlh.ods.sng_t500p",
-      "source_sql_fqn": "dlh.ods.sng_t500p",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_t500p",
+      "source_sql_fqn": "dlh.ods.og_t500p",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "persa"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1313,19 +1332,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 10
+      "observed_rows": 10,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_task",
+      "name": "ods.og_task",
       "class": "exact_existing_mirror",
       "description": "Задачи проектов",
-      "source_fqn": "dlh_trino.dlh.ods.sng_task",
-      "source_sql_fqn": "dlh.ods.sng_task",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_task",
+      "source_sql_fqn": "dlh.ods.og_task",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "task_id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1415,19 +1435,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 800
+      "observed_rows": 800,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_changerequest",
+      "name": "ods.og_tbl_changerequest",
       "class": "exact_existing_mirror",
       "description": "Запросы на изменения (Change Management)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_changerequest",
-      "source_sql_fqn": "dlh.ods.sng_tbl_changerequest",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_changerequest",
+      "source_sql_fqn": "dlh.ods.og_tbl_changerequest",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1501,19 +1522,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 200
+      "observed_rows": 200,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_cmdb",
+      "name": "ods.og_tbl_cmdb",
       "class": "exact_existing_mirror",
       "description": "Конфигурационные единицы",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_cmdb",
-      "source_sql_fqn": "dlh.ods.sng_tbl_cmdb",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_cmdb",
+      "source_sql_fqn": "dlh.ods.og_tbl_cmdb",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1579,19 +1601,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 200
+      "observed_rows": 200,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_comment",
+      "name": "ods.og_tbl_comment",
       "class": "exact_existing_mirror",
       "description": "Комментарии",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_comment",
-      "source_sql_fqn": "dlh.ods.sng_tbl_comment",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_comment",
+      "source_sql_fqn": "dlh.ods.og_tbl_comment",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1633,19 +1656,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 8122
+      "observed_rows": 8122,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_company",
+      "name": "ods.og_tbl_company",
       "class": "exact_existing_mirror",
       "description": "Компании-подрядчики",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_company",
-      "source_sql_fqn": "dlh.ods.sng_tbl_company",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_company",
+      "source_sql_fqn": "dlh.ods.og_tbl_company",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1687,19 +1711,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 15
+      "observed_rows": 15,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_directory",
+      "name": "ods.og_tbl_directory",
       "class": "exact_existing_mirror",
       "description": "Справочник объектов",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_directory",
-      "source_sql_fqn": "dlh.ods.sng_tbl_directory",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_directory",
+      "source_sql_fqn": "dlh.ods.og_tbl_directory",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1741,19 +1766,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 30
+      "observed_rows": 30,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_employee",
+      "name": "ods.og_tbl_employee",
       "class": "exact_existing_mirror",
       "description": "Сотрудники",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_employee",
-      "source_sql_fqn": "dlh.ods.sng_tbl_employee",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_employee",
+      "source_sql_fqn": "dlh.ods.og_tbl_employee",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1859,19 +1885,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 150
+      "observed_rows": 150,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_equipment_repair",
+      "name": "ods.og_tbl_equipment_repair",
       "class": "exact_existing_mirror",
       "description": "Ремонты оборудования",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_equipment_repair",
-      "source_sql_fqn": "dlh.ods.sng_tbl_equipment_repair",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_equipment_repair",
+      "source_sql_fqn": "dlh.ods.og_tbl_equipment_repair",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -1929,19 +1956,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 500
+      "observed_rows": 500,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_kb",
+      "name": "ods.og_tbl_kb",
       "class": "exact_existing_mirror",
       "description": "База знаний",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_kb",
-      "source_sql_fqn": "dlh.ods.sng_tbl_kb",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_kb",
+      "source_sql_fqn": "dlh.ods.og_tbl_kb",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2007,19 +2035,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 60
+      "observed_rows": 60,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_locality",
+      "name": "ods.og_tbl_locality",
       "class": "exact_existing_mirror",
       "description": "Месторождения (нефтегазовые)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_locality",
-      "source_sql_fqn": "dlh.ods.sng_tbl_locality",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_locality",
+      "source_sql_fqn": "dlh.ods.og_tbl_locality",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2061,19 +2090,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 20
+      "observed_rows": 20,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_mark",
+      "name": "ods.og_tbl_mark",
       "class": "exact_existing_mirror",
       "description": "Отметки",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_mark",
-      "source_sql_fqn": "dlh.ods.sng_tbl_mark",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_mark",
+      "source_sql_fqn": "dlh.ods.og_tbl_mark",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2115,19 +2145,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 10
+      "observed_rows": 10,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_ou",
+      "name": "ods.og_tbl_ou",
       "class": "exact_existing_mirror",
       "description": "Организационные единицы (заказчики)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_ou",
-      "source_sql_fqn": "dlh.ods.sng_tbl_ou",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_ou",
+      "source_sql_fqn": "dlh.ods.og_tbl_ou",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2185,19 +2216,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 20
+      "observed_rows": 20,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_priority",
+      "name": "ods.og_tbl_priority",
       "class": "exact_existing_mirror",
       "description": "Приоритеты заявок",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_priority",
-      "source_sql_fqn": "dlh.ods.sng_tbl_priority",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_priority",
+      "source_sql_fqn": "dlh.ods.og_tbl_priority",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2231,19 +2263,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 4
+      "observed_rows": 4,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_production_volume",
+      "name": "ods.og_tbl_production_volume",
       "class": "exact_existing_mirror",
       "description": "Добыча (факт)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_production_volume",
-      "source_sql_fqn": "dlh.ods.sng_tbl_production_volume",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_production_volume",
+      "source_sql_fqn": "dlh.ods.og_tbl_production_volume",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2301,19 +2334,20 @@
           "unit_status": "source_unspecified"
         }
       ],
-      "observed_rows": 2400
+      "observed_rows": 2400,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_servicecall",
+      "name": "ods.og_tbl_servicecall",
       "class": "exact_existing_mirror",
       "description": "Заявки (факт)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_servicecall",
-      "source_sql_fqn": "dlh.ods.sng_tbl_servicecall",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_servicecall",
+      "source_sql_fqn": "dlh.ods.og_tbl_servicecall",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2467,19 +2501,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 4000
+      "observed_rows": 4000,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_servicecateg",
+      "name": "ods.og_tbl_servicecateg",
       "class": "exact_existing_mirror",
       "description": "Категории услуг",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_servicecateg",
-      "source_sql_fqn": "dlh.ods.sng_tbl_servicecateg",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_servicecateg",
+      "source_sql_fqn": "dlh.ods.og_tbl_servicecateg",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2505,19 +2540,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 15
+      "observed_rows": 15,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_slmservice",
+      "name": "ods.og_tbl_slmservice",
       "class": "exact_existing_mirror",
       "description": "SLA-сервисы",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_slmservice",
-      "source_sql_fqn": "dlh.ods.sng_tbl_slmservice",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_slmservice",
+      "source_sql_fqn": "dlh.ods.og_tbl_slmservice",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2591,19 +2627,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 60
+      "observed_rows": 60,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_team",
+      "name": "ods.og_tbl_team",
       "class": "exact_existing_mirror",
       "description": "Группы поддержки",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_team",
-      "source_sql_fqn": "dlh.ods.sng_tbl_team",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_team",
+      "source_sql_fqn": "dlh.ods.og_tbl_team",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2653,19 +2690,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 12
+      "observed_rows": 12,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_typeworks",
+      "name": "ods.og_tbl_typeworks",
       "class": "exact_existing_mirror",
       "description": "Виды работ",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_typeworks",
-      "source_sql_fqn": "dlh.ods.sng_tbl_typeworks",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_typeworks",
+      "source_sql_fqn": "dlh.ods.og_tbl_typeworks",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2691,19 +2729,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 8
+      "observed_rows": 8,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_well",
+      "name": "ods.og_tbl_well",
       "class": "exact_existing_mirror",
       "description": "Скважины",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_well",
-      "source_sql_fqn": "dlh.ods.sng_tbl_well",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_well",
+      "source_sql_fqn": "dlh.ods.og_tbl_well",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2753,19 +2792,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 200
+      "observed_rows": 200,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_well_incident",
+      "name": "ods.og_tbl_well_incident",
       "class": "exact_existing_mirror",
       "description": "Инциденты на скважинах (HSE)",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_well_incident",
-      "source_sql_fqn": "dlh.ods.sng_tbl_well_incident",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_well_incident",
+      "source_sql_fqn": "dlh.ods.og_tbl_well_incident",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2815,19 +2855,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 800
+      "observed_rows": 800,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_tbl_workrecord",
+      "name": "ods.og_tbl_workrecord",
       "class": "exact_existing_mirror",
       "description": "Записи работ",
-      "source_fqn": "dlh_trino.dlh.ods.sng_tbl_workrecord",
-      "source_sql_fqn": "dlh.ods.sng_tbl_workrecord",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_tbl_workrecord",
+      "source_sql_fqn": "dlh.ods.og_tbl_workrecord",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2893,19 +2934,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 11970
+      "observed_rows": 11970,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_ws_user",
+      "name": "ods.og_ws_user",
       "class": "exact_existing_mirror",
       "description": "Пользователи системы",
-      "source_fqn": "dlh_trino.dlh.ods.sng_ws_user",
-      "source_sql_fqn": "dlh.ods.sng_ws_user",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_ws_user",
+      "source_sql_fqn": "dlh.ods.og_ws_user",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "ws_user_id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -2971,19 +3013,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 150
+      "observed_rows": 150,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_zcbap_infsys",
+      "name": "ods.og_zcbap_infsys",
       "class": "exact_existing_mirror",
       "description": "Информационные системы",
-      "source_fqn": "dlh_trino.dlh.ods.sng_zcbap_infsys",
-      "source_sql_fqn": "dlh.ods.sng_zcbap_infsys",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_zcbap_infsys",
+      "source_sql_fqn": "dlh.ods.og_zcbap_infsys",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "id"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -3033,19 +3076,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 18
+      "observed_rows": 18,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_zgr_it",
+      "name": "ods.og_zgr_it",
       "class": "exact_existing_mirror",
       "description": "Группы ИТ",
-      "source_fqn": "dlh_trino.dlh.ods.sng_zgr_it",
-      "source_sql_fqn": "dlh.ods.sng_zgr_it",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_zgr_it",
+      "source_sql_fqn": "dlh.ods.og_zgr_it",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "kod_gr"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -3087,19 +3131,20 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 10
+      "observed_rows": 10,
+      "row_count_status": "observed_validated_instance"
     },
     {
-      "name": "ods.sng_znapr",
+      "name": "ods.og_znapr",
       "class": "exact_existing_mirror",
       "description": "Направления деятельности",
-      "source_fqn": "dlh_trino.dlh.ods.sng_znapr",
-      "source_sql_fqn": "dlh.ods.sng_znapr",
-      "grain": "Existing source grain; candidate first-column key requires full extraction validation",
+      "source_fqn": "dlh_trino.dlh.ods.og_znapr",
+      "source_sql_fqn": "dlh.ods.og_znapr",
+      "grain": "Existing source grain; candidate first-column key checked unique and non-null on authorized snapshot",
       "business_key_candidate": [
         "kod_napr"
       ],
-      "key_status": "not_declared_in_catalog; validate uniqueness/nulls before enforcement",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "storage": "heap",
       "distribution": {
         "kind": "hash",
@@ -3133,7 +3178,8 @@
           "unit_status": null
         }
       ],
-      "observed_rows": 8
+      "observed_rows": 8,
+      "row_count_status": "observed_validated_instance"
     },
     {
       "name": "ref.unit",
@@ -3143,15 +3189,14 @@
       "logical_key": [
         "unit_code"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 12,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "unit_code",
@@ -3184,15 +3229,14 @@
       "logical_key": [
         "business_date"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 365,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "business_date",
@@ -3240,15 +3284,14 @@
       "logical_key": [
         "product_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 3,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "product_id",
@@ -3286,15 +3329,14 @@
       "logical_key": [
         "repair_type_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 6,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "repair_type_id",
@@ -3327,15 +3369,14 @@
       "logical_key": [
         "reason_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 6,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "reason_id",
@@ -3368,15 +3409,14 @@
       "logical_key": [
         "sensor_type_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 4,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "sensor_type_id",
@@ -3414,15 +3454,14 @@
       "logical_key": [
         "tariff_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 4,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "tariff_id",
@@ -3460,15 +3499,14 @@
       "logical_key": [
         "spec_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 6,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "spec_id",
@@ -3521,15 +3559,14 @@
       "logical_key": [
         "ingest_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
         "kind": "random",
         "columns": []
       },
-      "planned_rows": 1752000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "ingest_id",
@@ -3572,15 +3609,14 @@
       "logical_key": [
         "ingest_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
         "kind": "random",
         "columns": []
       },
-      "planned_rows": 2400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "ingest_id",
@@ -3623,15 +3659,14 @@
       "logical_key": [
         "ingest_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
         "kind": "random",
         "columns": []
       },
-      "planned_rows": 7200,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "ingest_id",
@@ -3674,15 +3709,14 @@
       "logical_key": [
         "ingest_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
         "kind": "random",
         "columns": []
       },
-      "planned_rows": 240,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "ingest_id",
@@ -3726,7 +3760,7 @@
         "well_id",
         "well_sk"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -3735,8 +3769,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_sk",
@@ -3789,7 +3822,7 @@
       "logical_key": [
         "equipment_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -3798,8 +3831,7 @@
           "equipment_id"
         ]
       },
-      "planned_rows": 400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "equipment_id",
@@ -3837,7 +3869,7 @@
       "logical_key": [
         "contract_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -3846,8 +3878,7 @@
           "contract_id"
         ]
       },
-      "planned_rows": 20,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "contract_id",
@@ -3892,7 +3923,7 @@
         "equipment_id",
         "valid_from"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -3901,8 +3932,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -3936,7 +3966,7 @@
         "well_id",
         "business_date"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "aoco_zlib_month",
       "distribution": {
@@ -3945,8 +3975,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 73000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4010,7 +4039,7 @@
         "well_id",
         "event_ts"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "aoco_zlib_month",
       "distribution": {
@@ -4019,8 +4048,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 1752000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4079,7 +4107,7 @@
         "well_id",
         "downtime_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4088,8 +4116,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 800,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "downtime_id",
@@ -4143,7 +4170,7 @@
         "well_id",
         "repair_order_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4152,8 +4179,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 800,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "repair_order_id",
@@ -4217,7 +4243,7 @@
         "well_id",
         "operation_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
@@ -4226,8 +4252,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 2400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "operation_id",
@@ -4281,7 +4306,7 @@
         "well_id",
         "business_date"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "aoco_zlib_month",
       "distribution": {
@@ -4290,8 +4315,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 73000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4335,7 +4359,7 @@
         "well_id",
         "sample_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4344,8 +4368,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 2400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "sample_id",
@@ -4390,7 +4413,7 @@
         "sample_id",
         "analyte"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
@@ -4399,8 +4422,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 7200,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4455,7 +4477,7 @@
         "month_start",
         "scenario"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4464,8 +4486,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 4800,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4514,7 +4535,7 @@
         "locality_id",
         "shipment_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4523,8 +4544,7 @@
           "locality_id"
         ]
       },
-      "planned_rows": 240,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "shipment_id",
@@ -4574,7 +4594,7 @@
         "shipment_id",
         "line_no"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "ao_row_zlib",
       "distribution": {
@@ -4583,8 +4603,7 @@
           "locality_id"
         ]
       },
-      "planned_rows": 240,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "locality_id",
@@ -4638,7 +4657,7 @@
         "well_id",
         "business_date"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "aoco_zlib_month",
       "distribution": {
@@ -4647,8 +4666,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 73000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4712,7 +4730,7 @@
         "locality_id",
         "month_start"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4721,8 +4739,7 @@
           "locality_id"
         ]
       },
-      "planned_rows": 60,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "locality_id",
@@ -4776,7 +4793,7 @@
         "well_id",
         "month_start"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4785,8 +4802,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 2400,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4835,7 +4851,7 @@
         "well_id",
         "business_date"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "logical_candidate_checked_on_validated_snapshot_not_enforced",
       "source_fqn": null,
       "storage": "aoco_zlib_month",
       "distribution": {
@@ -4844,8 +4860,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 73000,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "well_id",
@@ -4890,7 +4905,7 @@
         "sample_date",
         "analyte"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4899,8 +4914,7 @@
           "locality_id"
         ]
       },
-      "planned_rows": 180,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "locality_id",
@@ -4950,7 +4964,7 @@
         "month_start",
         "product_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -4959,8 +4973,7 @@
           "locality_id"
         ]
       },
-      "planned_rows": 60,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "locality_id",
@@ -5019,7 +5032,7 @@
         "servicecall_id",
         "well_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -5028,8 +5041,7 @@
           "well_id"
         ]
       },
-      "planned_rows": 200,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "servicecall_id",
@@ -5077,7 +5089,7 @@
       "logical_key": [
         "batch_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -5086,8 +5098,7 @@
           "batch_id"
         ]
       },
-      "planned_rows": 1,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "batch_id",
@@ -5135,7 +5146,7 @@
       "logical_key": [
         "run_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -5144,8 +5155,7 @@
           "run_id"
         ]
       },
-      "planned_rows": 20,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "run_id",
@@ -5198,7 +5208,7 @@
       "logical_key": [
         "result_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -5207,8 +5217,7 @@
           "result_id"
         ]
       },
-      "planned_rows": 250,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "result_id",
@@ -5256,15 +5265,14 @@
       "logical_key": [
         "asset_name"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
         "kind": "replicated",
         "columns": []
       },
-      "planned_rows": 46,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "asset_name",
@@ -5307,7 +5315,7 @@
       "logical_key": [
         "release_id"
       ],
-      "key_status": "planned; enforce only supported GP heap key including distribution columns",
+      "key_status": "enforced_gp_primary_key",
       "source_fqn": null,
       "storage": "heap",
       "distribution": {
@@ -5316,8 +5324,7 @@
           "release_id"
         ]
       },
-      "planned_rows": 1,
-      "row_count_status": "target; derived field counts depend on actual locality dimension",
+      "row_count_status": "observed_validated_instance",
       "columns": [
         {
           "name": "release_id",
@@ -5355,11 +5362,11 @@
   ],
   "relations": [
     {
-      "source": "ods.sng_tbl_production_volume",
+      "source": "ods.og_tbl_production_volume",
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5367,11 +5374,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_well",
+      "source": "ods.og_tbl_well",
       "columns": [
         "fieldid"
       ],
-      "target": "ods.sng_tbl_locality",
+      "target": "ods.og_tbl_locality",
       "target_columns": [
         "id"
       ],
@@ -5379,11 +5386,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_equipment_repair",
+      "source": "ods.og_tbl_equipment_repair",
       "columns": [
         "wellid"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5391,11 +5398,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_well_incident",
+      "source": "ods.og_tbl_well_incident",
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5403,11 +5410,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_workrecord",
+      "source": "ods.og_tbl_workrecord",
       "columns": [
         "servicecall"
       ],
-      "target": "ods.sng_tbl_servicecall",
+      "target": "ods.og_tbl_servicecall",
       "target_columns": [
         "id"
       ],
@@ -5415,11 +5422,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_workrecord",
+      "source": "ods.og_tbl_workrecord",
       "columns": [
         "employee"
       ],
-      "target": "ods.sng_tbl_employee",
+      "target": "ods.og_tbl_employee",
       "target_columns": [
         "id"
       ],
@@ -5427,11 +5434,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_servicecall",
+      "source": "ods.og_tbl_servicecall",
       "columns": [
         "clientou_id"
       ],
-      "target": "ods.sng_tbl_ou",
+      "target": "ods.og_tbl_ou",
       "target_columns": [
         "id"
       ],
@@ -5439,11 +5446,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_servicecall",
+      "source": "ods.og_tbl_servicecall",
       "columns": [
         "responsibleemployee_id"
       ],
-      "target": "ods.sng_tbl_employee",
+      "target": "ods.og_tbl_employee",
       "target_columns": [
         "id"
       ],
@@ -5451,11 +5458,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_servicecall",
+      "source": "ods.og_tbl_servicecall",
       "columns": [
         "responsibleteam_id"
       ],
-      "target": "ods.sng_tbl_team",
+      "target": "ods.og_tbl_team",
       "target_columns": [
         "id"
       ],
@@ -5463,11 +5470,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_servicecall",
+      "source": "ods.og_tbl_servicecall",
       "columns": [
         "priority_id"
       ],
-      "target": "ods.sng_tbl_priority",
+      "target": "ods.og_tbl_priority",
       "target_columns": [
         "id"
       ],
@@ -5475,11 +5482,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_servicecall",
+      "source": "ods.og_tbl_servicecall",
       "columns": [
         "service_id"
       ],
-      "target": "ods.sng_tbl_slmservice",
+      "target": "ods.og_tbl_slmservice",
       "target_columns": [
         "id"
       ],
@@ -5487,11 +5494,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_tbl_comment",
+      "source": "ods.og_tbl_comment",
       "columns": [
         "servicecall_id"
       ],
-      "target": "ods.sng_tbl_servicecall",
+      "target": "ods.og_tbl_servicecall",
       "target_columns": [
         "id"
       ],
@@ -5499,11 +5506,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_task",
+      "source": "ods.og_task",
       "columns": [
         "task_project_id"
       ],
-      "target": "ods.sng_project",
+      "target": "ods.og_project",
       "target_columns": [
         "id"
       ],
@@ -5511,11 +5518,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_task",
+      "source": "ods.og_task",
       "columns": [
         "assigned_ws_user_id"
       ],
-      "target": "ods.sng_ws_user",
+      "target": "ods.og_ws_user",
       "target_columns": [
         "ws_user_id"
       ],
@@ -5523,11 +5530,11 @@
       "native_fk_enforcement": false
     },
     {
-      "source": "ods.sng_pa0001",
+      "source": "ods.og_pa0001",
       "columns": [
         "pernr"
       ],
-      "target": "ods.sng_pa0002",
+      "target": "ods.og_pa0002",
       "target_columns": [
         "pernr"
       ],
@@ -5539,7 +5546,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5551,7 +5558,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5563,7 +5570,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5575,7 +5582,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5587,7 +5594,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5599,7 +5606,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5611,7 +5618,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5623,7 +5630,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5635,7 +5642,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5647,7 +5654,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5659,7 +5666,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5671,7 +5678,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5683,7 +5690,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5695,7 +5702,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5707,7 +5714,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5719,7 +5726,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5731,7 +5738,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5743,7 +5750,7 @@
       "columns": [
         "well_id"
       ],
-      "target": "ods.sng_tbl_well",
+      "target": "ods.og_tbl_well",
       "target_columns": [
         "id"
       ],
@@ -5755,7 +5762,7 @@
       "columns": [
         "source_month_id"
       ],
-      "target": "ods.sng_tbl_production_volume",
+      "target": "ods.og_tbl_production_volume",
       "target_columns": [
         "id"
       ],
@@ -5844,6 +5851,6 @@
     "negative_gates": 12,
     "exact_mirrors": 46,
     "idempotence_difference_rows": 0,
-    "target_migration": "NOT_EXECUTED"
+    "metadata_rename": "verified_no_row_changes"
   }
 }
