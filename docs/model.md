@@ -23,7 +23,7 @@
 | `ods.og_pa0001` | 150 | [SQL](../ddl/tables/ods/og_pa0001.sql) |
 | `ods.og_pa0002` | 150 | [SQL](../ddl/tables/ods/og_pa0002.sql) |
 | `ods.og_project` | 40 | [SQL](../ddl/tables/ods/og_project.sql) |
-| `ods.og_t500 p` | 10 | [SQL](../ddl/tables/ods/og_t500 p.sql) |
+| `ods.og_t500p` | 10 | [SQL](../ddl/tables/ods/og_t500p.sql) |
 | `ods.og_task` | 800 | [SQL](../ddl/tables/ods/og_task.sql) |
 | `ods.og_tbl_changerequest` | 200 | [SQL](../ddl/tables/ods/og_tbl_changerequest.sql) |
 | `ods.og_tbl_cmdb` | 200 | [SQL](../ddl/tables/ods/og_tbl_cmdb.sql) |
