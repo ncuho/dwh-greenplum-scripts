@@ -1,0 +1,5272 @@
+[
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "source_system",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "source_cut_ref",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "seed",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "started_at",
+    "ordinal": 5,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "finished_at",
+    "ordinal": 6,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "load_batch",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "release_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "release_state",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "artifact_ref",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "created_at",
+    "ordinal": 5,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "publication_release",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "validation_passed",
+    "ordinal": 6,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "result_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "asset_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "check_name",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "error_count",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "quality_result",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "checked_at",
+    "ordinal": 7,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "asset_name",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": false
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "source_fqn",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "snapshot_id",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "row_count",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "schema_sha256",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "source_asset",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "captured_at",
+    "ordinal": 6,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "attempt",
+    "ordinal": 4,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "started_at",
+    "ordinal": 5,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "finished_at",
+    "ordinal": 6,
+    "gp_type": "timestamp with time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ctl",
+    "table_name": "task_run",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "output_rows",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "bridge_equipment_well_history",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "bridge_equipment_well_history",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "equipment_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "bridge_equipment_well_history",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_from",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "bridge_equipment_well_history",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_to",
+    "ordinal": 4,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "contract_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "contractor_company_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_from",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_to",
+    "ordinal": 4,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "hour_rate_rub",
+    "ordinal": 5,
+    "gp_type": "numeric(14,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_contract",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "currency_code",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_equipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "equipment_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_equipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "equipment_code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_equipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "equipment_type",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_equipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "commissioned_on",
+    "ordinal": 4,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_equipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "rated_kw",
+    "ordinal": 5,
+    "gp_type": "numeric(12,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_sk",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_from",
+    "ordinal": 4,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_to",
+    "ordinal": 5,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "pump_mode",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "nominal_load_kw",
+    "ordinal": 7,
+    "gp_type": "numeric(12,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "dim_well_scd2",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "is_current",
+    "ordinal": 8,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "downtime_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "starts_at",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ends_at",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "reason_id",
+    "ordinal": 5,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "repair_order_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "planned",
+    "ordinal": 7,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_downtime_interval",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "business_date",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "tariff_id",
+    "ordinal": 3,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "energy_kwh",
+    "ordinal": 4,
+    "gp_type": "numeric(20,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "energy_cost_rub",
+    "ordinal": 5,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_energy_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "sample_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "sampled_at",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_id",
+    "ordinal": 4,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "laboratory_code",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_lab_sample",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "business_date",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_sk",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "source_month_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "oil_legacy_quantity",
+    "ordinal": 5,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "gas_legacy_quantity",
+    "ordinal": 6,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "water_legacy_quantity",
+    "ordinal": 7,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "operating_hours",
+    "ordinal": 8,
+    "gp_type": "numeric(8,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "contract_code",
+    "ordinal": 9,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "batch_id",
+    "ordinal": 10,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_start",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "scenario",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "oil_plan_legacy",
+    "ordinal": 4,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "gas_plan_legacy",
+    "ordinal": 5,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "energy_budget_kwh",
+    "ordinal": 6,
+    "gp_type": "numeric(20,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_production_plan_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "sample_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "analyte",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "measured_value",
+    "ordinal": 4,
+    "gp_type": "numeric(18,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "unit_code",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "spec_id",
+    "ordinal": 6,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "is_compliant",
+    "ordinal": 7,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_quality_measurement",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "operation_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "repair_order_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "well_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "operation_code",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "labor_hours",
+    "ordinal": 5,
+    "gp_type": "numeric(12,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "material_cost_rub",
+    "ordinal": 6,
+    "gp_type": "numeric(18,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "labor_cost_rub",
+    "ordinal": 7,
+    "gp_type": "numeric(18,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_operation",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "repair_order_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "equipment_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "contract_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "repair_type_id",
+    "ordinal": 5,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "opened_at",
+    "ordinal": 6,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "closed_at",
+    "ordinal": 7,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "status",
+    "ordinal": 8,
+    "gp_type": "ref.work_state",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "source_repair_id",
+    "ordinal": 9,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_repair_order",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 10,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "shipment_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "dispatched_at",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "buyer_contract_code",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "transport_mode",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "document_status",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "batch_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "locality_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "shipment_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "line_no",
+    "ordinal": 3,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "product_id",
+    "ordinal": 4,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "quantity_m3",
+    "ordinal": 5,
+    "gp_type": "numeric(20,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "density_kg_m3",
+    "ordinal": 6,
+    "gp_type": "numeric(12,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "amount_rub",
+    "ordinal": 7,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_shipment_item",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "event_ts",
+    "ordinal": 2,
+    "gp_type": "timestamp without time zone",
+    "nullable": false
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_sk",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "pressure_kpa",
+    "ordinal": 4,
+    "gp_type": "numeric(12,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "temperature_c",
+    "ordinal": 5,
+    "gp_type": "numeric(8,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "vibration_mm_s",
+    "ordinal": 6,
+    "gp_type": "numeric(8,4)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "water_cut_pct",
+    "ordinal": 7,
+    "gp_type": "numeric(7,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "quality_flag",
+    "ordinal": 8,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dds",
+    "table_name": "fact_telemetry_hour",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "batch_id",
+    "ordinal": 9,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "business_date",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "energy_kwh",
+    "ordinal": 3,
+    "gp_type": "numeric(20,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "oil_legacy_quantity",
+    "ordinal": 4,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "kwh_per_legacy_unit",
+    "ordinal": 5,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "energy_intensity_day",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "run_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_start",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "oil_actual_legacy",
+    "ordinal": 3,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "oil_plan_legacy",
+    "ordinal": 4,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "plan_attainment_pct",
+    "ordinal": 5,
+    "gp_type": "numeric(12,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "energy_cost_rub",
+    "ordinal": 6,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "downtime_hours",
+    "ordinal": 7,
+    "gp_type": "numeric(18,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "field_month_performance",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "sample_date",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "analyte",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "sample_count",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "failed_count",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "compliance_pct",
+    "ordinal": 6,
+    "gp_type": "numeric(10,4)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "quality_compliance_day",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_start",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "repair_count",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "labor_hours",
+    "ordinal": 4,
+    "gp_type": "numeric(18,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "labor_cost_rub",
+    "ordinal": 5,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "material_cost_rub",
+    "ordinal": 6,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "repair_cost_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "servicecall_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "linked_date",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "association_basis",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "is_causal_evidence",
+    "ordinal": 5,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "downtime_hours",
+    "ordinal": 6,
+    "gp_type": "numeric(10,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "service_production_impact",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_start",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_id",
+    "ordinal": 3,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "opening_m3",
+    "ordinal": 4,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "received_synthetic_m3",
+    "ordinal": 5,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "dispatched_m3",
+    "ordinal": 6,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "closing_m3",
+    "ordinal": 7,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "revenue_rub",
+    "ordinal": 8,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "shipment_balance_month",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "run_id",
+    "ordinal": 9,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "well_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "business_date",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "locality_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "oil_legacy_quantity",
+    "ordinal": 4,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "plan_oil_legacy",
+    "ordinal": 5,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "lost_quantity_proxy",
+    "ordinal": 6,
+    "gp_type": "numeric(24,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "downtime_hours",
+    "ordinal": 7,
+    "gp_type": "numeric(8,3)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "energy_kwh",
+    "ordinal": 8,
+    "gp_type": "numeric(20,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "energy_cost_rub",
+    "ordinal": 9,
+    "gp_type": "numeric(20,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "dm",
+    "table_name": "well_day_balance",
+    "relkind": "r",
+    "relstorage": "c",
+    "column_name": "run_id",
+    "ordinal": 10,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "bo_werks_text",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "zkz_werks",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "bo_werks_text",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "werks_name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "bo_werks_text",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "werks_text",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "year",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "incident_count",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "severity_max",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_one",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_one",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "incident_type",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_one",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "severity",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_one",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "timebegin",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_hse_one",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_incidents",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "incident_count",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_project_status",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_project_status",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "director_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_project_status",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "status",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_project_status",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "project_count",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_project_status",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "total_cost",
+    "ordinal": 5,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_state",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "with_fire",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "with_explode",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_more",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "injuries",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "locality_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "year",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "total_oil",
+    "ordinal": 6,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "dm_well_production",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "total_gas",
+    "ordinal": 7,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_bs_area",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "bs_area",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_bs_area",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "direction",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "clientou_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "year",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "cnt",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "avg_resolution_min",
+    "ordinal": 6,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "pct_usedkb",
+    "ordinal": 7,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "pct_first_time",
+    "ordinal": 8,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "avg_answer",
+    "ordinal": 9,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "mart",
+    "table_name": "sng_report",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "total_time_hours",
+    "ordinal": 10,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "assigment_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "assigment_name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "work_type",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "assigment_state",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_asu_work_assignment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "executor_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "partner",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "type",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name_org1",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name_last",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name_first",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "namemiddle",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ind_sector",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "location_1",
+    "ordinal": 8,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_but000",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "found_dat",
+    "ordinal": 9,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_activity_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_activity_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "category",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_activity_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "priority",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_activity_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "partner",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_activity_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "completion",
+    "ordinal": 5,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "object_id",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "process_type",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "posting_date",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "description",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_h",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "partner",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_i",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_i",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ordered_prod",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_i",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "header",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_i",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "number_int",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_orderadm_i",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "cost",
+    "ordinal": 5,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_partner",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_partner",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "partner_fct",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_partner",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "partner_no",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_crmd_partner",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "order_id",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0001",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "pernr",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0001",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "bukrs",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0001",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "werks",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0001",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "orgeh",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0001",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "stell",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "pernr",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "nachn",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "vorna",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "midnm",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "gesch",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "gbdat",
+    "ordinal": 6,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_pa0002",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "natio",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "status_id",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "director_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "date_start_plan",
+    "ordinal": 6,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "date_end_plan",
+    "ordinal": 7,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_project",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "object_cost",
+    "ordinal": 8,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_t500p",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "persa",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_t500p",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "molga",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_t500p",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name1",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_desc",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_hours",
+    "ordinal": 4,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_project_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_status_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "assigned_ws_user_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_priority_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_target_finish",
+    "ordinal": 9,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_task",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "task_completed",
+    "ordinal": 10,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleemployee_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleteam_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "impact",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "category",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_changerequest",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 8,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ci_hostname",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ci_ip",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleteam_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_cmdb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ci_bservice",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_comment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_comment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "servicecall_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_comment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "author_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_comment",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "text",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_company",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_company",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "dbid",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_company",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "fullname",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_company",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "company_type",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_directory",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_directory",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_directory",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_directory",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "type",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "first_name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "last_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "middle_name",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "fio",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "login",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "email",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "mobile_phone",
+    "ordinal": 8,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "employee_employeenumber",
+    "ordinal": 9,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "post",
+    "ordinal": 10,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "parent_id",
+    "ordinal": 11,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_employee",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "date_of_birth",
+    "ordinal": 12,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "factbegindate",
+    "ordinal": 2,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "factenddate",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "wellid",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "contractor_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_equipment_repair",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "cost",
+    "ordinal": 6,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleteam_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "author_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "viewcounter",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_kb",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "kbsection_basedcateg",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_locality",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_locality",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "dbid",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_locality",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_locality",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "region",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_mark",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_mark",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_mark",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "color",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_mark",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "titleshort",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ou_code",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ou_customer",
+    "ordinal": 5,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_ou",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "parent_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_priority",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_priority",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_priority",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "priority_level",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "prod_date",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "oil_volume",
+    "ordinal": 4,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "gas_volume",
+    "ordinal": 5,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_production_volume",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "water_volume",
+    "ordinal": 6,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "request_date",
+    "ordinal": 2,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "registration_date",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "priority_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "service_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "clientou_id",
+    "ordinal": 7,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "clientemployee_id",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleteam_id",
+    "ordinal": 9,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleemployee_id",
+    "ordinal": 10,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "resolutiontime",
+    "ordinal": 11,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "datedecision",
+    "ordinal": 12,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "usedkb",
+    "ordinal": 13,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "cnt_sol",
+    "ordinal": 14,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "answ_avg",
+    "ordinal": 15,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "call_infsystem",
+    "ordinal": 16,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "impact",
+    "ordinal": 17,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecall",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "urgency",
+    "ordinal": 18,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecateg",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_servicecateg",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state_",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "responsibleteam_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "customer_ou",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "classification",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "rating",
+    "ordinal": 7,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_slmservice",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "informsystem",
+    "ordinal": 8,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_team",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_team",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_team",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "teamlevel",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_team",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "leader_id",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_team",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "headou_id",
+    "ordinal": 5,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_typeworks",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_typeworks",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "fieldid",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "title",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "depth",
+    "ordinal": 4,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well_incident",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well_incident",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "well_id",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well_incident",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "timebegin",
+    "ordinal": 3,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well_incident",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "incident_type",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_well_incident",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "severity",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "servicecall",
+    "ordinal": 2,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "employee",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "workrecordkb_typeworks",
+    "ordinal": 4,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "time",
+    "ordinal": 5,
+    "gp_type": "double precision",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "client_ou",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_tbl_workrecord",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "state",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "ws_user_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "auth_user",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "firstname",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "lastname",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "email",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "phone_number",
+    "ordinal": 6,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_ws_user",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "job_title",
+    "ordinal": 7,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zcbap_infsys",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zcbap_infsys",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zcbap_infsys",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "short_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zcbap_infsys",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "teh_name",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zcbap_infsys",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "flag_cap",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zgr_it",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "kod_gr",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zgr_it",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zgr_it",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name_eng",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_zgr_it",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "gr_pp",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_znapr",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "kod_napr",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_znapr",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ods",
+    "table_name": "sng_znapr",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "name_eng",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "business_date",
+    "ordinal": 1,
+    "gp_type": "date",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "year_no",
+    "ordinal": 2,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_no",
+    "ordinal": 3,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "month_start",
+    "ordinal": 4,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "day_of_month",
+    "ordinal": 5,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "days_in_month",
+    "ordinal": 6,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "calendar",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "is_weekend",
+    "ordinal": 7,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "downtime_reason",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "reason_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "downtime_reason",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "downtime_reason",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "planned",
+    "ordinal": 3,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "downtime_reason",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "description",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "energy_tariff",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "tariff_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "energy_tariff",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_from",
+    "ordinal": 2,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "energy_tariff",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_to",
+    "ordinal": 3,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "energy_tariff",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "rub_per_kwh",
+    "ordinal": 4,
+    "gp_type": "ref.tariff_rate",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "energy_tariff",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "currency_code",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "product",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "product",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "product",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_name",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "product",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "unit_code",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "product",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "contract_scope",
+    "ordinal": 5,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "spec_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "product_id",
+    "ordinal": 2,
+    "gp_type": "integer",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "analyte",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "unit_code",
+    "ordinal": 4,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "min_value",
+    "ordinal": 5,
+    "gp_type": "numeric(18,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "max_value",
+    "ordinal": 6,
+    "gp_type": "numeric(18,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_from",
+    "ordinal": 7,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "quality_spec",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "valid_to",
+    "ordinal": 8,
+    "gp_type": "date",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "repair_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "repair_type_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "repair_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "repair_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "description",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "repair_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "standard_hours",
+    "ordinal": 4,
+    "gp_type": "numeric(10,2)",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "sensor_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "sensor_type_id",
+    "ordinal": 1,
+    "gp_type": "integer",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "sensor_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "code",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "sensor_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "unit_code",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "sensor_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "min_valid",
+    "ordinal": 4,
+    "gp_type": "numeric(18,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "sensor_type",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "max_valid",
+    "ordinal": 5,
+    "gp_type": "numeric(18,6)",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "unit",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "unit_code",
+    "ordinal": 1,
+    "gp_type": "text",
+    "nullable": false
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "unit",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "symbol",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "unit",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "description",
+    "ordinal": 3,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "ref",
+    "table_name": "unit",
+    "relkind": "r",
+    "relstorage": "h",
+    "column_name": "physical",
+    "ordinal": 4,
+    "gp_type": "boolean",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "ingest_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "source_event_key",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "well_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "event_ts",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "payload",
+    "ordinal": 5,
+    "gp_type": "json",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "lab_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "ingest_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "source_event_key",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "well_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "event_ts",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "payload",
+    "ordinal": 5,
+    "gp_type": "json",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "measurement_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "ingest_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "source_event_key",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "well_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "event_ts",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "payload",
+    "ordinal": 5,
+    "gp_type": "json",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "repair_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "ingest_id",
+    "ordinal": 1,
+    "gp_type": "bigint",
+    "nullable": false
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "source_event_key",
+    "ordinal": 2,
+    "gp_type": "text",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "locality_id",
+    "ordinal": 3,
+    "gp_type": "bigint",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "event_ts",
+    "ordinal": 4,
+    "gp_type": "timestamp without time zone",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "payload",
+    "ordinal": 5,
+    "gp_type": "json",
+    "nullable": true
+  },
+  {
+    "schema_name": "stg",
+    "table_name": "shipment_event",
+    "relkind": "r",
+    "relstorage": "a",
+    "column_name": "batch_id",
+    "ordinal": 6,
+    "gp_type": "bigint",
+    "nullable": true
+  }
+]

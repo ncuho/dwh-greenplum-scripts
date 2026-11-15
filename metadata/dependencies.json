@@ -1,0 +1,91 @@
+[
+  {
+    "target": "dm.well_day_balance",
+    "sources": [
+      "dds.fact_production_day",
+      "ods.sng_tbl_well",
+      "ref.calendar",
+      "dds.fact_production_plan_month",
+      "dds.fact_energy_day"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Direct source relations in executed SQL; not inferred from FK"
+  },
+  {
+    "target": "dm.field_month_performance",
+    "sources": [
+      "dds.fact_production_day",
+      "ods.sng_tbl_well",
+      "ref.calendar",
+      "dds.fact_production_plan_month",
+      "dds.fact_energy_day"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Executed SQL reads TEMP work_well_balance built directly from these five relations; it does not read dm.well_day_balance."
+  },
+  {
+    "target": "dm.repair_cost_month",
+    "sources": [
+      "dds.fact_production_plan_month",
+      "dds.fact_repair_order",
+      "dds.fact_repair_operation"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Direct source relations in executed SQL; not inferred from FK"
+  },
+  {
+    "target": "dm.energy_intensity_day",
+    "sources": [
+      "dds.fact_production_day",
+      "ods.sng_tbl_well",
+      "ref.calendar",
+      "dds.fact_production_plan_month",
+      "dds.fact_energy_day"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Executed SQL reads TEMP work_well_balance built directly from these five relations; it does not read dm.well_day_balance."
+  },
+  {
+    "target": "dm.quality_compliance_day",
+    "sources": [
+      "dds.fact_quality_measurement",
+      "dds.fact_lab_sample",
+      "ods.sng_tbl_well"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Direct source relations in executed SQL; not inferred from FK"
+  },
+  {
+    "target": "dm.shipment_balance_month",
+    "sources": [
+      "dds.fact_shipment",
+      "dds.fact_shipment_item"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Direct source relations in executed SQL; not inferred from FK"
+  },
+  {
+    "target": "dm.service_production_impact",
+    "sources": [
+      "ods.sng_tbl_servicecall",
+      "ods.sng_tbl_well",
+      "dds.fact_production_day"
+    ],
+    "kind": "computed_data_lineage",
+    "transformation": "etl.rebuild_marts(bigint,bigint)",
+    "code_ref": "sql/20_logic.sql",
+    "note": "Direct source relations in executed SQL; not inferred from FK"
+  }
+]
