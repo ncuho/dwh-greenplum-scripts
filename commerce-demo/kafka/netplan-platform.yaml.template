@@ -1,0 +1,13 @@
+# Fill with the MAC and IP allocated to the dedicated Neutron port.
+# Keep the primary interface, default route and its DNS configuration intact.
+network:
+  version: 2
+  ethernets:
+    dp-platform:
+      match:
+        macaddress: "REPLACE_WITH_NEUTRON_PORT_MAC"
+      dhcp4: false
+      addresses: [REPLACE_WITH_NEUTRON_PORT_IP/24]
+      nameservers:
+        addresses: [10.0.2.3]
+        search: ["~mcs.local"]
