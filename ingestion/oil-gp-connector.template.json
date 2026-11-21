@@ -1,0 +1,15 @@
+{
+  "name": "webinar-oil-gp-ingest",
+  "initial_state": "PAUSED",
+  "config": {
+    "connector.class": "demo.oil.OilGreenplumSinkConnector",
+    "tasks.max": "1",
+    "topics": "oil.events.v1",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "gp.jdbc.url": "jdbc:postgresql://10.77.25.10:5432/og_dwh?sslmode=verify-full&sslrootcert=/etc/kafka-demo/gp-ca.crt",
+    "gp.user": "oil_kafka_ingest",
+    "gp.schema": "oil_stg",
+    "gp.password.file": "/etc/kafka-demo/oil-gp-ingest-password"
+  }
+}
