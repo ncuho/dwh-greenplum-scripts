@@ -1,0 +1,93 @@
+{
+  "id": 14,
+  "slice_name": "Показатели по месторождениям",
+  "viz_type": "table",
+  "datasource_id": 5,
+  "datasource_type": "table",
+  "params": {
+    "datasource": "5__table",
+    "granularity_sqla": "production_date",
+    "adhoc_filters": [],
+    "time_range": "No filter",
+    "viz_type": "table",
+    "query_mode": "aggregate",
+    "groupby": [
+      "field_name",
+      "region"
+    ],
+    "metrics": [
+      {
+        "expressionType": "SIMPLE",
+        "column": {
+          "column_name": "oil_tonnes",
+          "type": "NUMERIC",
+          "type_generic": 0
+        },
+        "aggregate": "SUM",
+        "label": "Добыча, т",
+        "sqlExpression": null,
+        "optionName": "metric_oil_tonnes"
+      },
+      {
+        "expressionType": "SIMPLE",
+        "column": {
+          "column_name": "downtime_hours",
+          "type": "NUMERIC",
+          "type_generic": 0
+        },
+        "aggregate": "SUM",
+        "label": "Часы простоев",
+        "sqlExpression": null,
+        "optionName": "metric_downtime_hours"
+      }
+    ],
+    "row_limit": 100,
+    "server_pagination": false,
+    "show_cell_bars": false
+  },
+  "query_context": {
+    "datasource": {
+      "id": 5,
+      "type": "table"
+    },
+    "queries": [
+      {
+        "metrics": [
+          {
+            "expressionType": "SIMPLE",
+            "column": {
+              "column_name": "oil_tonnes",
+              "type": "NUMERIC",
+              "type_generic": 0
+            },
+            "aggregate": "SUM",
+            "label": "Добыча, т",
+            "sqlExpression": null,
+            "optionName": "metric_oil_tonnes"
+          },
+          {
+            "expressionType": "SIMPLE",
+            "column": {
+              "column_name": "downtime_hours",
+              "type": "NUMERIC",
+              "type_generic": 0
+            },
+            "aggregate": "SUM",
+            "label": "Часы простоев",
+            "sqlExpression": null,
+            "optionName": "metric_downtime_hours"
+          }
+        ],
+        "columns": [
+          "field_name",
+          "region"
+        ],
+        "filters": [],
+        "row_limit": 1000,
+        "time_range": "No filter"
+      }
+    ],
+    "result_format": "json",
+    "result_type": "full"
+  }
+}

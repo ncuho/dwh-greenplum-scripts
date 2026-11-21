@@ -1,0 +1,230 @@
+{
+  "id": 4,
+  "dashboard_title": "Эффективность добычи и простои",
+  "slug": "oil-field-downtime",
+  "published": true,
+  "css": "div[class*=\"big_number\"] .header-line { font-size: 3rem !important; font-weight: 700; margin-bottom: 0 !important; }",
+  "position_json": {
+    "DASHBOARD_VERSION_KEY": "v2",
+    "ROOT_ID": {
+      "id": "ROOT_ID",
+      "type": "ROOT",
+      "children": [
+        "GRID_ID"
+      ]
+    },
+    "GRID_ID": {
+      "id": "GRID_ID",
+      "type": "GRID",
+      "children": [
+        "ROW-1",
+        "ROW-2",
+        "ROW-3"
+      ],
+      "parents": [
+        "ROOT_ID"
+      ]
+    },
+    "ROW-1": {
+      "id": "ROW-1",
+      "type": "ROW",
+      "children": [
+        "CHART-11",
+        "CHART-12"
+      ],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID"
+      ],
+      "meta": {
+        "background": "BACKGROUND_TRANSPARENT"
+      }
+    },
+    "ROW-2": {
+      "id": "ROW-2",
+      "type": "ROW",
+      "children": [
+        "CHART-13"
+      ],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID"
+      ],
+      "meta": {
+        "background": "BACKGROUND_TRANSPARENT"
+      }
+    },
+    "ROW-3": {
+      "id": "ROW-3",
+      "type": "ROW",
+      "children": [
+        "CHART-14"
+      ],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID"
+      ],
+      "meta": {
+        "background": "BACKGROUND_TRANSPARENT"
+      }
+    },
+    "CHART-11": {
+      "id": "CHART-11",
+      "type": "CHART",
+      "children": [],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID",
+        "ROW-1"
+      ],
+      "meta": {
+        "chartId": 11,
+        "sliceName": "Добыча, т",
+        "width": 6,
+        "height": 16
+      }
+    },
+    "CHART-12": {
+      "id": "CHART-12",
+      "type": "CHART",
+      "children": [],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID",
+        "ROW-1"
+      ],
+      "meta": {
+        "chartId": 12,
+        "sliceName": "Часы простоев",
+        "width": 6,
+        "height": 16
+      }
+    },
+    "CHART-13": {
+      "id": "CHART-13",
+      "type": "CHART",
+      "children": [],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID",
+        "ROW-2"
+      ],
+      "meta": {
+        "chartId": 13,
+        "sliceName": "Динамика простоев по месторождениям",
+        "width": 12,
+        "height": 32
+      }
+    },
+    "CHART-14": {
+      "id": "CHART-14",
+      "type": "CHART",
+      "children": [],
+      "parents": [
+        "ROOT_ID",
+        "GRID_ID",
+        "ROW-3"
+      ],
+      "meta": {
+        "chartId": 14,
+        "sliceName": "Показатели по месторождениям",
+        "width": 12,
+        "height": 32
+      }
+    }
+  },
+  "json_metadata": {
+    "color_scheme": "supersetColors",
+    "refresh_frequency": 0,
+    "timed_refresh_immune_slices": [],
+    "expanded_slices": {},
+    "label_colors": {},
+    "shared_label_colors": [],
+    "map_label_colors": {},
+    "color_scheme_domain": [],
+    "cross_filters_enabled": true,
+    "native_filter_configuration": [
+      {
+        "id": "NATIVE_FILTER-3d8dd48c-23f6-4645-8d6f-aeffad00196c",
+        "name": "Регион",
+        "filterType": "filter_select",
+        "type": "NATIVE_FILTER",
+        "targets": [
+          {
+            "datasetId": 5,
+            "column": {
+              "name": "region"
+            }
+          }
+        ],
+        "controlValues": {
+          "enableEmptyFilter": false,
+          "multiSelect": true,
+          "searchAllOptions": false,
+          "inverseSelection": false,
+          "defaultToFirstItem": false
+        },
+        "defaultDataMask": {
+          "extraFormData": {},
+          "filterState": {},
+          "ownState": {}
+        },
+        "cascadeParentIds": [],
+        "scope": {
+          "rootPath": [
+            "ROOT_ID"
+          ],
+          "excluded": []
+        },
+        "chartsInScope": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "tabsInScope": []
+      },
+      {
+        "id": "NATIVE_FILTER-c48cb780-cab1-404a-b50e-1d9c37360ce7",
+        "name": "Месторождение",
+        "filterType": "filter_select",
+        "type": "NATIVE_FILTER",
+        "targets": [
+          {
+            "datasetId": 5,
+            "column": {
+              "name": "field_name"
+            }
+          }
+        ],
+        "controlValues": {
+          "enableEmptyFilter": false,
+          "multiSelect": true,
+          "searchAllOptions": false,
+          "inverseSelection": false,
+          "defaultToFirstItem": false
+        },
+        "defaultDataMask": {
+          "extraFormData": {},
+          "filterState": {},
+          "ownState": {}
+        },
+        "cascadeParentIds": [],
+        "scope": {
+          "rootPath": [
+            "ROOT_ID"
+          ],
+          "excluded": []
+        },
+        "chartsInScope": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "tabsInScope": []
+      }
+    ],
+    "show_native_filters": true
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": 9,
+  "slice_name": "Динамика добычи по месторождениям",
+  "viz_type": "echarts_timeseries_line",
+  "datasource_id": 4,
+  "datasource_type": "table",
+  "params": {
+    "datasource": "4__table",
+    "granularity_sqla": "production_date",
+    "adhoc_filters": [],
+    "time_range": "No filter",
+    "viz_type": "echarts_timeseries_line",
+    "x_axis": "production_date",
+    "time_grain_sqla": "P1M",
+    "metrics": [
+      {
+        "expressionType": "SIMPLE",
+        "column": {
+          "column_name": "oil_tonnes",
+          "type": "NUMERIC",
+          "type_generic": 0
+        },
+        "aggregate": "SUM",
+        "label": "Динамика добычи по месторождениям",
+        "sqlExpression": null,
+        "optionName": "metric_oil_tonnes"
+      }
+    ],
+    "groupby": [
+      "field_name"
+    ],
+    "row_limit": 100,
+    "show_legend": true,
+    "show_markers": false,
+    "x_axis_time_format": "%b %Y",
+    "tooltipTimeFormat": "%Y-%m-%d",
+    "y_axis_format": ",.2f",
+    "rich_tooltip": true,
+    "contributionMode": null
+  },
+  "query_context": {
+    "datasource": {
+      "id": 4,
+      "type": "table"
+    },
+    "queries": [
+      {
+        "metrics": [
+          {
+            "expressionType": "SIMPLE",
+            "column": {
+              "column_name": "oil_tonnes",
+              "type": "NUMERIC",
+              "type_generic": 0
+            },
+            "aggregate": "SUM",
+            "label": "Динамика добычи по месторождениям",
+            "sqlExpression": null,
+            "optionName": "metric_oil_tonnes"
+          }
+        ],
+        "columns": [
+          "field_name"
+        ],
+        "filters": [],
+        "row_limit": 1000,
+        "time_range": "No filter",
+        "granularity": "production_date",
+        "is_timeseries": true,
+        "extras": {
+          "time_grain_sqla": "P1M"
+        }
+      }
+    ],
+    "result_format": "json",
+    "result_type": "full"
+  }
+}

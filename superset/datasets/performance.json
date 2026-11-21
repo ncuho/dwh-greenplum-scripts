@@ -1,0 +1,95 @@
+{
+  "id": 5,
+  "schema": "oil_mart",
+  "table_name": "v_field_performance",
+  "catalog": "og_dwh",
+  "main_dttm_col": "production_date",
+  "filter_select_enabled": true,
+  "sql": null,
+  "normalize_columns": false,
+  "always_filter_main_dttm": true,
+  "columns": [
+    {
+      "column_name": "production_date",
+      "type": "DATE",
+      "is_dttm": true,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "field_hk",
+      "type": "TEXT",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "field_name",
+      "type": "TEXT",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "region",
+      "type": "TEXT",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "oil_tonnes",
+      "type": "NUMERIC(22, 3)",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "producing_well_days",
+      "type": "BIGINT",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "oil_per_well_day",
+      "type": "NUMERIC(22, 6)",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    },
+    {
+      "column_name": "downtime_hours",
+      "type": "NUMERIC",
+      "is_dttm": false,
+      "expression": null,
+      "filterable": true,
+      "groupby": true,
+      "verbose_name": null
+    }
+  ],
+  "metrics": [
+    {
+      "metric_name": "count",
+      "expression": "COUNT(*)",
+      "metric_type": "count",
+      "verbose_name": "COUNT(*)",
+      "d3format": null
+    }
+  ],
+  "database_id": 3
+}

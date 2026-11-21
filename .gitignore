@@ -28,3 +28,12 @@
 **/.aws/
 **/.kube/
 **/.terraform/
+
+# Python runtime caches
+__pycache__/
+*.py[cod]
+
+# Generated operational evidence, not entity source
+*.evidence.json
+*.manifest.json
+*evidence*.jsonl
