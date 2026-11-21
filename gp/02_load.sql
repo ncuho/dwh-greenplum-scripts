@@ -11,6 +11,7 @@ FROM oil_stg.event_log;
 CREATE OR REPLACE FUNCTION oil_dds.apply_batch(p_batch_id bigint) RETURNS void AS $$
 DECLARE bad bigint;
 BEGIN
+ IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN RAISE EXCEPTION 'oil source is fenced'; END IF;
  IF (SELECT count(*) FROM oil_stg.batch_control WHERE batch_id=p_batch_id AND status='APPLIED')=1 THEN RETURN; END IF;
  IF (SELECT count(*) FROM oil_stg.batch_control WHERE batch_id=p_batch_id AND status='READY')<>1 THEN
   RAISE EXCEPTION 'batch % not READY',p_batch_id;

@@ -22,6 +22,7 @@ CREATE OR REPLACE FUNCTION oil_stg.coalesce_ready_batches(
 ) RETURNS bigint AS $$
 DECLARE v_count bigint; v_batches bigint; v_events bigint; v_changed bigint;
 BEGIN
+ IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN RAISE EXCEPTION 'oil source is fenced'; END IF;
  IF p_first_batch IS NULL OR p_last_batch IS NULL OR p_new_batch IS NULL OR p_source IS NULL OR p_source='' OR
     p_first_batch>p_last_batch OR p_new_batch BETWEEN p_first_batch AND p_last_batch OR
     p_max_events IS NULL OR p_max_events<1 OR p_max_events>10000 THEN

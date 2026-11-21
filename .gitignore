@@ -1,0 +1,30 @@
+# Local credentials and protected runtime artifacts
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.kubeconfig
+**/credentials.json
+**/*credentials*.json
+**/*secret*.json
+**/backup/
+**/backups/
+*.bak
+*.bundle
+*.zip
+
+# Additional local private key and recovery formats
+*.pem
+*.der
+*.ovpn
+*.dump
+*.backup
+*.tfstate
+**/.ssh/
+**/.aws/
+**/.kube/
+**/.terraform/

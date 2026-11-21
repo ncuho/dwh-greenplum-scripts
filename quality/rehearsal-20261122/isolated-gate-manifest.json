@@ -1,0 +1,28 @@
+{
+  "cut_id": "68227053be5846a0af48164dbfe8da03",
+  "topic": "oil.events.v1",
+  "topic_id": "gV0vmGj7TlqZGUh-OW7nNg",
+  "cluster_id": "CT4t_OO3QvCOy-oAphf0Ag",
+  "partitions": [
+    {
+      "partition": 0,
+      "start": 5170,
+      "end": 5170
+    },
+    {
+      "partition": 1,
+      "start": 5196,
+      "end": 5196
+    },
+    {
+      "partition": 2,
+      "start": 5159,
+      "end": 5159
+    }
+  ],
+  "mode": "initial",
+  "baseline_table": "dlh.oil_i_airflowgate_20261122.baseline_event",
+  "baseline_snapshot": 7653824636263867327,
+  "delta_table": "dlh.oil_stg.event_log_wave2",
+  "delta_snapshot": 1381957110677643656
+}

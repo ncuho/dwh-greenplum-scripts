@@ -1,0 +1,100 @@
+#!/usr/bin/python3
+"""Restricted oil-topic fence controller. Stdin/stdout JSON; no command input."""
+import fcntl, json, os, pathlib, re, secrets, subprocess, sys, tempfile, time, urllib.request
+
+BASE='/var/lib/oil-migration-fence'
+TOPIC='oil.events.v1'; CONNECTOR='webinar-oil-gp-ingest'; EXPECTED_ID='gV0vmGj7TlqZGUh-OW7nNg'
+ACL=['sudo','-n','-u','kafka','env','JAVA_HOME=/opt/kafka-demo/jdk','/opt/kafka-demo/current/bin/kafka-acls.sh','--bootstrap-server','10.77.25.20:9093','--command-config','/etc/kafka-demo/client.properties']
+TOPICS=['sudo','-n','-u','kafka','env','JAVA_HOME=/opt/kafka-demo/jdk','/opt/kafka-demo/current/bin/kafka-topics.sh','--bootstrap-server','10.77.25.20:9093','--command-config','/etc/kafka-demo/client.properties']
+PRINCIPAL='User:CN=oil-producer'
+BASE_ACLS={('User:CN=oil-producer','*','WRITE','ALLOW'),('User:CN=oil-connect-worker','*','READ','ALLOW'),('User:CN=oil-iceberg-wave2-worker','*','READ','ALLOW'),('User:CN=oil-kafka-ui-metadata','*','DESCRIBE','ALLOW')}
+DENY=(PRINCIPAL,'*','WRITE','DENY')
+
+def run(cmd): return subprocess.run(cmd,check=True,capture_output=True,text=True,timeout=20).stdout
+
+def http(path,method='GET'):
+ req=urllib.request.Request('http://127.0.0.1:18084'+path,method=method)
+ with urllib.request.urlopen(req,timeout=8) as r:
+  b=r.read(); return json.loads(b) if b else None
+
+def atomic(obj):
+ fd,n=tempfile.mkstemp(dir=BASE,prefix='.lease-')
+ try:
+  os.fchmod(fd,0o600)
+  with os.fdopen(fd,'w') as f: json.dump(obj,f);f.flush();os.fsync(f.fileno())
+  os.replace(n,BASE+'/lease.json')
+  d=os.open(BASE,os.O_RDONLY);os.fsync(d);os.close(d)
+ finally:
+  if os.path.exists(n): os.unlink(n)
+
+def observe():
+ out=run(ACL+['--list']); entries=re.findall(r'\(principal=([^,]+), host=([^,]+), operation=([^,]+), permissionType=([^\)]+)\)',out)
+ resources=re.findall(r'ResourcePattern\(resourceType=([^,]+), name=([^,]+), patternType=([^\)]+)\)',out)
+ if resources != [('TOPIC',TOPIC,'LITERAL')] or len(entries)!=len(set(entries)): raise RuntimeError('unexpected ACL resources')
+ rules=set(entries)
+ if rules not in (BASE_ACLS,BASE_ACLS|{DENY}):raise RuntimeError('unexpected ACL rules')
+ description=run(TOPICS+['--describe','--topic',TOPIC]); match=re.search(r'\bTopicId:\s*(\S+)',description)
+ if not match or match.group(1)!=EXPECTED_ID:raise RuntimeError('topic id mismatch')
+ with urllib.request.urlopen('http://127.0.0.1:18086/api/state',timeout=8) as r: state=json.load(r)
+ if not state['broker']['ok']:raise RuntimeError('broker unavailable')
+ parts=state['broker']['partitions']
+ if sorted(x['partition'] for x in parts)!=[0,1,2]:raise RuntimeError('partitions changed')
+ source=http('/connectors/'+CONNECTOR+'/status')
+ processes=[]
+ for proc in pathlib.Path('/proc').glob('[0-9]*/cmdline'):
+  try:
+   cmd=[v.decode('utf8','replace') for v in proc.read_bytes().split(b'\0') if v]
+   if cmd and any(re.search(r'(^|/)oil_events\.py$',v) for v in cmd):processes.append(int(proc.parent.name))
+  except (OSError,ValueError):pass
+ return {'topic':TOPIC,'topic_id':EXPECTED_ID,'cluster_id':state['broker']['cluster_id'], 'partitions':parts,'connector':source,'producer_denied':DENY in rules,'known_oil_generator_processes':processes}
+
+def connector_is(s,state):
+ c=s['connector']; tasks=c.get('tasks',[])
+ return c.get('connector',{}).get('state')==state and bool(tasks) and all(t.get('state')==state for t in tasks)
+
+def main():
+ if os.geteuid()!=0: raise RuntimeError('root required')
+ raw=sys.stdin.buffer.read(4097)
+ if len(raw)>4096:raise ValueError('request too large')
+ req=json.loads(raw); action=req.get('action');cut=req.get('cut_id')
+ if set(req)-{'action','cut_id','lease_id'} or action not in ('acquire','status','release') or not isinstance(cut,str) or not re.fullmatch(r'[A-Za-z0-9_.-]{1,100}',cut): raise ValueError('invalid request')
+ os.makedirs(BASE,mode=0o700,exist_ok=True)
+ with open(BASE+'/lock','a') as lock:
+  os.chmod(BASE+'/lock',0o600);fcntl.flock(lock,fcntl.LOCK_EX)
+  path=pathlib.Path(BASE+'/lease.json')
+  lease=json.loads(path.read_text()) if path.exists() else None
+  if action=='acquire':
+   if lease: raise RuntimeError('existing lease; manual recovery or matching release required')
+   s=observe()
+   if s['producer_denied'] or not connector_is(s,'RUNNING'):raise RuntimeError('unexpected initial state')
+   lease={'cut_id':cut,'lease_id':secrets.token_urlsafe(32),'topic_id':s['topic_id'],'next_offsets':{str(x['partition']):x['high'] for x in s['partitions']},'phase':'acquiring','created_at':int(time.time())}
+   atomic(lease)
+   run(ACL+['--add','--deny-principal',PRINCIPAL,'--operation','Write','--topic',TOPIC])
+   http('/connectors/'+CONNECTOR+'/pause','PUT')
+   for _ in range(25):
+    time.sleep(1); s=observe()
+    if s['producer_denied'] and connector_is(s,'PAUSED'): break
+   else: raise RuntimeError('fence not established; lease remains fail-closed')
+   now={str(x['partition']):x['high'] for x in s['partitions']}
+   if now!=lease['next_offsets']:raise RuntimeError('watermarks changed during acquire; lease remains')
+   lease['phase']='held';atomic(lease)
+   print(json.dumps({'lease_id':lease['lease_id'],'cut_id':cut,'status':'held','observation':s}));return
+  if not lease or lease['cut_id']!=cut or not secrets.compare_digest(str(req.get('lease_id','')),lease['lease_id']):raise RuntimeError('lease credentials mismatch')
+  if action=='status':
+   s=observe(); now={str(x['partition']):x['high'] for x in s['partitions']}
+   held=lease['phase']=='held' and s['producer_denied'] and connector_is(s,'PAUSED') and now==lease['next_offsets']
+   print(json.dumps({'status':'held' if held else 'invalid','cut_id':cut,'next_offsets':now,'observation':s}));return
+  # Keep DENY until source resumes. A failed release preserves lease for retry.
+  http('/connectors/'+CONNECTOR+'/resume','PUT')
+  for _ in range(25):
+   time.sleep(1);s=observe()
+   if connector_is(s,'RUNNING'):break
+  else:raise RuntimeError('connector did not resume; lease retained')
+  run(ACL+['--remove','--deny-principal',PRINCIPAL,'--operation','Write','--topic',TOPIC,'--force'])
+  s=observe()
+  if s['producer_denied'] or not connector_is(s,'RUNNING'):raise RuntimeError('release verification failed; lease retained')
+  path.unlink();d=os.open(BASE,os.O_RDONLY);os.fsync(d);os.close(d)
+  print(json.dumps({'status':'released','cut_id':cut,'observation':s}))
+if __name__=='__main__':
+ try:main()
+ except Exception as e:print(json.dumps({'error':str(e)}),file=sys.stderr);sys.exit(1)

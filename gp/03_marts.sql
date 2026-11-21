@@ -2,6 +2,7 @@
 CREATE OR REPLACE FUNCTION oil_mart.refresh_production() RETURNS void AS $$
 DECLARE bad bigint;
 BEGIN
+ IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN RAISE EXCEPTION 'oil source is fenced'; END IF;
  SELECT count(*) INTO bad FROM (
   SELECT field_hk,event_time FROM oil_dds.sat_field GROUP BY field_hk,event_time HAVING count(*)>1
   UNION ALL SELECT well_hk,(valid_from::timestamp AT TIME ZONE 'UTC') FROM oil_dds.sat_well GROUP BY well_hk,valid_from HAVING count(*)>1
@@ -40,6 +41,7 @@ END; $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION oil_mart.refresh_downtime() RETURNS void AS $$
 DECLARE bad bigint;
 BEGIN
+ IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN RAISE EXCEPTION 'oil source is fenced'; END IF;
  DELETE FROM oil_mart.fact_downtime_interval;
  DELETE FROM oil_mart.agg_field_downtime_day;
  DELETE FROM oil_mart.dim_downtime_reason;
@@ -62,6 +64,6 @@ END; $$ LANGUAGE plpgsql;
 -- The first migration wave uses production only; the second adds downtime.
 CREATE VIEW oil_mart.v_field_production AS SELECT * FROM oil_mart.agg_field_day;
 CREATE VIEW oil_mart.v_field_performance AS
- SELECT p.*,coalesce(d.downtime_hours,0) AS downtime_hours
+ SELECT p.*,CAST(coalesce(d.downtime_hours,0) AS numeric(20,6)) AS downtime_hours
  FROM oil_mart.agg_field_day p LEFT JOIN oil_mart.agg_field_downtime_day d
  ON d.production_date=p.production_date AND d.field_hk=p.field_hk;

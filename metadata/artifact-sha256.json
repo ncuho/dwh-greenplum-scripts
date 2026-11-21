@@ -1,0 +1,28 @@
+{
+  "description": "Selected Greenplum and Kafka wave2 source artifacts",
+  "algorithm": "sha256",
+  "files": {
+    "gp/01_schema.sql": "14951336bf15d7151e04e30ed02aa29ce3413fc275f068085723b739b71b22db",
+    "gp/02_load.sql": "5be2577a83c82972a804577b5dc5f86e099fc26408e75c6427240af2ee701b9b",
+    "gp/03_marts.sql": "e81f9183fc4ec961f59384dd732a32827d63ad5b7445e7383d35a787751c9ab7",
+    "gp/04_coalesce.sql": "9c9f717806ab45756b6b2fb8fd93a9139f1d32a7e82fe94c3ac647e99c59f153",
+    "gp/05_airflow_roles.sql": "3591425c7131a59beac0d46dd75ca779561ffd7e56c0b1709cd08668b3137e32",
+    "gp/06_cedrus_checkpoint_grant.sql": "c73547e0295e305695f8d2e9db9649b0ebcaedfae952c31bdde7187730d812d7",
+    "gp/07_legacy_candidate.sql": "f6928ab9753d064855aa2bb2932534c6015934ed28f0d0f667e959a4901b6023",
+    "gp/08_source_control_access.sql": "8cf0bb4494943c569ee3c8943481a0187725165a3972be515db810b98fe6047f",
+    "gp/airflow_oil_gp.py": "2fff21e176d3a3b3b4918b8d0a439b350f11a95a92c268262e9e4a65b630d6b1",
+    "ingestion/wave2/OilReadbackProbe.java": "1ec479ab260c6b7d50b3cec833315a353c0119783dfe9b73ea88cfee789ad0f8",
+    "ingestion/wave2/cleanup-test-namespace.py": "3d07d0871b7982da943b4d1a5ff1fdaa69ac380e0343052a0c4ff232d9571505",
+    "ingestion/wave2/connector.json": "5bbb6b9f8e9a648638bc1b7521078a85731e159520e7329f861180cea69994f6",
+    "ingestion/wave2/create-empty-target.py": "2114dc720ecce9ebfd8da68c200840d646ab73f87d66ac2e4f089a2ced04bfdf",
+    "ingestion/wave2/create-test-namespace.py": "414c1cb8cfbeb7e2a2f09dc679afe46c48a8df7aee92b1181d6b7dbb1e376fa2",
+    "ingestion/wave2/enable-topic-authorizer.sh": "c3b9e64d338e88b78e558f7210c22d597f90074bbf6879e75c4b4553b17c3b71",
+    "ingestion/wave2/grant-target.py": "15b49c40a08cc7aa0cbaab02df4cc1377a392756b43017a88b79c688e6b13b23",
+    "ingestion/wave2/install-ui.sh": "a8f2cf38cd56f4eb760f67dbce7e3fa2f4e90e3ecfb53d8682a3c887eb01531d",
+    "ingestion/wave2/install-worker.sh": "af5ad98aedfb1e95a2535eb48706049300b949e271f2e1512cfbc92c5ad89293",
+    "ingestion/wave2/observe-fence.py": "1de4439b42cf9708f6e333bbe67dc0d7355b3044ba3be7f0eff850321fd42152",
+    "ingestion/wave2/oil-migration-fence": "5a4cccb5e8b26e7dc52dc59712dec9b96da4a01816e6e6c0da9441c73a2ef852",
+    "ingestion/wave2/oil_kafka_ui.py": "2bd51ca9d36f0d6bbd9f511e5242e7ff38cc8bbd2b39aacbb083f7119b587675",
+    "ingestion/wave2/target-ddl.sql": "431e1f2ffaac2f7a16a764bcb124defa2041d7a749ac32fb97de70d68c21f6b2"
+  }
+}
