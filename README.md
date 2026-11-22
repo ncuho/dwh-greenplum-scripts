@@ -1,58 +1,30 @@
-# Нефтегазовое DWH на Greenplum
+# Нефтегазовое DWH · Greenplum
 
-Исходный контур двух отчётов: добыча по месторождениям и эффективность добычи с учётом простоев. 5 месторождений, 40 скважин, 2025 год; данные синтетические, масса в тоннах, время UTC. Первая цепочка уже перенесена в Lakehouse, вторая остаётся источником для показа миграции.
+Исходный контур управленческих отчётов добычи и простоев. Путь данных: источник событий → Kafka → GP Connect → STG → DDS → Marts → Superset. Происхождение и границы использования показателей: [паспорт данных](DATA-PASSPORT.md).
 
-```text
-Генератор → Kafka oil.events.v1 → GP Kafka Connect → oil_stg
-                                                     ↓ Airflow oil_gp_release
-                                              oil_dds → oil_mart → Superset
-Kafka → отдельный Iceberg Connect → Lakehouse (второй репозиторий)
-```
-
-## Код
-
-| Каталог | Назначение |
+| Каталог | Ответственность |
 |---|---|
-| `database/schemas/` | По одному файлу на схему STG, DDS и marts. |
-| `database/oil_stg/` | Таблицы приёма, checkpoint, партии, разбор JSON и объединение партий. |
-| `database/oil_dds/` | История событий, hubs, links, satellites и применение партии. |
-| `database/oil_mart/` | Измерения, факты, агрегаты, два представления отчётов и расчётные функции. |
-| `database/access/` | Права ограниченных сервисных ролей GP. |
-| `airflow/oil_gp_release.py` | Source DAG: fence → apply batches → production → downtime → release fence. |
-| `ingestion/oil_events.py` | Baseline и управляемая delta: исправление, replay, delete, late arrival, версия well. |
-| `ingestion/contracts/` | JSON Schema события; это контракт, не выгрузка каталога и не Schema Registry. |
-| `ingestion/gp-connect-src/` | Java sink: атомарная запись STG, batch и Kafka checkpoint в GP. |
-| `ingestion/iceberg-smt-src/` | Преобразование события и Kafka координат в raw-строку Iceberg. |
-| `ingestion/iceberg-auth-src/` | Обновление CIAM client-credentials токена для Iceberg REST. |
-| `ingestion/wave2/` | Отдельный Connect worker, connector, Kafka fence, read-only панель наблюдения. |
-| `superset/` | По одному декларативному JSON на dataset, chart и dashboard двух исходных отчётов. |
-| `quality/` | Исполняемые SQL-проверки; результатов запусков в репозитории нет. |
+| `ddl/` | Схемы, таблицы и последовательность; одна сущность на SQL-файл. |
+| `functions/` | Четыре хранимые PL/pgSQL-функции: apply, production refresh, downtime refresh и coalesce. |
+| `views/` | Разбор envelope и два serving-представления отчётов. |
+| `queries/` | Read-only песочница по слоям и SQL-проверки. |
+| `dags/` | `oil_gp_release`: управляемое применение партий и расчёты. |
+| `topics/` | Создание oil.events.v1 и контракт четырёх типов событий. |
+| `generators/` | Источник baseline/delta и TLS wrapper. |
+| `connectors/` | GP sink, Iceberg sink, SMT и CIAM AuthManager. |
+| `workers/` | Конфигурация двух независимых Connect workers. |
+| `grants/` | Минимальные GP-права и Kafka ACL. |
+| `migration/` | Фиксация offsets и контроллер живой границы. |
+| `monitoring/` | Read-only наблюдение за Kafka и connectors. |
+| `superset/` | Отдельные datasets, charts, dashboards двух отчётов. |
+| `deploy/` | Порядок создания объектов в новой БД. |
 
-## Сущности хранилища
+Рядом с каждым кодовым файлом находится одноимённый MD: назначение, поведение и роль в цепочке. В Greenplum 6 используются хранимые функции, нативных процедур CALL в этом решении нет.
 
-| Сущность | За что отвечает |
-|---|---|
-| `oil_stg.event_log` | Исходный JSON и уникальная позиция topic/partition/offset. |
-| `batch_control`, `kafka_checkpoint`, `kafka_batch_id_seq` | Статус партии, следующая доставляемая позиция, ID партии. |
-| `event_reject`, `v_event_parsed` | Таблица для отклонённых записей; представление разбора JSON. Некорректная партия в apply откатывается целиком, автоматическая доставка в reject не заявляется. |
-| `batch_coalesce_map`, `batch_coalesce_event_map`, `coalesce_ready_batches` | Контролируемое объединение READY партий с сохранением происхождения. |
-| `oil_dds.event`, `apply_batch` | Реестр принятых событий; валидация, deduplication и проверка версий в одной транзакции. |
-| `hub_field`, `hub_well`, `hub_production_day`, `hub_downtime` | Бизнес-ключи месторождения, скважины, скважино-дня и интервала простоя. |
-| `link_well_field`, `link_production_day_well`, `link_downtime_well` | Связи скважины с месторождением, добычи и простоя со скважиной. |
-| `sat_field`, `sat_well`, `sat_daily_production`, `sat_downtime` | Версии атрибутов и событий, включая удаления. |
-| `dim_field`, `dim_well`, `dim_downtime_reason` | Исторические измерения и справочник причин простоя. |
-| `fact_well_day`, `fact_downtime_interval` | Тонны по скважино-дню; интервалы и часы простоя. |
-| `agg_field_day`, `agg_field_downtime_day` | Дневные агрегаты добычи и простоев по месторождению. |
-| `refresh_production`, `refresh_downtime` | Пересчёт измерений/фактов/агрегатов; downtime выполняется после production. |
-| `v_field_production`, `v_field_performance` | Serving-представления отчётов добычи и добычи с простоями. |
-| `legacy_field_month_export_2024` | Отдельный учебный архив-кандидат на исключение, не участвует в двух цепочках. |
+STG сохраняет доставку и checkpoints. DDS использует Raw Vault patterns: event ledger, 4 hubs, 3 links и 4 satellites; полное соответствие стандарту Data Vault 2.0 не заявляется. Marts использует исторические измерения и факты Kimball; serving-агрегаты упрощают BI.
 
-## Применение
+Первая цепочка: field/well/production_day → apply_batch → refresh_production → v_field_production → dashboard 3. Вторая добавляет downtime → refresh_downtime → v_field_performance → dashboard 4. Общие зависимости рассчитываются до простоев.
 
-`database/install.sql` — порядок установки через psql в **новую** БД с подготовленными service roles. Файлы сущностей не являются идемпотентными миграциями для работающей БД. Опциональный `database/create_legacy_candidate.sql` запускается после заполнения первой витрины. Для provisioning требуется `OIL_GP_SSH_CONFIG`; пароли и TLS-файлы находятся вне Git.
+`deploy/install.sql` предназначен для новой БД с подготовленными service roles; повторный запуск поверх рабочих объектов не предусмотрен. Архивный экспорт создаётся отдельно после заполнения витрины. Baseline источника: seed 42, 5 fields, 40 wells, 365 days; повторная отправка baseline в рабочий topic не допускается. Секреты вне Git.
 
-Baseline генератора: `--phase baseline --seed 42 --fields 5 --wells 40 --days 365`; delta: `--phase delta` с теми же параметрами. Для реальной отправки добавляется `--kafka`; повторный baseline в рабочий topic не отправлять. Ручной DAG `oil_gp_release` запускается с `{}` и обрабатывает максимум 100 READY партий.
-
-Superset: dataset 4 / dashboard 3 — добыча; dataset 5 / dashboard 4 — простои. JSON содержит только определения, параметры графиков, фильтры и layout; ID относятся к этому стенду. Доступ к соединениям настраивается отдельно, credentials не включены.
-
-Модель DDS использует Raw Vault patterns, marts — Kimball star. Kafka один broker/RF=1: это стенд с production-подобной логикой, не промышленная HA. Сопутствующий код: [dlh-scripts](https://github.com/ncuho/dlh-scripts).
+Kafka имеет один broker/RF=1. Идентификаторы установленных connections, групп, Java-классов и TLS-путей сохраняются ради совместимости. [Целевой контур DLH](https://github.com/ncuho/dlh-scripts).

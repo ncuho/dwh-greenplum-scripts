@@ -8,6 +8,7 @@
   "sql": null,
   "normalize_columns": false,
   "always_filter_main_dttm": true,
+  "description": "Дневная добыча и часы простоев по месторождениям, исходный контур Greenplum.",
   "columns": [
     {
       "column_name": "production_date",

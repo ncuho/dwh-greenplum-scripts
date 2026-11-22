@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "oil.events.v1 event envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "entity_id",
+    "entity_version",
+    "op",
+    "event_time",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "event_type": {
+      "enum": [
+        "field",
+        "well",
+        "production_day",
+        "downtime"
+      ]
+    },
+    "entity_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "entity_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "op": {
+      "enum": [
+        "U",
+        "D"
+      ]
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC in generator"
+    },
+    "payload": {
+      "type": "object",
+      "description": "field: field_id,field_name,region; well: well_id,field_id,well_name,valid_from,status; production_day: production_id,well_id,production_date,oil_tonnes,status; downtime: downtime_id,well_id,start_at,end_at,reason."
+    }
+  },
+  "description": "Event contract; no claim of Schema Registry enforcement. U and D retain full payload. oil_tonnes is a decimal string in tonnes; timestamps UTC.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "field"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "field_id",
+              "field_name",
+              "region"
+            ],
+            "properties": {
+              "field_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "field_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "region": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "well"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "well_id",
+              "field_id",
+              "well_name",
+              "valid_from",
+              "status"
+            ],
+            "properties": {
+              "well_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "field_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "well_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "valid_from": {
+                "type": "string",
+                "format": "date"
+              },
+              "status": {
+                "enum": [
+                  "ACTIVE",
+                  "INACTIVE"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "production_day"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "production_id",
+              "well_id",
+              "production_date",
+              "oil_tonnes",
+              "status"
+            ],
+            "properties": {
+              "production_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "well_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "production_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "oil_tonnes": {
+                "type": "string",
+                "pattern": "^\\d+(\\.\\d{1,3})?$"
+              },
+              "status": {
+                "enum": [
+                  "ACTIVE",
+                  "INACTIVE"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "downtime"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "downtime_id",
+              "well_id",
+              "start_at",
+              "end_at",
+              "reason"
+            ],
+            "properties": {
+              "downtime_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "well_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "start_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "reason": {
+                "enum": [
+                  "EQUIPMENT",
+                  "POWER",
+                  "PLANNED"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

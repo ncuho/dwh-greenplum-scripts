@@ -8,6 +8,7 @@
   "sql": null,
   "normalize_columns": false,
   "always_filter_main_dttm": true,
+  "description": "Дневная добыча по месторождениям: тонны, активные скважино-дни и продуктивность.",
   "columns": [
     {
       "column_name": "production_date",

@@ -1,6 +1,6 @@
 {
   "id": 4,
-  "dashboard_title": "Эффективность добычи и простои",
+  "dashboard_title": "Эффективность добычи и простои · Greenplum",
   "slug": "oil-field-downtime",
   "published": true,
   "css": "div[class*=\"big_number\"] .header-line { font-size: 3rem !important; font-weight: 700; margin-bottom: 0 !important; }",
