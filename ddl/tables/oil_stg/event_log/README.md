@@ -8,4 +8,4 @@
 
 - **GitHub:** код и описание находятся в этой папке.
 - **Data Catalog:** Зарегистрирована отдельная карточка таблицы в Data Catalog.
-- **Lakehouse:** Первая цепочка: перенесена в Iceberg на зафиксированной границе. Включены field/well/production_day; downtime в этот baseline не входит.
+- **Lakehouse:** Целевой экземпляр удалён; код подготовлен для новой миграции. Включены field/well/production_day; downtime в этот baseline не входит.
