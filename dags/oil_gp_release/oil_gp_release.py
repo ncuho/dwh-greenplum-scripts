@@ -69,11 +69,11 @@ def release(**context):
         connection.close()
 
 
-# Ручной запуск без расписания; одновременно допускается один run, автоматический повтор отключён.
+# После включения DAG обрабатывает партии каждую минуту; одновременно допускается один run, автоматический повтор отключён.
 with DAG(
     dag_id="oil_gp_release",
     description="Применение событий и пересчёт витрин нефтедобычи в Greenplum",
-    start_date=datetime(2025, 1, 1), schedule=None, catchup=False,
+    start_date=datetime(2025, 1, 1), schedule="*/1 * * * *", catchup=False,
     is_paused_upon_creation=True, max_active_runs=1,
     default_args={"retries": 0, "execution_timeout": timedelta(minutes=5)},
     tags=["oil", "greenplum"],
