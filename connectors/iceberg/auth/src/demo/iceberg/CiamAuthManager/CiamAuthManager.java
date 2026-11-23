@@ -20,9 +20,11 @@ public final class CiamAuthManager implements AuthManager {
     "https://dp-103.mcs.local/iam/hydra/oauth2/token";
   private static final String AUDIENCE = "92d0c90a-3720-4831-9885-fde8aeb98a99";
 
+  /** Создаёт auth manager с существующим CIAM credential provider; секрет не вшивается в код. */
   public CiamAuthManager(String ignoredName) {}
 
   @Override
+  /** Создаёт авторизованную сессию Iceberg REST Catalog для служебной identity. */
   public AuthSession catalogSession(
     RESTClient client,
     Map<String, String> props
@@ -38,6 +40,7 @@ public final class CiamAuthManager implements AuthManager {
   }
 
   @Override
+  /** Освобождает ресурсы завершённой сессии или снимает локальное назначение partition. */
   public void close() {}
 
   private static final class Session implements AuthSession {
@@ -53,6 +56,7 @@ public final class CiamAuthManager implements AuthManager {
     }
 
     @Override
+    /** Добавляет актуальную авторизацию CIAM к HTTP запросу каталога. */
     public synchronized HTTPRequest authenticate(HTTPRequest request) {
       if (
         !"https".equals(request.requestUri().getScheme()) ||
@@ -97,6 +101,7 @@ public final class CiamAuthManager implements AuthManager {
     }
 
     @Override
+    /** Освобождает ресурсы завершённой сессии или снимает локальное назначение partition. */
     public synchronized void close() {
       token = null;
       renewAt = 0;

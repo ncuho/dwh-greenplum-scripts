@@ -1,3 +1,5 @@
+-- Назначение: Задаёт порядок установки SQL-объектов через psql. Сервисные роли должны существовать; повторное применение к рабочим таблицам не предусмотрено.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Fresh database only; prerequisites: scoped service roles already exist.
 \set ON_ERROR_STOP on
 \ir ../../ddl/schemas/oil_stg/oil_stg.sql

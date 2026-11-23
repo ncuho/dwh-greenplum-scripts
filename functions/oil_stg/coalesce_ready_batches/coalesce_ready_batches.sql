@@ -1,3 +1,5 @@
+-- Назначение: Объединяет ограниченный диапазон READY-партий одного источника с сохранением происхождения. Работает под общей блокировкой writer.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 CREATE OR REPLACE FUNCTION oil_stg.coalesce_ready_batches (p_first_batch bigint, p_last_batch bigint, p_new_batch bigint, p_source text, p_max_events integer)
     RETURNS bigint
     AS $$

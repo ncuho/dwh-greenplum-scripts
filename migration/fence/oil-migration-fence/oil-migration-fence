@@ -28,7 +28,7 @@ def atomic(obj):
   if os.path.exists(n): os.unlink(n)
 
 def observe():
- out=run(ACL+['--list']); entries=re.findall(r'\(principal=([^,]+), host=([^,]+), operation=([^,]+), permissionType=([^\)]+)\)',out)
+ out=run(ACL+['--list','--topic',TOPIC]); entries=re.findall(r'\(principal=([^,]+), host=([^,]+), operation=([^,]+), permissionType=([^\)]+)\)',out)
  resources=re.findall(r'ResourcePattern\(resourceType=([^,]+), name=([^,]+), patternType=([^\)]+)\)',out)
  if resources != [('TOPIC',TOPIC,'LITERAL')] or len(entries)!=len(set(entries)): raise RuntimeError('unexpected ACL resources')
  rules=set(entries)
@@ -48,6 +48,28 @@ def observe():
   except (OSError,ValueError):pass
  return {'topic':TOPIC,'topic_id':EXPECTED_ID,'cluster_id':state['broker']['cluster_id'], 'partitions':parts,'connector':source,'producer_denied':DENY in rules,'known_oil_generator_processes':processes}
 
+def observe_online(topic):
+ """Read-only watermarks for a registered business or isolated verification topic."""
+ if topic!=TOPIC and not re.fullmatch(r'bridge-verify-[a-f0-9]{8}',topic or ''):raise ValueError('unregistered observation topic')
+ if pathlib.Path(BASE+'/lease.json').exists():raise RuntimeError('legacy producer lease active')
+ description=run(TOPICS+['--describe','--topic',topic]);match=re.search(r'\bTopicId:\s*(\S+)',description)
+ if not match:raise RuntimeError('topic identity absent')
+ command=[x.replace('kafka-topics.sh','kafka-get-offsets.sh') for x in TOPICS]
+ def positions(when):
+  values={}
+  for line in run(command+['--topic',topic,'--time',str(when)]).splitlines():
+   name,partition,offset=line.rsplit(':',2)
+   if name!=topic:raise RuntimeError('unexpected topic result')
+   values[int(partition)]=int(offset)
+  return values
+ low,high=positions(-2),positions(-1)
+ if set(low)!=set(high) or not low:raise RuntimeError('partition metadata incomplete')
+ with urllib.request.urlopen('http://127.0.0.1:18086/api/state',timeout=8) as response:cluster=json.load(response)['broker']
+ if not cluster.get('ok') or not cluster.get('cluster_id'):raise RuntimeError('cluster identity absent')
+ print(json.dumps({'status':'observed','topic':topic,'topic_id':match.group(1),
+  'cluster_id':cluster['cluster_id'],'producer_denied':False,
+  'partitions':[{'partition':p,'low':low[p],'high':high[p]} for p in sorted(low)]}))
+
 def connector_is(s,state):
  c=s['connector']; tasks=c.get('tasks',[])
  return c.get('connector',{}).get('state')==state and bool(tasks) and all(t.get('state')==state for t in tasks)
@@ -57,7 +79,9 @@ def main():
  raw=sys.stdin.buffer.read(4097)
  if len(raw)>4096:raise ValueError('request too large')
  req=json.loads(raw); action=req.get('action');cut=req.get('cut_id')
- if set(req)-{'action','cut_id','lease_id'} or action not in ('acquire','status','release') or not isinstance(cut,str) or not re.fullmatch(r'[A-Za-z0-9_.-]{1,100}',cut): raise ValueError('invalid request')
+ if set(req)-{'action','cut_id','lease_id','topic'} or action not in ('acquire','status','release','observe') or not isinstance(cut,str) or not re.fullmatch(r'[A-Za-z0-9_.-]{1,100}',cut): raise ValueError('invalid request')
+ if action=='observe':
+  observe_online(req.get('topic',TOPIC));return
  os.makedirs(BASE,mode=0o700,exist_ok=True)
  with open(BASE+'/lock','a') as lock:
   os.chmod(BASE+'/lock',0o600);fcntl.flock(lock,fcntl.LOCK_EX)

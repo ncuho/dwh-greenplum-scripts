@@ -4,12 +4,14 @@ import json, subprocess, urllib.request, re, pathlib, sys
 
 
 def output(args):
+    """Запускает фиксированную диагностическую команду и возвращает её stdout."""
     return subprocess.run(
         args, check=True, text=True, capture_output=True, timeout=12
     ).stdout
 
 
 def main():
+    """Точка входа: Observe known source writers and Kafka; does not establish or claim a fence. Импорт модуля сам по себе эту операцию не запускает."""
     state = json.load(
         urllib.request.urlopen("http://127.0.0.1:18086/api/state", timeout=10)
     )

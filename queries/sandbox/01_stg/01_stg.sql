@@ -1,3 +1,5 @@
+-- Назначение: Read-only разбор доставки и расшифровки исходного события.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Greenplum: inspect event delivery and decoded business fields; read-only.
 SELECT
     e.topic,

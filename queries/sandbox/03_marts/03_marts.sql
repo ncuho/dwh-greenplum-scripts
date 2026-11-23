@@ -1,3 +1,5 @@
+-- Назначение: Read-only разбор связи факта с действовавшей версией скважины.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Greenplum: trace a fact to its historical dimension version; read-only.
 SELECT
     f.production_date,

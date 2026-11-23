@@ -1,3 +1,5 @@
+-- Назначение: Сохраняет соответствие каждой Kafka-позиции исходной и объединённой партиям.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 CREATE TABLE oil_stg.batch_coalesce_event_map (
     topic text NOT NULL,
     kafka_partition integer NOT NULL,

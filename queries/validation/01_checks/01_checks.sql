@@ -1,3 +1,5 @@
+-- Назначение: Read-only SQL-проверки качества, полноты и согласованности результатов двух контуров.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Read-only GP checks; zero violations is necessary, not proof of complete coverage.
 SELECT
     'duplicate_well_day' check_name,

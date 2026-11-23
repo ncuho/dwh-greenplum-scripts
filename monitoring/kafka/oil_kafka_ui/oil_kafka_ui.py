@@ -14,6 +14,7 @@ CUT = {0: 5170, 1: 5196, 2: 5159}
 
 
 def connect_get(port, path):
+    """Читает Kafka Connect REST endpoint без изменения состояния connector."""
     try:
         request = urllib.request.Request("http://127.0.0.1:%d%s" % (port, path))
         with urllib.request.urlopen(request, timeout=4) as r:
@@ -23,6 +24,7 @@ def connect_get(port, path):
 
 
 def state():
+    """Возвращает текущее сохранённое состояние проекта или сервиса без выполнения миграции."""
     cfg = {
         "bootstrap.servers": "10.77.25.20:9093",
         "security.protocol": "SSL",
@@ -75,9 +77,11 @@ const text=(id,v)=>document.getElementById(id).textContent=v;const status=x=>x&&
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, *args):
+        """Пишет HTTP access log без возвращения секретных заголовков."""
         pass
 
     def do_GET(self):
+        """Обрабатывает разрешённый HTTP GET и возвращает наблюдаемое состояние сервиса."""
         host = self.headers.get("Host", "")
         origin = self.headers.get("Origin")
         if host not in ("127.0.0.1:18086", "localhost:18086") or (

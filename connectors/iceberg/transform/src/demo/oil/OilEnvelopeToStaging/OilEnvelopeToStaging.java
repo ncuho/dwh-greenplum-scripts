@@ -13,7 +13,7 @@ import org.apache.kafka.connect.errors.DataException;
 import org.apache.kafka.connect.sink.SinkRecord;
 import org.apache.kafka.connect.transforms.Transformation;
 
-/** Proposal: single-topic per-record staging mapping; not installed or tested. */
+/** Validated single-topic delivery envelope for the installed Iceberg sink. */
 public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
 
   private static final String DEFAULT_TOPIC = "oil.events.v1";
@@ -30,12 +30,13 @@ public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
     .field("batch_id", Schema.INT64_SCHEMA)
     .field(
       "received_at",
-      org.apache.kafka.connect.data.Timestamp.builder().optional().build()
+      org.apache.kafka.connect.data.Timestamp.builder().build()
     )
     .field("event_json", Schema.STRING_SCHEMA)
     .build();
 
   @Override
+  /** Проверяет конверт, topic и Kafka-координаты и преобразует запись в raw Iceberg schema. */
   public SinkRecord apply(SinkRecord record) {
     Integer p = record.kafkaPartition();
     long offset = record.kafkaOffset();
@@ -125,13 +126,15 @@ public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
     } catch (Exception e) {
       throw new DataException("invalid JSON envelope");
     }
+    // Stable delivery identity; distinct from Greenplum batch sequence IDs.
     long batch = ((long) p << 56) | offset;
     Struct value = new Struct(SCHEMA)
       .put("topic", record.topic())
       .put("kafka_partition", p)
       .put("kafka_offset", offset)
       .put("batch_id", batch)
-      .put("received_at", null)
+      // Actual sink receipt clock. It may differ across Kafka replay attempts.
+      .put("received_at", new java.util.Date())
       .put("event_json", text);
     return record.newRecord(
       record.topic(),
@@ -145,6 +148,7 @@ public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
   }
 
   @Override
+  /** Возвращает ConfigDef параметров плагина для штатной Connect validation. */
   public ConfigDef config() {
     return new ConfigDef().define(
       "allowed.topic",
@@ -156,6 +160,7 @@ public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
   }
 
   @Override
+  /** Проверяет и применяет параметры topic/SMT до обработки первой записи. */
   public void configure(Map<String, ?> props) {
     Object topic = props.get("allowed.topic");
     if (topic != null) {
@@ -168,5 +173,6 @@ public final class OilEnvelopeToStaging implements Transformation<SinkRecord> {
   }
 
   @Override
+  /** Освобождает ресурсы завершённой сессии или снимает локальное назначение partition. */
   public void close() {}
 }

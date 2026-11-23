@@ -1,3 +1,5 @@
+-- Назначение: Read-only разбор истории и выбора актуальной версии добычи.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Greenplum: compare event versions with the latest business state; read-only.
 WITH versions AS (
     SELECT

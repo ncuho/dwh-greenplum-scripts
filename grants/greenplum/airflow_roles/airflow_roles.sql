@@ -1,3 +1,5 @@
+-- Назначение: Назначает минимальные права вызова SECURITY DEFINER расчётных функций и доступа их владельца.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Explicit, narrowly scoped SECURITY DEFINER executor for manual GP releases.
 -- The existing demo_airflow_runner login has no direct write access to these tables.
 BEGIN;

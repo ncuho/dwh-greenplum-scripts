@@ -1,3 +1,5 @@
+-- Назначение: Выдаёт уникальные ID партий единственному Kafka writer.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Apply in the selected oil GP database only after backup/owner review.
 -- Reserve this ID range for the single Kafka writer; coordinate any fixture IDs.
 CREATE SEQUENCE oil_stg.kafka_batch_id_seq

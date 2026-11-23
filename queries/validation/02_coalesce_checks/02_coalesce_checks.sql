@@ -1,3 +1,5 @@
+-- Назначение: Read-only SQL-проверки объединения партий и сохранения происхождения.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Read-only; replace :new_batch_id with a validated numeric batch ID in psql.
 -- These checks do not establish Kafka end offset or snapshot consistency.
 SELECT

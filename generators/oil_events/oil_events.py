@@ -21,11 +21,13 @@ DELTA_TIME = "2026-01-02T12:00:00Z"
 
 
 def scenario_seed(seed: int, fields: int, wells: int, days: int) -> int:
+    """Получает стабильный seed из параметров кейса; иной размер набора создаёт другой поток."""
     raw = f"oil-events-v1:{seed}:{fields}:{wells}:{days}".encode()
     return int.from_bytes(hashlib.sha256(raw).digest()[:8], "big")
 
 
 def encode(value: dict) -> str:
+    """Сериализует событие каноническим JSON UTF-8; формат важен для повторов и hashdiff."""
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
@@ -38,6 +40,7 @@ def event(
     event_time: str,
     payload: dict,
 ) -> dict:
+    """Формирует конверт бизнес-события с версией, операцией и стабильным event_id."""
     body = {
         "schema_version": 1,
         "event_type": event_type,
@@ -52,6 +55,7 @@ def event(
 
 
 def field(n: int) -> dict:
+    """Формирует атрибуты месторождения по его бизнес-ключу."""
     return {
         "field_id": f"F{n:03d}",
         "field_name": f"Месторождение {n:03d}",
@@ -60,6 +64,7 @@ def field(n: int) -> dict:
 
 
 def well(n: int, fields: int) -> dict:
+    """Формирует скважину и её принадлежность месторождению с датой начала действия."""
     return {
         "well_id": f"W{n:05d}",
         "field_id": f"F{1 + (n - 1) % fields:03d}",
@@ -70,6 +75,7 @@ def well(n: int, fields: int) -> dict:
 
 
 def production(n: int, day: int, seed: int) -> dict:
+    """Формирует суточный факт добычи в тоннах с точной шкалой Decimal."""
     dt = START + timedelta(days=day)
     rnd = random.Random((seed ^ (n * 1000003) ^ (day * 9176)))
     tonnes = (Decimal(rnd.randrange(4000, 45001)) / Decimal(1000)).quantize(
@@ -85,6 +91,7 @@ def production(n: int, day: int, seed: int) -> dict:
 
 
 def downtime(n: int, day: int) -> dict:
+    """Формирует интервал простоя, его причину и ссылку на скважину."""
     dt = START + timedelta(days=day)
     start = datetime(dt.year, dt.month, dt.day, 8, tzinfo=timezone.utc)
     end = start + timedelta(hours=2 + n % 5)
@@ -99,6 +106,7 @@ def downtime(n: int, day: int) -> dict:
 
 
 def baseline(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
+    """Формирует исходную историю: справочники прежде фактов, затем события по дням."""
     for n in range(1, fields + 1):
         p = field(n)
         yield event(seed, "field", p["field_id"], 1, "U", DIM_TIME, p)
@@ -118,6 +126,7 @@ def baseline(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
 def delta(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
     # One correction, one logical delete, a late valid-time dimension version,
     # a late arrival and a byte-identical replay. All refer to the same baseline.
+    """Формирует коррекцию, удаление, поздние версии и точный replay относительно того же baseline."""
     original = production(1, 0, seed)
     corrected = dict(
         original,
@@ -146,6 +155,7 @@ def delta(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
 
 
 def main() -> None:
+    """Точка входа: Reproducible oilfield events. Import has no I/O; publishing is explicit. Импорт модуля сам по себе эту операцию не запускает."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--phase", required=True, choices=("baseline", "delta"))
     p.add_argument("--seed", type=int, default=20261120)
@@ -215,6 +225,7 @@ def main() -> None:
     state = {"delivered": 0, "failed": 0}
 
     def delivered(error, _msg):
+        """Обрабатывает подтверждение брокера и учитывает успешные и неуспешные доставки."""
         state["failed" if error else "delivered"] += 1
 
     for e in events:

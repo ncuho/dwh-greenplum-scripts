@@ -1,3 +1,5 @@
+-- Назначение: Сохраняет версии атрибутов интервала простоя, event_id, entity_version и операцию U/D. GP хранит типизированный payload и audit-поля; release DLH использует логическую проекцию с исходным document.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 CREATE TABLE oil_dds.sat_downtime (
     downtime_hk text NOT NULL,
     link_hk text NOT NULL,

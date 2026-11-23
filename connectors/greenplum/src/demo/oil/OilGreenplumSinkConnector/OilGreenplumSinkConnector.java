@@ -11,16 +11,19 @@ public final class OilGreenplumSinkConnector extends SinkConnector {
   private Map<String, String> config;
 
   @Override
+  /** Проверяет конфигурацию и инициализирует ресурсы connector/task. */
   public void start(Map<String, String> props) {
     config = new HashMap<>(props);
   }
 
   @Override
+  /** Возвращает тип исполняемой SinkTask для данного connector. */
   public Class<? extends Task> taskClass() {
     return OilGreenplumSinkTask.class;
   }
 
   @Override
+  /** Передаёт проверенную конфигурацию каждой создаваемой Connect task. */
   public List<Map<String, String>> taskConfigs(int maxTasks) {
     if (maxTasks != 1) throw new IllegalArgumentException(
       "tasks.max must be 1"
@@ -29,9 +32,11 @@ public final class OilGreenplumSinkConnector extends SinkConnector {
   }
 
   @Override
+  /** Завершает работу плагина и закрывает принадлежащее task соединение. */
   public void stop() {}
 
   @Override
+  /** Возвращает ConfigDef параметров плагина для штатной Connect validation. */
   public ConfigDef config() {
     return new ConfigDef()
       .define(
@@ -62,6 +67,7 @@ public final class OilGreenplumSinkConnector extends SinkConnector {
   }
 
   @Override
+  /** Возвращает версию установленной реализации Kafka Connect plugin. */
   public String version() {
     return "0.1.0-demo";
   }

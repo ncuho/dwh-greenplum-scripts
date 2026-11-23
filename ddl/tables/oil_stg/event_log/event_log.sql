@@ -1,3 +1,5 @@
+-- Назначение: Принимает исходные JSON-события вместе с topic, partition, offset и ID партии. Сохраняет доставку до применения бизнес-логики.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 CREATE TABLE oil_stg.event_log (
     topic text NOT NULL,
     kafka_partition integer NOT NULL,

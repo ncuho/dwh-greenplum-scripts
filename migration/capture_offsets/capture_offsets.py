@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 def main():
+    """Точка входа: Capture Kafka low/high offsets only; this is NOT a Greenplum-consistent cut. Импорт модуля сам по себе эту операцию не запускает."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--topic", default="oil.events.v1")
     p.add_argument(

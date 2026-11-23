@@ -19,11 +19,13 @@ public final class OilGreenplumSinkTask extends SinkTask {
   private final Map<TopicPartition, Long> positions = new HashMap<>();
 
   @Override
+  /** Возвращает версию установленной реализации Kafka Connect plugin. */
   public String version() {
     return "0.1.0-demo";
   }
 
   @Override
+  /** Проверяет конфигурацию и инициализирует ресурсы connector/task. */
   public void start(Map<String, String> cfg) {
     try {
       schema = cfg.getOrDefault("gp.schema", "oil_stg");
@@ -53,6 +55,7 @@ public final class OilGreenplumSinkTask extends SinkTask {
   }
 
   @Override
+  /** Восстанавливает позицию каждой назначенной partition из эксклюзивного GP checkpoint. */
   public void open(Collection<TopicPartition> partitions) {
     try {
       for (TopicPartition tp : partitions) {
@@ -83,6 +86,7 @@ public final class OilGreenplumSinkTask extends SinkTask {
   }
 
   @Override
+  /** Атомарно сохраняет событие, batch и следующий offset в GP; сбой откатывает доставку. */
   public void put(Collection<SinkRecord> records) {
     for (SinkRecord record : records) {
       TopicPartition tp = new TopicPartition(
@@ -204,6 +208,7 @@ public final class OilGreenplumSinkTask extends SinkTask {
   }
 
   @Override
+  /** Возвращает только подтверждённые GP позиции для фиксации Kafka consumer offsets. */
   public Map<TopicPartition, OffsetAndMetadata> preCommit(
     Map<TopicPartition, OffsetAndMetadata> current
   ) {
@@ -216,23 +221,27 @@ public final class OilGreenplumSinkTask extends SinkTask {
   }
 
   @Override
+  /** Освобождает ресурсы завершённой сессии или снимает локальное назначение partition. */
   public void close(Collection<TopicPartition> partitions) {
     for (TopicPartition tp : partitions) positions.remove(tp);
   }
 
   @Override
+  /** Завершает работу плагина и закрывает принадлежащее task соединение. */
   public void stop() {
     if (db != null) try {
       db.close();
     } catch (SQLException ignored) {}
   }
 
+  /** Откатывает незавершённую GP транзакцию, не объявляя offset обработанным. */
   private void rollback() {
     if (db != null) try {
       db.rollback();
     } catch (SQLException ignored) {}
   }
 
+  /** Подставляет заранее проверенную Stage schema в фиксированные SQL statements плагина. */
   private String sql(String statement) {
     return statement.replace("demo_stg.", schema + ".");
   }

@@ -1,3 +1,5 @@
+-- Назначение: Read-only разбор управленческих показателей по месторождениям; отношение рассчитывается по суммам.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Greenplum: aggregate the second report without averaging daily ratios.
 SELECT
     field_name,

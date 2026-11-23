@@ -1,3 +1,5 @@
+-- Назначение: Хранит следующий ожидаемый offset каждой партиции. Обновляется в одной транзакции с записью события в GP.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 CREATE TABLE oil_stg.kafka_checkpoint (
     topic text NOT NULL,
     kafka_partition integer NOT NULL,

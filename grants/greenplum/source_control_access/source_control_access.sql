@@ -1,3 +1,5 @@
+-- Назначение: Назначает минимальные права контроля статуса партий и checkpoints без прямой записи.
+-- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
 -- Read-only technical counters for the bounded source and migration controllers.
 -- No payload read or direct write is granted to the Airflow runner.
 BEGIN;
