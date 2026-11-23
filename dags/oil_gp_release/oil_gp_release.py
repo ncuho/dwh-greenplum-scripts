@@ -1,9 +1,5 @@
 # Управляемое применение партий и пересчёт двух цепочек Greenplum. Код: oil_gp_release.py.
-"""Apply complete Kafka batches and refresh both GP reports online.
-
-The database service serializes participating writers only during this source
-transaction. Kafka producers and Kafka Connect remain running throughout.
-"""
+"""Apply complete Kafka batches and refresh both GP reports in one ordinary transaction."""
 from datetime import datetime, timedelta
 import json
 from airflow import DAG
@@ -34,9 +30,44 @@ def validate_coalesce_audit(cursor):
     return violations
 
 
+def apply_ready_batches(cursor):
+    """Serialize the source writer, apply READY batches and rebuild both dependent reports.
+
+    This is normal source processing. It creates no migration schema or source
+    copies. The checkpoint lock serializes Kafka delivery with batch application.
+    """
+    cursor.execute('SELECT pg_try_advisory_xact_lock(860223191::bigint)')
+    if not cursor.fetchone()[0]:
+        raise RuntimeError('Source calculation already running')
+    cursor.execute('LOCK TABLE oil_stg.kafka_checkpoint IN EXCLUSIVE MODE')
+    cursor.execute("SELECT count(*) FROM oil_stg.batch_control WHERE source_name='kafka:oil.events.v1' AND status IN ('OPEN','FAILED')")
+    if cursor.fetchone()[0]:
+        raise ValueError('Incomplete or failed source batch')
+    cursor.execute("SELECT batch_id FROM oil_stg.batch_control WHERE source_name='kafka:oil.events.v1' AND status='READY' ORDER BY batch_id")
+    batches = [row[0] for row in cursor.fetchall()]
+    if len(batches) > 100:
+        raise ValueError('More than 100 READY batches; coalesce the backlog before applying')
+    for batch_id in batches:
+        # Главный вызов обработки GP: apply_batch разбирает события и обновляет Vault.
+        cursor.execute('SELECT oil_dds.apply_batch(%s)', (batch_id,))
+    if batches:
+        # Расчёт добычи формирует измерения, факт и агрегат; простои используют их результат.
+        cursor.execute('SELECT oil_mart.refresh_production()')
+        cursor.execute('SELECT oil_mart.refresh_downtime()')
+    cursor.execute('SELECT count(*) FROM oil_stg.event_reject')
+    if cursor.fetchone()[0]:
+        raise ValueError('Source contains rejected events')
+    cursor.execute("SELECT count(*) FROM oil_stg.event_log s LEFT JOIN oil_dds.event d ON d.event_id=(s.event_json::json->>'event_id') WHERE s.topic='oil.events.v1' AND (d.event_id IS NULL OR d.event_document<>s.event_json)")
+    if cursor.fetchone()[0]:
+        raise ValueError('Source Stage and DDS ledger differ')
+    cursor.execute("SELECT kafka_partition,next_offset FROM oil_stg.kafka_checkpoint WHERE topic='oil.events.v1' ORDER BY kafka_partition")
+    return {'applied_batches': len(batches), 'partitions': [
+        {'partition': row[0], 'end': row[1]} for row in cursor.fetchall()], 'source_checks': 'PASS'}
+
+
 # Airflow передаёт контекст запуска в release(); SQL ниже выполняется на GP.
 def release(**context):
-    """Apply the bounded READY backlog under the registered source contract.
+    """Apply the bounded READY backlog and commit both source reports together.
 
     A checkpoint lock drains an in-flight sink transaction. The service then
     applies all READY batches and refreshes both dependent marts atomically.
@@ -52,9 +83,8 @@ def release(**context):
         with connection.cursor() as cursor:
             cursor.execute("SET LOCAL lock_timeout='10s'")
             cursor.execute("SET LOCAL statement_timeout='180s'")
-            # При наличии READY prepare_source("oil") вызывает apply_batch, затем refresh_production и refresh_downtime.
-            cursor.execute("SELECT bridge_capture.prepare_source(%s)", ("oil",))
-            result = cursor.fetchone()[0]
+            # Python явно вызывает исходные GP-функции; отдельная миграционная SQL-служба не нужна.
+            result = apply_ready_batches(cursor)
             # Читаем обе карты coalesce и исходные доставки; ошибка аудита откатывает весь source release.
             result["coalesce_audit_violations"] = validate_coalesce_audit(cursor)
         # Фиксируем применение партий и оба пересчёта одной транзакцией; до этого момента любая ошибка ведёт к rollback.
