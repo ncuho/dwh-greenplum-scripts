@@ -1,5 +1,9 @@
--- Назначение: Объект online_capture. Назначение и порядок исполнения определяются согласованным контрактом этого каталога.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- Контекст миграции: AS IS / TO BE.
+-- Назначение: prepare_source сериализует исходных писателей одной короткой транзакцией, применяет до 100 READY batches и обновляет обе общие витрины. capture копирует согласованные relations в закрытую схему bridge_capture, фиксирует OID, counts и примен.
+-- AS IS: Короткая GP-транзакция применяет READY и материализует согласованные relations C0/C1.
+-- TO BE: Cedrus читает committed copies, Spark рассчитывает выпуск без длительного удержания GP.
+-- Отличие: Kafka producer и source sink не останавливаются на INITIAL; GP writers могут ждать capture-транзакцию.
+-- Конец контекста миграции.
 -- Online capture for Greenplum 6: Kafka and Connect remain running.
 -- Only GP writers wait briefly while a transaction applies READY batches and
 -- materializes the consistent source image. The subsequent network copy reads

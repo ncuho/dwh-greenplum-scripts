@@ -1,3 +1,7 @@
+-- Контекст миграции: AS IS / TO BE.
 -- Назначение: Схема интеграции и истории бизнес-сущностей с hubs, links и satellites.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- AS IS: Создаёт схемы/sequence и физические объекты исходного GP.
+-- TO BE: Iceberg REST catalog хранит namespaces/table metadata; compute отделён от хранения.
+-- Отличие: GP sequence, distribution и индексы не становятся механизмами Iceberg.
+-- Конец контекста миграции.
 CREATE SCHEMA oil_dds;

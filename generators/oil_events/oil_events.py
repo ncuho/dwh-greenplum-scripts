@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Программный источник событий месторождений, скважин, добычи и простоев. Baseline воспроизводим по seed; delta включает correction, replay, delete, late arrival и версию well.
+# AS IS: Producer отправляет события приложения в общий oil.events.v1.
+# TO BE: Тот же producer обслуживает независимые GP и Iceberg consumer groups.
+# Отличие: Генератор не переводится на запись напрямую в S3; это поток событий, а не WAL CDC.
+# Конец контекста миграции.
 """Reproducible oilfield events. Import has no I/O; publishing is explicit."""
 from __future__ import annotations
 import argparse

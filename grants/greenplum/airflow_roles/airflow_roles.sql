@@ -1,5 +1,9 @@
+-- Контекст миграции: AS IS / TO BE.
 -- Назначение: Назначает минимальные права вызова SECURITY DEFINER расчётных функций и доступа их владельца.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- AS IS: Роли GP ограничивают чтение и запуск source-логики.
+-- TO BE: CIAM задаёт identities/роли; LakeKeeper выдаёт права на target table UUID.
+-- Отличие: GRANT GP не переносится буквально; Superset RBAC проверяется отдельно.
+-- Конец контекста миграции.
 -- Explicit, narrowly scoped SECURITY DEFINER executor for manual GP releases.
 -- The existing demo_airflow_runner login has no direct write access to these tables.
 BEGIN;

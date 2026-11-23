@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Читает состояния известных writers и Kafka ACL/offsets. Наблюдение не заменяет живую блокировку.
+# AS IS: Сохранённый offline-контроллер может удерживать producer/source fence.
+# TO BE: Текущий online-маршрут использует bridge_capture вместо долгого fence.
+# Отличие: Этот файл не является обязательным шагом online-переноса; не запускайте acquire рядом с capture.
+# Конец контекста миграции.
 """Observe known source writers and Kafka; does not establish or claim a fence."""
 import json, subprocess, urllib.request, re, pathlib, sys
 

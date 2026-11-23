@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Создаёт ограниченного Kafka writer в GP и защищённый credential-файл. Требует явной SSH-конфигурации; не предназначен для повторного запуска вслепую.
+# AS IS: Роли GP ограничивают чтение и запуск source-логики.
+# TO BE: CIAM задаёт identities/роли; LakeKeeper выдаёт права на target table UUID.
+# Отличие: GRANT GP не переносится буквально; Superset RBAC проверяется отдельно.
+# Конец контекста миграции.
 """Provision only the oil staging GP role and a 0600 VM secret; no event writes."""
 import hashlib, secrets, subprocess
 from pathlib import Path

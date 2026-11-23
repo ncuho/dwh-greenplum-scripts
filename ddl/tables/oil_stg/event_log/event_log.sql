@@ -1,5 +1,9 @@
--- Назначение: Принимает исходные JSON-события вместе с topic, partition, offset и ID партии. Сохраняет доставку до применения бизнес-логики.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- Контекст миграции: AS IS / TO BE.
+-- Назначение: Сохраняет JSON доставок с topic, partition, offset и исходной партией.
+-- AS IS: oil_stg.event_log; таблица или view исходного слоя GP.
+-- TO BE: Логический аналог в Iceberg release; текущий код первой волны — pipelines/production_online в DLH.
+-- Отличие: GP distribution/индексы не копируются; бизнес-ключи, типы и смысл связей сохраняются и проверяются DQ.
+-- Конец контекста миграции.
 CREATE TABLE oil_stg.event_log (
     topic text NOT NULL,
     kafka_partition integer NOT NULL,

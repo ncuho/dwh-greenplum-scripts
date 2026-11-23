@@ -1,3 +1,9 @@
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Управляемое применение партий и пересчёт двух цепочек Greenplum. Код: oil_gp_release.py.
+# AS IS: Airflow вызывает source prepare_source и атомарно обновляет обе GP-витрины.
+# TO BE: Целевой DAG запускает принятые Cedrus/Spark-операции и DQ release.
+# Отличие: Source DAG остаётся рабочим; target DAG и consumer добавляются отдельно.
+# Конец контекста миграции.
 """Apply complete Kafka batches and refresh both GP reports online.
 
 The database service serializes participating writers only during this source

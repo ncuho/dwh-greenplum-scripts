@@ -1,3 +1,9 @@
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Компилирует текущий OilEnvelopeToStaging, выполняет JVM-проверку сохранения JSON/координат и обязательного времени приёма, затем заменяет ровно один установленный класс. Старый JAR сохраняется за пределами plugin.path. Перезапускается тольк.
+# AS IS: GP sink принимает JSON и фиксирует партии/checkpoints в GP.
+# TO BE: Iceberg sink использует SMT и отдельную consumer group для raw.
+# Отличие: Адаптируется формат записи; event_json и Kafka coordinates сохраняются.
+# Конец контекста миграции.
 """Compile, test and update the installed staging SMT without changing GP ingestion."""
 import json,subprocess
 from pathlib import Path

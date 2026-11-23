@@ -1,5 +1,9 @@
--- Назначение: Разбирает envelope JSON в STG: тип, ID, версию, операцию, время и payload без изменения исходного документа.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- Контекст миграции: AS IS / TO BE.
+-- Назначение: Извлекает поля envelope и payload без потери исходного JSON.
+-- AS IS: oil_stg.v_event_parsed; таблица или view исходного слоя GP.
+-- TO BE: Логический аналог в Iceberg release; текущий код первой волны — pipelines/production_online в DLH.
+-- Отличие: GP distribution/индексы не копируются; бизнес-ключи, типы и смысл связей сохраняются и проверяются DQ.
+-- Конец контекста миграции.
 CREATE VIEW oil_stg.v_event_parsed AS
 SELECT
     topic,

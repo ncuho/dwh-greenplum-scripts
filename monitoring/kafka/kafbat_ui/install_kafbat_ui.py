@@ -1,3 +1,9 @@
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Kafbat UI 1.5.1 наблюдает Kafka topics, partitions, messages, consumer groups и два Kafka Connect workers. Работает на существующей Kafka VM отдельным systemd service oil-kafbat-ui.service, на Java 25, с mTLS и read-only UI. Слушает только .
+# AS IS: Наблюдает существующие Kafka/Connect и исходную доставку.
+# TO BE: Тем же UI наблюдают отдельный Iceberg connector, его tasks и lag.
+# Отличие: Наблюдение не меняет offsets и не заменяет сверку DDS/Marts.
+# Конец контекста миграции.
 """Install the pinned official Kafbat UI on the existing Kafka VM.
 
 The UI uses its own read-only mTLS principal and listens on loopback only.

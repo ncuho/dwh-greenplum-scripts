@@ -1,5 +1,9 @@
+-- Контекст миграции: AS IS / TO BE.
 -- Назначение: Read-only SQL-проверки качества, полноты и согласованности результатов двух контуров.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- AS IS: Проверяет исходные ключи, связи, версии и полноту данных.
+-- TO BE: DQ-гейты выполняются для INITIAL C0 и REFRESH C1 до публикации BI.
+-- Отличие: Сравнение ведётся на одной сохранённой границе, а не с продолжающим меняться GP.
+-- Конец контекста миграции.
 -- DRAFT: 12 full multiset comparisons; replace identifiers only with verified FQNs.
 -- GP tables must be frozen at the approved cut; read Iceberg output at the exact manifest snapshot.
 -- This template uses table heads: verify each head equals its manifest snapshot before execution.

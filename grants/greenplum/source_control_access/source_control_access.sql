@@ -1,5 +1,9 @@
+-- Контекст миграции: AS IS / TO BE.
 -- Назначение: Назначает минимальные права контроля статуса партий и checkpoints без прямой записи.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- AS IS: Роли GP ограничивают чтение и запуск source-логики.
+-- TO BE: CIAM задаёт identities/роли; LakeKeeper выдаёт права на target table UUID.
+-- Отличие: GRANT GP не переносится буквально; Superset RBAC проверяется отдельно.
+-- Конец контекста миграции.
 -- Read-only technical counters for the bounded source and migration controllers.
 -- No payload read or direct write is granted to the Airflow runner.
 BEGIN;

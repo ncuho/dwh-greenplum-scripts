@@ -1,5 +1,9 @@
+-- Контекст миграции: AS IS / TO BE.
 -- Назначение: Read-only SQL-проверки объединения партий и сохранения происхождения.
--- Исполняйте в указанном SQL-движке; одноимённые функции и типы GP и Spark могут иметь разную семантику.
+-- AS IS: Проверяет исходные ключи, связи, версии и полноту данных.
+-- TO BE: DQ-гейты выполняются для INITIAL C0 и REFRESH C1 до публикации BI.
+-- Отличие: Сравнение ведётся на одной сохранённой границе, а не с продолжающим меняться GP.
+-- Конец контекста миграции.
 -- Read-only; replace :new_batch_id with a validated numeric batch ID in psql.
 -- These checks do not establish Kafka end offset or snapshot consistency.
 SELECT

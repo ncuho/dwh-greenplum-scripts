@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# Контекст миграции: AS IS / TO BE.
+# Назначение: Снимает позиции партиций для согласования границы переноса. Сам по себе не устанавливает fence.
+# AS IS: Считывает позиции Kafka для фиксации транспорта.
+# TO BE: Полная граница содержит applied offsets GP, capture и pinned target snapshots.
+# Отличие: Broker end сам по себе не подтверждает применение событий в DDS.
+# Конец контекста миграции.
 """Capture Kafka low/high offsets only; this is NOT a Greenplum-consistent cut."""
 import argparse
 import json
