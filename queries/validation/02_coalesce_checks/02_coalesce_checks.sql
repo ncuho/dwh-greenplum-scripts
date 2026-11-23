@@ -1,11 +1,4 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Read-only SQL-проверки объединения партий и сохранения происхождения.
--- AS IS: Проверяет исходные ключи, связи, версии и полноту данных.
--- TO BE: DQ-гейты выполняются для INITIAL C0 и REFRESH C1 до публикации BI.
--- Отличие: Сравнение ведётся на одной сохранённой границе, а не с продолжающим меняться GP.
--- Конец контекста миграции.
--- Read-only; replace :new_batch_id with a validated numeric batch ID in psql.
--- These checks do not establish Kafka end offset or snapshot consistency.
+-- Группирует исходные партии по состоянию обработки.
 SELECT
     b.batch_id,
     b.status,
@@ -21,6 +14,8 @@ GROUP BY
     b.status,
     b.source_name;
 
+
+-- Группирует исходные партии по состоянию обработки.
 SELECT
     m.original_batch_id,
     m.original_event_count,
@@ -41,6 +36,8 @@ HAVING
     m.original_event_count <> count(em.kafka_offset)
     OR b.status <> 'COALESCED';
 
+
+-- Считает строки/значения из oil_stg.batch_coalesce_event_map.
 SELECT
     count(*) AS mapping_mismatches
 FROM
@@ -53,6 +50,8 @@ WHERE
     AND (e.kafka_offset IS NULL
         OR e.batch_id <> m.coalesced_batch_id);
 
+
+-- Считает строки/значения из oil_stg.event_log.
 SELECT
     e.topic,
     e.kafka_partition,
@@ -69,5 +68,3 @@ GROUP BY
 ORDER BY
     e.topic,
     e.kafka_partition;
-
--- min/max do NOT prove no gaps: compare complete offsets with Kafka and checkpoint.

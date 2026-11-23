@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-# Контекст миграции: AS IS / TO BE.
-# Назначение: Панель наблюдения за Kafka-позициями и двумя connectors, без функций записи или запуска producer.
-# AS IS: Наблюдает существующие Kafka/Connect и исходную доставку.
-# TO BE: Тем же UI наблюдают отдельный Iceberg connector, его tasks и lag.
-# Отличие: Наблюдение не меняет offsets и не заменяет сверку DDS/Marts.
-# Конец контекста миграции.
+# Панель наблюдения за Kafka-позициями и двумя connectors, без функций записи или запуска producer.
 """Loopback-only fixed read-only operations dashboard; no writes or secret output."""
 import json
 import os

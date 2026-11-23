@@ -1,9 +1,4 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Хранит следующий принятый offset каждой исходной Kafka-партиции.
--- AS IS: oil_stg.kafka_checkpoint; таблица или view исходного слоя GP.
--- TO BE: Логический аналог в Iceberg release; текущий код первой волны — pipelines/production_online в DLH.
--- Отличие: GP distribution/индексы не копируются; бизнес-ключи, типы и смысл связей сохраняются и проверяются DQ.
--- Конец контекста миграции.
+-- Создаёт таблицу oil_stg.kafka_checkpoint.
 CREATE TABLE oil_stg.kafka_checkpoint (
     topic text NOT NULL,
     kafka_partition integer NOT NULL,

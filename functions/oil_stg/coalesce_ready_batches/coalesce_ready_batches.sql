@@ -1,9 +1,4 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Объединяет ограниченный диапазон READY-партий одного источника с сохранением происхождения. Работает под общей блокировкой writer.
--- AS IS: Объединяет READY-партии, сохраняя происхождение каждой доставки.
--- TO BE: Карты coalesce сохраняются как аудит INITIAL.
--- Отличие: Новый Iceberg sink имеет собственные offsets; GP batch IDs не становятся его checkpoint.
--- Конец контекста миграции.
+-- Объединяет ограниченный диапазон READY-партий одного источника с сохранением происхождения. Работает под общей блокировкой writer.
 CREATE OR REPLACE FUNCTION oil_stg.coalesce_ready_batches (p_first_batch bigint, p_last_batch bigint, p_new_batch bigint, p_source text, p_max_events integer)
     RETURNS bigint
     AS $$
@@ -13,6 +8,7 @@ DECLARE
     v_events bigint;
     v_changed bigint;
 BEGIN
+    -- Объединяем ограниченное число READY-партий одного source и сохраняем карты происхождения каждой доставки.
     IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN
         RAISE EXCEPTION 'oil source is fenced';
     END IF;
@@ -35,7 +31,7 @@ BEGIN
         RAISE EXCEPTION 'new batch already exists';
     END IF;
     -- Select only committed READY batches of the specified source; non-READY and
-    -- other sources in range remain untouched. No claim is made of contiguous offsets.
+    -- Other sources in range remain untouched. No claim is made of contiguous offsets.
     SELECT
         count(*)
     INTO

@@ -1,16 +1,12 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: prepare_source сериализует исходных писателей одной короткой транзакцией, применяет до 100 READY batches и обновляет обе общие витрины. capture копирует согласованные relations в закрытую схему bridge_capture, фиксирует OID, counts и примен.
--- AS IS: Короткая GP-транзакция применяет READY и материализует согласованные relations C0/C1.
--- TO BE: Cedrus читает committed copies, Spark рассчитывает выпуск без длительного удержания GP.
--- Отличие: Kafka producer и source sink не останавливаются на INITIAL; GP writers могут ждать capture-транзакцию.
--- Конец контекста миграции.
--- Online capture for Greenplum 6: Kafka and Connect remain running.
--- Only GP writers wait briefly while a transaction applies READY batches and
--- materializes the consistent source image. The subsequent network copy reads
--- those immutable tables and holds no business-table or producer fence.
+-- Создаёт namespace/схему bridge_capture.
 CREATE SCHEMA IF NOT EXISTS bridge_capture;
+
+
+-- Отзывает явно перечисленные права у PUBLIC для ограничения доступа к объектам.
 REVOKE ALL ON SCHEMA bridge_capture FROM PUBLIC;
 
+
+-- Создаёт таблицу bridge_capture.sources.
 CREATE TABLE IF NOT EXISTS bridge_capture.sources (
     source_id text PRIMARY KEY,
     stage_schema text NOT NULL,
@@ -20,6 +16,8 @@ CREATE TABLE IF NOT EXISTS bridge_capture.sources (
     reader_role text NOT NULL
 ) DISTRIBUTED BY (source_id);
 
+
+-- Читает manifests уже сохранённых исходных образов.
 CREATE TABLE IF NOT EXISTS bridge_capture.registry (
     capture_id text PRIMARY KEY,
     source_id text NOT NULL,
@@ -28,12 +26,14 @@ CREATE TABLE IF NOT EXISTS bridge_capture.registry (
     manifest json NOT NULL
 ) DISTRIBUTED BY (capture_id);
 
--- Only an administrator registers source contracts. Callers cannot inject an
--- arbitrary relation, function, role, or SQL expression into the definer scope.
+
+-- Записывает результат SELECT в bridge_capture.sources.
 INSERT INTO bridge_capture.sources
 SELECT 'oil','oil_stg','oil_dds','oil_mart','oil.events.v1','cedrus_gp_ro'
 WHERE NOT EXISTS (SELECT 1 FROM bridge_capture.sources WHERE source_id='oil');
 
+
+-- Применяет READY-партии, пересчитывает обе исходные витрины и проверяет согласованность Stage, DDS и Kafka checkpoint в одной короткой GP-транзакции.
 CREATE OR REPLACE FUNCTION bridge_capture.prepare_source(p_source_id text)
 RETURNS json LANGUAGE plpgsql SECURITY DEFINER
 SET search_path = pg_catalog, pg_temp AS $$
@@ -47,15 +47,15 @@ DECLARE
 BEGIN
     SELECT * INTO STRICT cfg FROM bridge_capture.sources WHERE source_id=p_source_id;
     -- Shared writer gate with the existing apply/refresh functions. It does not
-    -- change a Kafka ACL, pause a connector, or reject a producer process.
+    -- Change a Kafka ACL, pause a connector, or reject a producer process.
     IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN
         RAISE EXCEPTION 'source writer busy; retry capture before any target write';
     END IF;
     -- GP sink takes this same checkpoint lock for each atomic delivery. Waiting
-    -- here drains its current transaction and queues the next delivery normally.
+    -- Here drains its current transaction and queues the next delivery normally.
     EXECUTE format('LOCK TABLE %I.kafka_checkpoint IN EXCLUSIVE MODE',cfg.stage_schema);
     -- Lock physical relations in a stable order. This also protects against
-    -- ordinary writers that do not participate in the advisory-lock contract.
+    -- Ordinary writers that do not participate in the advisory-lock contract.
     FOR item IN
         SELECT n.nspname,c.relname FROM pg_class c
         JOIN pg_namespace n ON n.oid=c.relnamespace
@@ -71,15 +71,18 @@ BEGIN
         INTO bad USING 'kafka:'||cfg.topic;
     IF bad>100 THEN RAISE EXCEPTION 'more than 100 READY batches; bounded coalesce required'; END IF;
     -- The bounded apply happens in this same transaction. A failure rolls back
-    -- both source application and every capture table created by the caller.
+    -- Both source application and every capture table created by the caller.
     FOR batch IN EXECUTE format('SELECT batch_id FROM %I.batch_control WHERE source_name=$1 AND status=''READY'' ORDER BY batch_id',cfg.stage_schema)
         USING 'kafka:'||cfg.topic
     LOOP
+        -- Для каждой READY-партии выполняется oil_dds.apply_batch(batch_id).
         EXECUTE format('SELECT %I.apply_batch($1)',cfg.dds_schema) USING batch.batch_id;
         batch_count:=batch_count+1;
     END LOOP;
     IF batch_count>0 THEN
+        -- Refresh_production строит SCD2, суточный факт и агрегат добычи.
         EXECUTE format('SELECT %I.refresh_production()',cfg.mart_schema);
+        -- Refresh_downtime использует уже обновлённую добычу и добавляет показатели простоев.
         EXECUTE format('SELECT %I.refresh_downtime()',cfg.mart_schema);
     END IF;
     EXECUTE format('SELECT count(*) FROM %I.event_reject',cfg.stage_schema) INTO bad;
@@ -97,6 +100,8 @@ BEGIN
         'source_checks','PASS','producer_paused',false,'connector_paused',false);
 END $$;
 
+
+-- Создаёт неизменяемые копии согласованного исходного среза и сохраняет manifest с OID, числом строк и Kafka offsets; вызывающий код фиксирует транзакцию через COMMIT.
 CREATE OR REPLACE FUNCTION bridge_capture.capture(
     p_capture_id text,p_source_id text,p_objects json
 ) RETURNS json LANGUAGE plpgsql SECURITY DEFINER
@@ -152,7 +157,7 @@ BEGIN
         END LOOP;
         destination:=p_capture_id||'_'||substr(md5(symbol),1,12);
         -- CTAS preserves the actual source types and values, including audit
-        -- timestamps and lexical JSON. No business constraints are fabricated.
+        -- Timestamps and lexical JSON. No business constraints are fabricated.
         EXECUTE format('CREATE TABLE bridge_capture.%I AS SELECT %s FROM %I.%I DISTRIBUTED RANDOMLY',destination,fields,source_schema,source_table);
         GET DIAGNOSTICS row_count=ROW_COUNT;
         EXECUTE format('REVOKE ALL ON TABLE bridge_capture.%I FROM PUBLIC',destination);
@@ -178,6 +183,8 @@ BEGIN
     RETURN manifest;
 END $$;
 
+
+-- Удаляет только зарегистрированные копии выбранного capture после проверки их принадлежности и OID; исходные бизнес-таблицы сохраняются.
 CREATE OR REPLACE FUNCTION bridge_capture.cleanup(p_capture_id text)
 RETURNS integer LANGUAGE plpgsql SECURITY DEFINER
 SET search_path = pg_catalog, pg_temp AS $$
@@ -206,12 +213,34 @@ BEGIN
     RETURN removed;
 END $$;
 
+
+-- Отзывает явно перечисленные права у PUBLIC для ограничения доступа к объектам.
 REVOKE ALL ON ALL TABLES IN SCHEMA bridge_capture FROM PUBLIC;
+
+
+-- Применяет READY и последовательно пересчитывает обе исходные витрины.
 REVOKE ALL ON FUNCTION bridge_capture.prepare_source(text) FROM PUBLIC;
+
+
+-- Применяет READY-партии и сохраняет согласованный образ выбранных source-таблиц.
 REVOKE ALL ON FUNCTION bridge_capture.capture(text,text,json) FROM PUBLIC;
+
+
+-- Отзывает явно перечисленные права у PUBLIC для ограничения доступа к объектам.
 REVOKE ALL ON FUNCTION bridge_capture.cleanup(text) FROM PUBLIC;
+
+
+-- Выдаёт USAGE на SCHEMA bridge_capture роли demo_airflow_runner,cedrus_gp_ro.
 GRANT USAGE ON SCHEMA bridge_capture TO demo_airflow_runner,cedrus_gp_ro;
+
+
+-- Применяет READY-партии и сохраняет согласованный образ выбранных source-таблиц.
 GRANT EXECUTE ON FUNCTION bridge_capture.prepare_source(text),bridge_capture.capture(text,text,json),bridge_capture.cleanup(text) TO demo_airflow_runner;
+
+
+-- Читает manifests уже сохранённых исходных образов.
 GRANT SELECT ON bridge_capture.registry TO demo_airflow_runner,cedrus_gp_ro;
 
+
+-- Выдаёт SELECT на bridge_capture.sources роли cedrus_gp_ro.
 GRANT SELECT ON bridge_capture.sources TO cedrus_gp_ro;

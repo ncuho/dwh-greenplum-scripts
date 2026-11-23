@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-# Контекст миграции: AS IS / TO BE.
-# Назначение: Снимает позиции партиций для согласования границы переноса. Сам по себе не устанавливает fence.
-# AS IS: Считывает позиции Kafka для фиксации транспорта.
-# TO BE: Полная граница содержит applied offsets GP, capture и pinned target snapshots.
-# Отличие: Broker end сам по себе не подтверждает применение событий в DDS.
-# Конец контекста миграции.
+# Снимает позиции партиций для согласования границы переноса. Сам по себе не устанавливает fence.
 """Capture Kafka low/high offsets only; this is NOT a Greenplum-consistent cut."""
 import argparse
 import json
@@ -58,7 +53,7 @@ def main():
     consumer = Consumer(cfg)
     try:
         # Full metadata avoids a topic-specific lookup that can auto-create a
-        # missing topic on brokers with auto.create.topics.enable=true.
+        # Missing topic on brokers with auto.create.topics.enable=true.
         meta = consumer.list_topics(timeout=15)
         topic = meta.topics.get(args.topic)
         if topic is None or topic.error or not topic.partitions:

@@ -1,15 +1,11 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Перестраивает SCD-измерения, факт скважино-дня и дневной агрегат добычи. Выбирает актуальные версии событий и проверяет однозначность измерений.
--- AS IS: PL/pgSQL обновляет SCD2, факт и агрегат внутри GP.
--- TO BE: Spark SQL последовательно считает dim_field, dim_well, fact_well_day и agg_field_day.
--- Отличие: Вместо изменения текущих GP-таблиц создаётся новый release; BI переключается после сверки.
--- Конец контекста миграции.
+-- Перестраивает SCD-измерения, факт скважино-дня и дневной агрегат добычи. Выбирает актуальные версии событий и проверяет однозначность измерений.
 CREATE OR REPLACE FUNCTION oil_mart.refresh_production ()
     RETURNS void
     AS $$
 DECLARE
     bad bigint;
 BEGIN
+    -- Перестраиваем SCD2, факт скважино-дня и дневной агрегат добычи; неоднозначные исторические связи отклоняем.
     IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN
         RAISE EXCEPTION 'oil source is fenced';
     END IF;
@@ -46,6 +42,7 @@ BEGIN
     DELETE FROM oil_mart.agg_field_day;
     DELETE FROM oil_mart.dim_well;
     DELETE FROM oil_mart.dim_field;
+    -- SCD2 месторождений: LEAD(event_time) закрывает интервал предыдущей версии.
     INSERT INTO oil_mart.dim_field
     SELECT
         field_hk,
@@ -57,6 +54,7 @@ BEGIN
         op = 'D'
     FROM
         oil_dds.sat_field;
+    -- SCD2 скважин: LEAD(valid_from) задаёт конец интервала; link даёт историческую принадлежность месторождению.
     INSERT INTO oil_mart.dim_well
     SELECT
         w.well_hk,
@@ -70,6 +68,7 @@ BEGIN
     FROM
         oil_dds.sat_well w
         JOIN oil_dds.link_well_field l ON l.link_hk = w.link_hk;
+    -- Факт: последняя неудалённая версия добычи присоединяется к ровно одной действовавшей версии скважины и месторождения.
     INSERT INTO oil_mart.fact_well_day
     SELECT
         p.production_hk,
@@ -136,6 +135,7 @@ WHERE
     IF bad > 0 THEN
         RAISE EXCEPTION 'inconsistent well status / nonzero inactive oil %', bad;
     END IF;
+    -- Агрегат: суммируем тонны и активные скважино-дни по дате/месторождению; продуктивность — отношение сумм.
     INSERT INTO oil_mart.agg_field_day
     SELECT
         p.production_date,

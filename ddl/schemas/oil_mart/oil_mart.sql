@@ -1,7 +1,2 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Схема измерений, фактов и serving-агрегатов управленческой отчётности.
--- AS IS: Создаёт схемы/sequence и физические объекты исходного GP.
--- TO BE: Iceberg REST catalog хранит namespaces/table metadata; compute отделён от хранения.
--- Отличие: GP sequence, distribution и индексы не становятся механизмами Iceberg.
--- Конец контекста миграции.
+-- Создаёт namespace/схему oil_mart.
 CREATE SCHEMA oil_mart;

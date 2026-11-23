@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-# Контекст миграции: AS IS / TO BE.
-# Назначение: Программный источник событий месторождений, скважин, добычи и простоев. Baseline воспроизводим по seed; delta включает correction, replay, delete, late arrival и версию well.
-# AS IS: Producer отправляет события приложения в общий oil.events.v1.
-# TO BE: Тот же producer обслуживает независимые GP и Iceberg consumer groups.
-# Отличие: Генератор не переводится на запись напрямую в S3; это поток событий, а не WAL CDC.
-# Конец контекста миграции.
+# Программный источник событий месторождений, скважин, добычи и простоев. Baseline воспроизводим по seed; delta включает correction, replay, delete, late arrival и версию well.
 """Reproducible oilfield events. Import has no I/O; publishing is explicit."""
 from __future__ import annotations
 import argparse
@@ -131,7 +126,7 @@ def baseline(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
 
 def delta(seed: int, fields: int, wells: int, days: int) -> Iterator[dict]:
     # One correction, one logical delete, a late valid-time dimension version,
-    # a late arrival and a byte-identical replay. All refer to the same baseline.
+    # A late arrival and a byte-identical replay. All refer to the same baseline.
     """Формирует коррекцию, удаление, поздние версии и точный replay относительно того же baseline."""
     original = production(1, 0, seed)
     corrected = dict(
@@ -237,6 +232,7 @@ def main() -> None:
     for e in events:
         while True:
             try:
+                # Отправляем JSON в Kafka; GP-функции вызовет отдельный Airflow release после приёма события sink-коннектором.
                 producer.produce(
                     args.topic,
                     key=e["event_type"] + ":" + e["entity_id"],

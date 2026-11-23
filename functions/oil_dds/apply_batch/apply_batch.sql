@@ -1,15 +1,11 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Применяет одну READY-партию в общей транзакции: проверяет контракт и конфликты, исключает повторы, заполняет реестр, hubs, links и satellites. При ошибке откатывает всю партию.
--- AS IS: PL/pgSQL атомарно валидирует READY-партию и обновляет общий Data Vault.
--- TO BE: Spark строит целевые event/hub/link/satellite из INITIAL и ограниченного raw-окна.
--- Отличие: Транзакцию функции заменяет изолированный выпуск с проверками; PL/pgSQL в Iceberg не исполняется.
--- Конец контекста миграции.
+-- Применяет одну READY-партию в общей транзакции: проверяет контракт и конфликты, исключает повторы, заполняет реестр, hubs, links и satellites. При ошибке откатывает всю партию.
 CREATE OR REPLACE FUNCTION oil_dds.apply_batch (p_batch_id bigint)
     RETURNS void
     AS $$
 DECLARE
     bad bigint;
 BEGIN
+    -- Проверяем READY-партию, исключаем replay, дописываем event и Vault; APPLIED ставим только после всех проверок.
     IF NOT pg_catalog.pg_try_advisory_xact_lock(860223191::bigint) THEN
         RAISE EXCEPTION 'oil source is fenced';
     END IF;
@@ -162,6 +158,7 @@ BEGIN
     IF bad > 0 THEN
         RAISE EXCEPTION 'conflicting entity versions %', bad;
     END IF;
+    -- Реестр DDS: сохраняем валидные события; row_number и NOT EXISTS исключают точный replay event_id.
     INSERT INTO oil_dds.event
     SELECT
         e.event_id,
@@ -190,6 +187,7 @@ WHERE
                 oil_dds.event d
             WHERE
                 d.event_id = e.event_id);
+    -- Hub месторождений: создаём отсутствующие бизнес-ключи и детерминированный field hash key.
     INSERT INTO oil_dds.hub_field
     SELECT
         md5('field:' || entity_id),
@@ -210,6 +208,7 @@ WHERE
                 h.field_id = e.entity_id)
     GROUP BY
         entity_id;
+    -- Hub скважин: сохраняем ключи скважин отдельно от изменяемых атрибутов.
     INSERT INTO oil_dds.hub_well
     SELECT
         md5('well:' || entity_id),
@@ -230,6 +229,7 @@ WHERE
                 h.well_id = e.entity_id)
     GROUP BY
         entity_id;
+    -- Hub добычи: ключ соответствует одному бизнес-идентификатору скважино-дня.
     INSERT INTO oil_dds.hub_production_day
     SELECT
         md5('production:' || entity_id),
@@ -250,6 +250,7 @@ WHERE
                 h.production_id = e.entity_id)
     GROUP BY
         entity_id;
+    -- Hub простоев: сохраняем идентификаторы интервалов второй исходной ветки.
     INSERT INTO oil_dds.hub_downtime
     SELECT
         md5('downtime:' || entity_id),
@@ -270,6 +271,7 @@ WHERE
                 h.downtime_id = e.entity_id)
     GROUP BY
         entity_id;
+    -- Link: фиксируем встречавшуюся связь скважины с месторождением по hash keys.
     INSERT INTO oil_dds.link_well_field
     SELECT
         md5('well_field:' || entity_id || ':' || (payload::json ->> 'field_id')),
@@ -292,6 +294,7 @@ WHERE
     GROUP BY
         entity_id,
         payload::json ->> 'field_id';
+    -- Link: связываем производственный ключ скважино-дня с hub скважины.
     INSERT INTO oil_dds.link_production_day_well
     SELECT
         md5('production_day_well:' || entity_id || ':' || (payload::json ->> 'well_id')),
@@ -314,6 +317,7 @@ WHERE
     GROUP BY
         entity_id,
         payload::json ->> 'well_id';
+    -- Link: связываем интервал простоя со скважиной.
     INSERT INTO oil_dds.link_downtime_well
     SELECT
         md5('downtime_well:' || entity_id || ':' || (payload::json ->> 'well_id')),
@@ -336,6 +340,7 @@ WHERE
     GROUP BY
         entity_id,
         payload::json ->> 'well_id';
+    -- Satellite месторождений: добавляем версии атрибутов и hashdiff исходного payload.
     INSERT INTO oil_dds.sat_field
     SELECT
         md5('field:' || entity_id),
@@ -360,6 +365,7 @@ WHERE
                 oil_dds.sat_field s
             WHERE
                 s.event_id = e.event_id);
+    -- Satellite скважин: сохраняем версию, valid_from, статус и ссылку на link месторождения.
     INSERT INTO oil_dds.sat_well
     SELECT
         md5('well:' || entity_id),
@@ -386,6 +392,11 @@ WHERE
                 oil_dds.sat_well s
             WHERE
                 s.event_id = e.event_id);
+    -- Satellite добычи: сохраняем версии тонн/статуса и U/D, не затирая историю.
+    -- Satellite добычи: сохраняем версии тонн/статуса и U/D, не затирая историю.
+    -- Satellite добычи: сохраняем версии тонн/статуса и U/D, не затирая историю.
+    -- Satellite добычи: сохраняем версии тонн/статуса и U/D, не затирая историю.
+    -- Satellite добычи: сохраняем версии тонн/статуса и U/D, не затирая историю.
     INSERT INTO oil_dds.sat_daily_production
     SELECT
         md5('production:' || entity_id),
@@ -412,6 +423,7 @@ WHERE
                 oil_dds.sat_daily_production s
             WHERE
                 s.event_id = e.event_id);
+    -- Satellite простоев: сохраняем версии интервала, причину и U/D.
     INSERT INTO oil_dds.sat_downtime
     SELECT
         md5('downtime:' || entity_id),
@@ -775,6 +787,7 @@ WHERE
     IF bad > 0 THEN
         RAISE EXCEPTION 'duplicate sat downtime event IDs %', bad;
     END IF;
+    -- Только после всех проверок помечаем партию APPLIED; до этого места частичный успех не фиксируется.
     UPDATE
         oil_stg.batch_control
     SET

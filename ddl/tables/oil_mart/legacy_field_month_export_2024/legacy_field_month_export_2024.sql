@@ -1,10 +1,8 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Сохраняет старый месячный экспорт как кандидата вне первой волны.
--- AS IS: oil_mart.legacy_field_month_export_2024; таблица или view исходного слоя GP.
--- TO BE: Не входит в первую волну; потребители проверяются до решения о переносе.
--- Отличие: Объект не создаётся в Lakehouse и не удаляется из GP этим файлом.
--- Конец контекста миграции.
+-- Открывает транзакцию согласованного исходного среза.
 BEGIN;
+
+
+-- Создаёт таблицу oil_mart.legacy_field_month_export_2024.
 CREATE TABLE oil_mart.legacy_field_month_export_2024 (
     export_month date NOT NULL,
     field_hk text NOT NULL,
@@ -13,6 +11,9 @@ CREATE TABLE oil_mart.legacy_field_month_export_2024 (
     export_status text NOT NULL,
     PRIMARY KEY (export_month, field_hk))
 DISTRIBUTED BY (field_hk);
+
+
+-- Записывает результат SELECT в oil_mart.legacy_field_month_export_2024.
 INSERT INTO oil_mart.legacy_field_month_export_2024
 SELECT
     (date_trunc('month', production_date) - interval '1 year')::date,
@@ -26,6 +27,15 @@ GROUP BY
     1,
     2,
     3;
+
+
+-- Сохраняет описание назначения объекта в системном каталоге Greenplum.
 COMMENT ON TABLE oil_mart.legacy_field_month_export_2024 IS 'Archived monthly export excluded from active reporting. Values derived from the 2025 baseline with a 0.95 factor and dates shifted back one year; not verified measurements for 2024. No scheduled consumer is configured.';
+
+
+-- Выдаёт SELECT на oil_mart.legacy_field_month_export_2024 роли cedrus_gp_ro.
 GRANT SELECT ON oil_mart.legacy_field_month_export_2024 TO cedrus_gp_ro;
+
+
+-- Фиксирует исходный срез и освобождает блокировки GP.
 COMMIT;

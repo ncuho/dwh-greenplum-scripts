@@ -1,9 +1,4 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Хранит историю связи production_day_well через hash keys связанных hubs.
--- AS IS: oil_dds.link_production_day_well; таблица или view исходного слоя GP.
--- TO BE: Логический аналог в Iceberg release; текущий код первой волны — pipelines/production_online в DLH.
--- Отличие: GP distribution/индексы не копируются; бизнес-ключи, типы и смысл связей сохраняются и проверяются DQ.
--- Конец контекста миграции.
+-- Создаёт таблицу oil_dds.link_production_day_well.
 CREATE TABLE oil_dds.link_production_day_well (
     link_hk text NOT NULL,
     production_hk text NOT NULL,

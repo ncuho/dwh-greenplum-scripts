@@ -1,9 +1,4 @@
--- Контекст миграции: AS IS / TO BE.
--- Назначение: Учитывает состояния исходных партий и завершённость применения.
--- AS IS: oil_stg.batch_control; таблица или view исходного слоя GP.
--- TO BE: Логический аналог в Iceberg release; текущий код первой волны — pipelines/production_online в DLH.
--- Отличие: GP distribution/индексы не копируются; бизнес-ключи, типы и смысл связей сохраняются и проверяются DQ.
--- Конец контекста миграции.
+-- Создаёт таблицу oil_stg.batch_control.
 CREATE TABLE oil_stg.batch_control (
     batch_id bigint PRIMARY KEY,
     source_name text NOT NULL,
