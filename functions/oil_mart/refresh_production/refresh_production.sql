@@ -175,4 +175,7 @@ WHERE
         f.region;
 END;
 $$
-LANGUAGE plpgsql;
+-- Выполняется от ограниченного владельца функции; Airflow не получает прямую запись в DDS/Marts.
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = pg_catalog, pg_temp;
