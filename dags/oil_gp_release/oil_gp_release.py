@@ -108,5 +108,5 @@ with DAG(
     default_args={"retries": 0, "execution_timeout": timedelta(minutes=5)},
     tags=["oil", "greenplum"],
 ) as dag:
-    # Apply_batches_and_refresh_marts вызывает Python release(), а та — prepare_source в Greenplum.
+    # Apply_batches_and_refresh_marts вызывает Python release(), а та — apply_ready_batches и проверки в Greenplum.
     PythonOperator(task_id="apply_batches_and_refresh_marts", python_callable=release)
